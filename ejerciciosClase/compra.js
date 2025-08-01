@@ -1,13 +1,14 @@
 /* let compra 
-let descuento
+Ejercicio 1: Cálculo del Total de una Compra
 
-compra = parseInt(prompt("cuánto es el valor de la compra?"));
+Descripción: Crea un programa que calcule el total de una compra después de aplicar un descuento.
 
-descuento = parseInt(prompt("cuánto es el valor del descuento?"));
+Requisitos:
 
-total = compra * (descuento / 100);
-
-alert (`El total es: ${total} el precio era ${compra} y el decuento ${descuento}`) 
+Pedir al usuario que ingrese el precio de la compra.
+Pedir al usuario que ingrese el porcentaje de descuento (si hay).
+Calcular el total aplicando el descuento.
+Imprimir el total de la compra.
  */
 
 let compra 
