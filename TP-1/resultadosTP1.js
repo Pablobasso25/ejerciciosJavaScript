@@ -41,3 +41,17 @@ if (num1 > num2 && num1 > num3){
 }else {
     document.writeln(`El ${num3} es mayor`);
 } */
+
+/* 8 
+let numero = parseInt(prompt("Ingrese un número"));
+
+if (numero % 2 == 0) {
+
+    alert(`El ${numero} es divisible por 2`);
+}else{
+    alert(`El ${numero} no es divisible por 2`);
+}
+ */
+
+9
+
