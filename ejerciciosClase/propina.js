@@ -9,3 +9,19 @@ Pedir al usuario que ingrese el porcentaje de propina que desea dejar.
 Calcular la cantidad de propina.
 Calcular el total a pagar incluyendo la propina.
 Imprimir la propina y el total a pagar. */
+
+let totCuenta
+let propina
+
+totCuenta = parseInt(prompt("Ingresa el total de la cuenta en $"));
+propina = parseInt(prompt("Qué % de propina queres dejarle al mozo ?"));
+
+propina = totCuenta * (propina / 100);
+totalAPagar = totCuenta + propina;
+
+if (totalAPagar > 0 && propina > 0) {
+    alert(`La propina es de $${propina}, y el total a pagar es de $${totalAPagar}`);
+}else {
+    alert(`El total a pagar es de $${totalAPagar}`);
+}
+
