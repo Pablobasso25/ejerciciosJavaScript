@@ -54,4 +54,13 @@ if (numero % 2 == 0) {
  */
 
 9
+let frase = prompt("Escribí una frase:");
+let vocales = "";
 
+for (let i = 0; i < frase.length; i++) {
+    let letra = frase.charAt(i);
+    if ("aeiouAEIOU".includes(letra)){
+        vocales += letra;
+        alert(`Las vocales que aparecen son: ${vocales}`);
+    }
+}
