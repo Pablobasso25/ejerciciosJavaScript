@@ -82,7 +82,9 @@ else{
     alert(`El numero ${numero} no es divisible ni en 2,3,5 y 7`);
 }   */
 
-    let numero = parseInt(prompt("Ingresa un número"));
+11 
+
+let numero = parseInt(prompt("Ingresa un número"));
 let mensaje = `El número ${numero} es divisible: `;
 let divisible = false;
 
@@ -91,15 +93,15 @@ if (numero % 2 === 0) {
   divisible = true;
 }
 if (numero % 3 === 0) {
-  mensaje += "3 ";
+  mensaje += "por 3 ";
   divisible = true;
 }
 if (numero % 5 === 0) {
-  mensaje += "5 ";
+  mensaje += "por 5 ";
   divisible = true;
 }
 if (numero % 7 === 0) {
-  mensaje += "7 ";
+  mensaje += "por 7 ";
   divisible = true;
 }
 
