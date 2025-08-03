@@ -53,7 +53,7 @@ if (numero % 2 == 0) {
 }
  */
 
-9
+/* 9
 let frase = prompt("Escribí una frase:");
 let vocales = "";
 
@@ -63,4 +63,48 @@ for (let i = 0; i < frase.length; i++) {
         vocales += letra;
         alert(`Las vocales que aparecen son: ${vocales}`);
     }
+} */
+
+/* 10
+ 
+let numero = parseInt(prompt("Ingresa un nùmero"));
+
+if(numero % 2 ==0){
+  alert(`El ${numero} es divisible por 2`)
+}else if(numero % 3 == 0){
+  alert(`El ${numero} es divisible por 3`)
+}else if(numero % 5 == 0){
+  alert(`El ${numero} es divisible por 5`)
+}else if(numero % 7 == 0){
+  alert(`El ${numero} es divisible por 7`)
+}
+else{
+    alert(`El numero ${numero} no es divisible ni en 2,3,5 y 7`);
+}   */
+
+    let numero = parseInt(prompt("Ingresa un número"));
+let mensaje = `El número ${numero} es divisible: `;
+let divisible = false;
+
+if (numero % 2 === 0) {
+  mensaje += "por 2 ";
+  divisible = true;
+}
+if (numero % 3 === 0) {
+  mensaje += "3 ";
+  divisible = true;
+}
+if (numero % 5 === 0) {
+  mensaje += "5 ";
+  divisible = true;
+}
+if (numero % 7 === 0) {
+  mensaje += "7 ";
+  divisible = true;
+}
+
+if (divisible) {
+  alert(mensaje);
+} else {
+  alert(`El número ${numero} no es divisible ni por 2, 3, 5 ni 7`);
 }
