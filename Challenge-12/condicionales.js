@@ -102,3 +102,25 @@ if (operacion === "sumar"){
   alert("Operación no válida.");
 } */
 
+/* 7
+let año = parseInt(prompt("Ingresá un año"));
+
+if ((año % 4 === 0 && año % 100 !== 0) || año % 400 === 0) {
+  alert(`El año ${año} es bisiesto.`);
+} else {
+  alert(`El año ${año} no es bisiesto.`);
+} */
+
+8
+
+let nota = parseFloat(prompt("Ingresá tu calificación (0 a 10)"));
+
+if (nota < 0 || nota > 10 || isNaN(nota)) {
+  alert("Calificación inválida. Debe estar entre 0 y 10.");
+} else if (nota <= 5) {
+  alert("Reprobado");
+} else if (nota <= 8) {
+  alert("Aprobado");
+} else {
+  alert("Excelente");
+}
