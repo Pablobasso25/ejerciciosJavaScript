@@ -136,7 +136,7 @@ if (compra > 100){
   alert(`No se aplicaron descuentos, el monto a pagar es: $${compra}`);
 } */
 
-10
+/* 10
 let usuario = prompt("Ingresá tu nombre de usuario");
 let contraseña = prompt("Ingresar contraseña");
 
@@ -151,4 +151,4 @@ if (usuario === usuarioG && contraseña === contraseñaG){
   alert(`Contraseña incorrecta`);
 }else{
   alert(`El usuario o la contraseña no son correctos`);
-}
+} */
