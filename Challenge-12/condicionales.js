@@ -111,8 +111,7 @@ if ((año % 4 === 0 && año % 100 !== 0) || año % 400 === 0) {
   alert(`El año ${año} no es bisiesto.`);
 } */
 
-8
-
+/* 8
 let nota = parseFloat(prompt("Ingresá tu calificación (0 a 10)"));
 
 if (nota < 0 || nota > 10 || isNaN(nota)) {
@@ -123,4 +122,33 @@ if (nota < 0 || nota > 10 || isNaN(nota)) {
   alert("Aprobado");
 } else {
   alert("Excelente");
+} */
+
+/* 9
+let compra = parseFloat(prompt("Ingrese el monto de la compra en pesos $:"));
+let descuento = compra * (10 / 100);
+let total = compra - descuento;
+
+if (compra > 100){
+  alert(`Tenes un descuento del 10%, el monto a pagar es: $${total}`);
+
+} else{
+  alert(`No se aplicaron descuentos, el monto a pagar es: $${compra}`);
+} */
+
+10
+let usuario = prompt("Ingresá tu nombre de usuario");
+let contraseña = prompt("Ingresar contraseña");
+
+let usuarioG = "pablobasso1234";
+let contraseñaG = "Pablobassobasso"
+
+if (usuario === usuarioG && contraseña === contraseñaG){
+  alert(`Bienvenido ${usuarioG}`);
+}else if (usuario !== usuarioG && contraseña === contraseñaG){
+  alert(`Nombre de usuario incorrecto`);
+}else if (usuario === usuarioG && contraseña !== contraseñaG){
+  alert(`Contraseña incorrecta`);
+}else{
+  alert(`El usuario o la contraseña no son correctos`);
 }
