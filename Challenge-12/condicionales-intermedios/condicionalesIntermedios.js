@@ -146,6 +146,64 @@ alert(`Temperatura ingresada: ${temperatura.toFixed(1)}°${unidad}
 Convertida: ${temperaturaConvertida.toFixed(1)}°${unidad === "C" ? "F" : "C"}
 Diagnóstico: ${diagnostico}`); */
 
-            6
+/*             6
+
+do {            
+let numeroSecreto = Math.round(Math.random() * 10) + 1;
+let intento = parseInt(prompt("Adivina el número (entre 1 y 10):"));
+
+if (intento === numeroSecreto) {
+  alert("¡Correcto! Adivinaste el número.");
+} else if (intento < numeroSecreto) {
+  alert("Demasiado bajo. Intenta con un número más alto.");
+} else {
+  alert("Demasiado alto. Intenta con un número más bajo.");
+}} while (confirm("Ingresar de nuevo"));
+ */
+
+
+                  7             //  Documentación: https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions
+                                              //   https://www.freecodecamp.org/espanol/news/expresiones-regulares-regex-en-javascript-manual-para-principiantes/#use-regex-in-js
+
+/* // Pedir la contraseña al usuario
+let contraseña = prompt("Ingresá tu contraseña");
+
+// Validar si tiene al menos 8 caracteres
+if (contraseña.length < 8) {
+  alert("❌ La contraseña debe tener al menos 8 caracteres.");
+} 
+// Validar si tiene al menos una letra mayúscula
+else if (!/[A-Z]/.test(contraseña)) {
+  alert("⚠️ La contraseña debe incluir al menos una letra mayúscula.");
+} 
+// Validar si tiene al menos un número
+else if (!/[0-9]/.test(contraseña)) {
+  alert("⚠️ La contraseña debe incluir al menos un número.");
+} 
+// Validar si tiene al menos un símbolo
+else if (!/[^A-Za-z0-9]/.test(contraseña)) {
+  alert("⚠️ La contraseña debe incluir al menos un símbolo (ej: @, #, $, %, etc).");
+} 
+// Si todas las condiciones se cumplen
+else {
+  alert("✅ Contraseña válida y segura.");
+} */
+
+
+// otra forma de validar en una sola linea//
+/* // Pedir la contraseña al usuario
+let contraseña = prompt("Ingresá tu contraseña");
+
+if (
+  contraseña.length >= 8 &&
+  /^[A-Za-z]/.test(contraseña) &&
+  /^\S+$/.test(contraseña) &&
+  /[A-Z]/.test(contraseña) &&
+  /[0-9]/.test(contraseña) &&
+  /[^A-Za-z0-9]/.test(contraseña)
+) alert("✅ Contraseña válida"); else alert("❌ Contraseña inválida"); */
+
+  
+              8
 
 
