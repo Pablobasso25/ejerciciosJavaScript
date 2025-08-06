@@ -37,7 +37,9 @@ Si estás usando Visual Studio Code, hacé clic en el botón Go Live en la esqui
 💡 Consejos útiles para el usuario:
 
 🧹 Ejecutá solo un ejercicio a la vez para evitar conflictos.
+
 🗂️ Usá comentarios para organizar los distintos bloques dentro del archivo .js.
+
 🧪 Si lo preferís, podés duplicar el archivo .js para tener un script por ejercicio.
 
 
