@@ -97,7 +97,7 @@ if (ingreso < 1000){
          • Total a pagar $${ingreso * 0.20}`);
 } */
 
-             5
+/*              5
  
 let unidad;
 let temperatura;
@@ -144,6 +144,6 @@ if (tempC < 35) {
 // resultados
 alert(`Temperatura ingresada: ${temperatura.toFixed(1)}°${unidad}
 Convertida: ${temperaturaConvertida.toFixed(1)}°${unidad === "C" ? "F" : "C"}
-Diagnóstico: ${diagnostico}`);
+Diagnóstico: ${diagnostico}`); */
 
 
