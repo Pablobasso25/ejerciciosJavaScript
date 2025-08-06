@@ -146,4 +146,6 @@ alert(`Temperatura ingresada: ${temperatura.toFixed(1)}°${unidad}
 Convertida: ${temperaturaConvertida.toFixed(1)}°${unidad === "C" ? "F" : "C"}
 Diagnóstico: ${diagnostico}`); */
 
+            6
+
 
