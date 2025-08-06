@@ -1,5 +1,5 @@
 
-/*              1
+/*         EJERCICIO 1
 let edad = parseInt(prompt("Ingresa tu edad"));
 
 if (isNaN(edad) || edad < 0) {    // “Si el valor ingresado no es un número válido o es menor que cero, mostrar un mensaje de error.” 
@@ -14,7 +14,7 @@ if (isNaN(edad) || edad < 0) {    // “Si el valor ingresado no es un número v
   alert("Sos un adulto mayor");
 } */
 
-/*                2
+/*          EJERCICIO 2
 let dia = parseInt(prompt("Ingresá el día (1-31)"));
 let mes = parseInt(prompt("Ingresá el mes (1-12)"));
 let año = parseInt(prompt("Ingresá el año"));
@@ -26,7 +26,7 @@ if (dia <= 0 || mes <= 0 || año <= 0){
 }
  */
 
-/*               3
+/*           EJERCICIO 3
 let usuario = prompt("Infresá tu usuario").toUpperCase;
 let rol = prompt("Elije una opción: admin-editor-invitado").toLowerCase();
 
@@ -44,11 +44,12 @@ if (rol === "admin" ){
   alert(`Hola ${usuario}, no tenés acceso al contenido`);
 } */
 
-               4
-/* - Menos de R$1.000 → 0%
+/*           EJERCICIO 4
+
+- Menos de R$1.000 → 0%
 - Entre R$1.000 y R$5.000 → 10%
 - Más de R$5.000 → 20%
- */
+ */ 
 
 /* let ingreso = parseFloat(prompt("Cuál es tu ingreso mensual en R$")); 
 
@@ -68,7 +69,7 @@ if (ingreso < 1000){
   alert(`•Tu ingreso es de: $R${ingreso}
          • Impuestos: 20%
          • Total a pagar $${ingreso * 0.20}`);
-} */
+} 
 
 
          //APLICANDO DO WHILE //
@@ -97,7 +98,7 @@ if (ingreso < 1000){
          • Total a pagar $${ingreso * 0.20}`);
 } */
 
-/*              5
+/*           EJERCICIO 5
  
 let unidad;
 let temperatura;
@@ -146,7 +147,7 @@ alert(`Temperatura ingresada: ${temperatura.toFixed(1)}°${unidad}
 Convertida: ${temperaturaConvertida.toFixed(1)}°${unidad === "C" ? "F" : "C"}
 Diagnóstico: ${diagnostico}`); */
 
-/*             6
+/*          EJERCICIO 6
 
 do {            
 let numeroSecreto = Math.round(Math.random() * 10) + 1;
@@ -162,10 +163,10 @@ if (intento === numeroSecreto) {
  */
 
 
-                  7             //  Documentación: https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions
+/*               EJERCICIO 7                     //  Documentación: https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions
                                               //   https://www.freecodecamp.org/espanol/news/expresiones-regulares-regex-en-javascript-manual-para-principiantes/#use-regex-in-js
 
-/* // Pedir la contraseña al usuario
+// Pedir la contraseña al usuario
 let contraseña = prompt("Ingresá tu contraseña");
 
 // Validar si tiene al menos 8 caracteres
@@ -187,10 +188,10 @@ else if (!/[^A-Za-z0-9]/.test(contraseña)) {
 // Si todas las condiciones se cumplen
 else {
   alert("✅ Contraseña válida y segura.");
-} */
+}  */
 
 
-// otra forma de validar en una sola linea//
+// OTRA FORMA DE VALIDAR PERO EN UNA SOLA LINEA//
 
 
 /* // Pedir la contraseña al usuario
@@ -203,21 +204,21 @@ if (
   /[A-Z]/.test(contraseña) &&
   /[0-9]/.test(contraseña) &&
   /[^A-Za-z0-9]/.test(contraseña)
-) alert("✅ Contraseña válida"); else alert("❌ Contraseña inválida"); */
+) alert("✅ Contraseña válida"); else alert("❌ Contraseña inválida");
 
   
-              8                                                                            //SE LEE DE LA SIGUIENTE MANERA //
-/* 
+             EJERCICIO 8                                                                            //SE LEE DE LA SIGUIENTE MANERA //
+
 let distancia = parseFloat(prompt("Ingresá la distancia en Kilométors"));   // se crea la variable distancia 
 
 if (isNaN(distancia) || distancia <= 0){                                    // si, el valor ingresado no es un número y no es mayor que cero, se muestra el cartel de "Distancia inválida"
   alert("Distancia inválida");
   
 }else{                                                                      // si, el usuario ingresa correctamente los valores 
-  let tarifaPorKm;                                                          // se devlara la variable "let tarifaPorKm" pero no se la inicializa
+  let tarifaPorKm;                                                          // se declara la variable "let tarifaPorKm" pero no se la inicializa
 
   if (distancia <= 10){                                                     // si, la distancia es menor o igual a 10                                                    
-    tarifaPorKm = 100;                                                      // la variable tarifaPorKm se inicializa con un nvalor de 100
+    tarifaPorKm = 100;                                                      // la variable tarifaPorKm se inicializa con un valor de 100
   }else if (distancia <= 50){                                               // si, la distancia es menor o igual a 50
     tarifaPorKm = 75;                                                       // la variable tarifaPorKm pasa a valer 75
   }else if (distancia <= 100){                                              // si, la distancia es menor o igual a 100
@@ -228,11 +229,11 @@ if (isNaN(distancia) || distancia <= 0){                                    // s
 
   let total = distancia * tarifaPorKm;                                      // antes de cerrar el else, se crea la variable "let total" que contiene la fórmula con el cálculo del costo por kilómetro.
   alert(`📦 El envío para ${distancia} km cuesta $${total}`);              // antes de cerrar el else tambíen se agrega un alert con el mensaje del total del envio
-} */
+}
 
-              9
+/*              EJERCICIO 9
 
-/* let edad = parseInt(prompt("Ingresá tu edad"));
+let edad = parseInt(prompt("Ingresá tu edad"));
 let clasificacion = prompt("Ingresá la clasificación de la película (+13, +18)");
 
 if (isNaN(edad) || edad <= 0) {
@@ -247,7 +248,7 @@ if (isNaN(edad) || edad <= 0) {
   }
 } */
 
-/*               10
+/*            EJERCICIO 10
 
 let color = prompt("Ingresá el color del semáforo (rojo, amarillo, verde)").toLowerCase();
 
