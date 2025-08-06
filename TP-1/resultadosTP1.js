@@ -66,7 +66,7 @@ for (let i = 0; i < frase.length; i++) {
 } */
 
 /* 10
- 
+
 let numero = parseInt(prompt("Ingresa un nùmero"));
 
 if(numero % 2 ==0){
