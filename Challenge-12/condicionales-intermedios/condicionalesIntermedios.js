@@ -191,6 +191,8 @@ else {
 
 
 // otra forma de validar en una sola linea//
+
+
 /* // Pedir la contraseña al usuario
 let contraseña = prompt("Ingresá tu contraseña");
 
@@ -204,6 +206,58 @@ if (
 ) alert("✅ Contraseña válida"); else alert("❌ Contraseña inválida"); */
 
   
-              8
+              8                                                                            //SE LEE DE LA SIGUIENTE MANERA //
+/* 
+let distancia = parseFloat(prompt("Ingresá la distancia en Kilométors"));   // se crea la variable distancia 
 
+if (isNaN(distancia) || distancia <= 0){                                    // si, el valor ingresado no es un número y no es mayor que cero, se muestra el cartel de "Distancia inválida"
+  alert("Distancia inválida");
+  
+}else{                                                                      // si, el usuario ingresa correctamente los valores 
+  let tarifaPorKm;                                                          // se devlara la variable "let tarifaPorKm" pero no se la inicializa
 
+  if (distancia <= 10){                                                     // si, la distancia es menor o igual a 10                                                    
+    tarifaPorKm = 100;                                                      // la variable tarifaPorKm se inicializa con un nvalor de 100
+  }else if (distancia <= 50){                                               // si, la distancia es menor o igual a 50
+    tarifaPorKm = 75;                                                       // la variable tarifaPorKm pasa a valer 75
+  }else if (distancia <= 100){                                              // si, la distancia es menor o igual a 100
+    tarifaPorKm = 50;                                                       // la variable tarifaPorKm pasa a valer 50
+  }else{                                                                    // si, no cumple ninguna de las condiciones anteriores
+    tarifaPorKm = 25;                                                       // la variable tarifaPorKm pasa a valer 25
+  }
+
+  let total = distancia * tarifaPorKm;                                      // antes de cerrar el else, se crea la variable "let total" que contiene la fórmula con el cálculo del costo por kilómetro.
+  alert(`📦 El envío para ${distancia} km cuesta $${total}`);              // antes de cerrar el else tambíen se agrega un alert con el mensaje del total del envio
+} */
+
+              9
+
+/* let edad = parseInt(prompt("Ingresá tu edad"));
+let clasificacion = prompt("Ingresá la clasificación de la película (+13, +18)");
+
+if (isNaN(edad) || edad <= 0) {
+  alert("Edad inválida");
+} else {
+  if (clasificacion === "+13" && edad >= 13) {
+    alert("✅ Podés ver la película");
+  } else if (clasificacion === "+18" && edad >= 18) {
+    alert("✅ Podés ver la película");
+  } else {
+    alert("❌ No podés ver la película");
+  }
+} */
+
+/*               10
+
+let color = prompt("Ingresá el color del semáforo (rojo, amarillo, verde)").toLowerCase();
+
+if (color === "rojo") {
+  alert("🛑 Detenerse");
+} else if (color === "amarillo") {
+  alert("⚠️ Precaución");
+} else if (color === "verde") {
+  alert("✅ Avanzar");
+} else {
+  alert("❌ Color inválido");
+}
+ */
