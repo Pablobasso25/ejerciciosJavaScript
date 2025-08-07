@@ -207,7 +207,7 @@ if (
 ) alert("✅ Contraseña válida"); else alert("❌ Contraseña inválida");
 
   
-             EJERCICIO 8                                                                            //SE LEE DE LA SIGUIENTE MANERA //
+GIR             EJERCICIO 8                                                                    //SE LEE DE LA SIGUIENTE MANERA //
 
 let distancia = parseFloat(prompt("Ingresá la distancia en Kilométors"));   // se crea la variable distancia 
 
@@ -228,7 +228,7 @@ if (isNaN(distancia) || distancia <= 0){                                    // s
   }
 
   let total = distancia * tarifaPorKm;                                      // antes de cerrar el else, se crea la variable "let total" que contiene la fórmula con el cálculo del costo por kilómetro.
-  alert(`📦 El envío para ${distancia} km cuesta $${total}`);              // antes de cerrar el else tambíen se agrega un alert con el mensaje del total del envio
+  alert(`El envío para ${distancia} km cuesta $${total}`);              // antes de cerrar el else tambíen se agrega un alert con el mensaje del total del envio
 }
 
 /*              EJERCICIO 9
