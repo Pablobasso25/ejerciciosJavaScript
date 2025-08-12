@@ -152,3 +152,12 @@ if (usuario === usuarioG && contraseña === contraseñaG){
 }else{
   alert(`El usuario o la contraseña no son correctos`);
 } */
+
+
+let series = ["narturo", "fragmentosdelEclipce", "alvarito"];
+let seri = ["narturo", "fragmentosdelEclipce", "alvarito"];
+
+console.log(seri);
+
+
+

@@ -324,4 +324,33 @@ if (cantidad > 0) {
  */
 
 
+const letrasDNI = [
+  "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X",
+  "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"
+];
+
+let entrada;
+
+do {
+  entrada = prompt("🆔 Ingresá tu número de DNI (0 a 99999999):");
+
+  if (entrada === null) {
+    break; // El usuario canceló
+  }
+
+  let dni = parseInt(entrada);
+
+  if (isNaN(dni)) {
+    alert("❌ Eso no es un número válido.");
+  } else if (dni < 0 || dni > 99999999) {
+    alert("⚠️ El número debe estar entre 0 y 99.999.999.");
+  } else {
+    let resto = dni % 23;
+    let letra = letrasDNI[resto];
+    alert(`✅ DNI: ${dni} → Letra: '${letra}'`);
+  }
+
+} while (true);
+
+
 
