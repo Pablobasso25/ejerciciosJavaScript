@@ -141,7 +141,7 @@ for (let i = 0; i < frase.length; i++) {
     }
 } */
 
-/*              // EJERCICIO 9 //
+            // EJERCICIO 9 //
 
 let edad;
 
@@ -157,7 +157,7 @@ do {
 
 } while (isNaN(edad) || edad < 18 || edad > 99);                   // el bucle se repite mientras la edad no sea válida.
 
-alert("Edad válida. Acceso permitido.");    */                        // y si la edad ingresada está dentro del rango, sale del bucle y se muestra otro mensaje.
+alert("Edad válida. Acceso permitido.");                         // y si la edad ingresada está dentro del rango, sale del bucle y se muestra otro mensaje.
 
 
 /*              // EJERCICIO 10 //
@@ -172,9 +172,9 @@ if (num1 < num2 && num2 < num3) {
   alert(" Los números NO están en orden creciente.");
 } */
 
-/*               // EJERCICIO 11 //  
+              // EJERCICIO 11 //  
 
-let opcion;
+/* let opcion;
 
 do {
   opcion = prompt(
@@ -324,33 +324,6 @@ if (cantidad > 0) {
  */
 
 
-const letrasDNI = [
-  "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X",
-  "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"
-];
-
-let entrada;
-
-do {
-  entrada = prompt("🆔 Ingresá tu número de DNI (0 a 99999999):");
-
-  if (entrada === null) {
-    break; // El usuario canceló
-  }
-
-  let dni = parseInt(entrada);
-
-  if (isNaN(dni)) {
-    alert("❌ Eso no es un número válido.");
-  } else if (dni < 0 || dni > 99999999) {
-    alert("⚠️ El número debe estar entre 0 y 99.999.999.");
-  } else {
-    let resto = dni % 23;
-    let letra = letrasDNI[resto];
-    alert(`✅ DNI: ${dni} → Letra: '${letra}'`);
-  }
-
-} while (true);
 
 
 

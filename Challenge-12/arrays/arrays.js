@@ -1,8 +1,8 @@
 
 
-/*             // EJERCICIO 1 //
+            // EJERCICIO 1 //
 
-let meses = [
+/* let meses = [
   "• Enero", "• Febrero", "• Marzo", "• Abril", "• Mayo", "• Junio",
   "• Julio", "• Agosto", "• Septiembre", "• Octubre", "• Noviembre", "• Diciembre"];
 
@@ -11,19 +11,24 @@ for(let i = 0; i < 12; i++){
   document.writeln(mostrar + "<br>");
 } */
 
+
+
+
            // EJERCICIO 2 //
 
 let entrada;
 let ciudades = [];
 
 do{
-  entrada = prompt("Ingresá una ciudad:");                // inicializo la variable entrada//
+  entrada = prompt("Ingresá varias ciudades:");                // inicializo la variable entrada//
 
-  if (entrada !== null){                                  //significa que solo se termina el bucle si el usuario presiona cancelar//
+  if (entrada !== null){                                  
     ciudades.push(entrada);                               // el método push agrega todas las ciudades que ingresa el usuario al array "ciudades"
 
   }              
-}while(entrada !== null);
+}while(entrada !== null);                                 //significa que solo se termina el bucle si el usuario presiona cancelar por eso es null//
+
+
 
 // longitud del arreglo //
 document.writeln("• " + "El arreglo de ciudades tiene: " + ciudades.length + " elementos" + "<br><br>");

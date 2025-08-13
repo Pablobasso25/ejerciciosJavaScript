@@ -22,7 +22,7 @@ Determinar la naturaleza de un número ingresado por el usuario: si es positivo,
 - if, else if, else
 - alert() */
 
-/*            EJERCICIO 1
+/*            //EJERCICIO 1
 let numero = parseFloat(prompt("Ingrese un número"));
 
 if (numero > 0 ){
@@ -33,7 +33,7 @@ if (numero > 0 ){
     alert(`El número ${numero} es negativo`);
 } */
 
-/*            EJERCICIO 2
+/*           // EJERCICIO 2
 let edad = parseInt(prompt("Que edad tenes?"));
 
 if (edad < 16 ){
@@ -52,7 +52,7 @@ if (numero % 2 == 0){
 }
  */
 
-/*            EJERCICIO 4
+/*            //EJERCICIO 4
 let contraseñaGuardada = "Pablobasso1234";
 let contraseñaIngresada = prompt("Ingresá nuevamente la contraseña");
 
@@ -75,7 +75,7 @@ if (num1 > num2 && num1 > num3){
     alert(`El número ${num3} es mayor que el número ${num2} y el número ${num1}`);
 } */
 
-/*            EJERCICIO 6
+/*           // EJERCICIO 6
 let operacion = prompt("Elegir una opción: Sumar - Restar - Multiplicar - Dividir")
 let num1 = parseFloat(prompt("Ingresa el primer número"));
 let num2 = parseFloat(prompt("Ingresa el segundo número"));
@@ -111,7 +111,7 @@ if ((año % 4 === 0 && año % 100 !== 0) || año % 400 === 0) {
   alert(`El año ${año} no es bisiesto.`);
 } */
 
-/*              EJERCICIO 8
+            //EJERCICIO 8
 let nota = parseFloat(prompt("Ingresá tu calificación (0 a 10)"));
 
 if (nota < 0 || nota > 10 || isNaN(nota)) {
@@ -122,9 +122,9 @@ if (nota < 0 || nota > 10 || isNaN(nota)) {
   alert("Aprobado");
 } else {
   alert("Excelente");
-} */
+}
 
-/*              EJERCICIO 9
+/*             // EJERCICIO 9
 let compra = parseFloat(prompt("Ingrese el monto de la compra en pesos $:"));
 let descuento = compra * (10 / 100);
 let total = compra - descuento;
@@ -136,7 +136,7 @@ if (compra > 100){
   alert(`No se aplicaron descuentos, el monto a pagar es: $${compra}`);
 } */
 
-/*             EJERCICIO 10
+/*             //EJERCICIO 10
 let usuario = prompt("Ingresá tu nombre de usuario");
 let contraseña = prompt("Ingresar contraseña");
 
@@ -153,11 +153,6 @@ if (usuario === usuarioG && contraseña === contraseñaG){
   alert(`El usuario o la contraseña no son correctos`);
 } */
 
-
-let series = ["narturo", "fragmentosdelEclipce", "alvarito"];
-let seri = ["narturo", "fragmentosdelEclipce", "alvarito"];
-
-console.log(seri);
 
 
 

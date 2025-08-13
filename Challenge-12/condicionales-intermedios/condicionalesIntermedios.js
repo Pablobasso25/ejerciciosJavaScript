@@ -12,7 +12,7 @@ if (isNaN(edad) || edad < 0) {    // “Si el valor ingresado no es un número v
   alert("Sos un adulto");
 }else{
   alert("Sos un adulto mayor");
-} */
+}  */
 
 /*          EJERCICIO 2
 let dia = parseInt(prompt("Ingresá el día (1-31)"));
@@ -49,9 +49,9 @@ if (rol === "admin" ){
 - Menos de R$1.000 → 0%
 - Entre R$1.000 y R$5.000 → 10%
 - Más de R$5.000 → 20%
- */ 
+ 
 
-/* let ingreso = parseFloat(prompt("Cuál es tu ingreso mensual en R$")); 
+ let ingreso = parseFloat(prompt("Cuál es tu ingreso mensual en R$")); 
 
 if (isNaN(ingreso) || ingreso < 0) {  //si el usuario ingresa un valor distinto a un número o un valor menor a 0
   alert("Ingreso inválido.");
@@ -69,12 +69,12 @@ if (ingreso < 1000){
   alert(`•Tu ingreso es de: $R${ingreso}
          • Impuestos: 20%
          • Total a pagar $${ingreso * 0.20}`);
-} 
+}  */
 
 
-         //APLICANDO DO WHILE //
+/*          //APLICANDO DO WHILE //
 
-/* let ingreso;
+let ingreso;
 
 do{
 ingreso = parseFloat(prompt("Cuál es tu ingreso mensual en R$")); 
