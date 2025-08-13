@@ -1,10 +1,12 @@
 
 
+/////////////////////////////////////////////////////// ARRAY /////////////////////////////////////////////////////////
+
 ///// Propiedad "length" (longitud)////
 
 let miArray = ["David", "Juan", "Kevin"];
 
-let cantidad = miArray.length;      // sirve para saver cuanto eslentos hay dentro del array
+let cantidad = miArray.length;      // sirve para saber cuanto eslentos hay dentro del array
 
 console.log(cantidad);
 
@@ -74,6 +76,10 @@ console.log(nombres[i]);
 }
 
 
+
+
+////////////////////////////////////////////// OBJETO /////////////////////////////////////////////////////////////
+
 ////////// Crear un abjeto /////////
 
 let persona = {
@@ -87,10 +93,35 @@ let persona = {
 let edad = persona.edad;
 console.log(edad);
 
-// Modificar una propiedad del objeto//
+// Editar una propiedad del objeto//
 persona.edad = 32;
 console.log(persona);
 
+// Agregar un nueva propiedad al objeto //
+persona.deporteFavorito = "Tenis";
+console.log(persona);
 
+// Eliminar una propiedad del obejo //
+delete persona.comidaFavorita;
+console.log(persona);
+
+
+////////// Recorrer / iterar un objeto ///////////
+
+let persona1 = {
+    nombre:": Pablo",
+    edad:": " + 32,
+    comida:": Pizza",
+    deporte:": Futbol",
+};
+
+/* for (let key in persona1) {
+    document.writeln(key, persona1[key] + "<br>");
+} */
+
+for (let key in persona1){
+
+    console.log(key, persona1[key]);
+}
 
 
