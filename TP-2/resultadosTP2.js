@@ -14,6 +14,7 @@ if(edad>=18){
 
 do{
     nota = parseInt(prompt("Ingresar nota del 0 al 10"));
+
     if (isNaN(nota)){
         alert("Introduce un número válido")
     }
@@ -32,27 +33,32 @@ do{
     }else if (nota == 10) {
         alert("Sobresaliente");
     }
-} while (isNaN(nota) || nota < 0 || nota > 10) ; */
+} while (isNaN(nota) || nota < 0 || nota > 10) ; */          //El bucle se repite si la nota no es un número válido o está fuera del rango. Se detiene cuando el usuario ingresa un número entre 0 y 10.
+
 
 
          // EJERCICIO 3 //
 
-let texto = "";                          // variable vacia para poder ir agregando cadenas de texto
-let entrada = true;                      // esta variable controla el bucle, mientras "entrada" sea true, el usuario va a poder seguir ingresanto cadenas
+let texto = "";                                                   // variable vacia para poder ir agregando cadenas de texto
+let resultado = true;                                             // esta variable controla el bucle, mientras "resultado" sea true, el usuario va a poder seguir ingresanto cadenas de textos.
 
-while (continuar){
-    let texto = prompt("Ingresá un texto");
+while (resultado) {                                               // Se ejecuta el bucle mientras que el usuario quiera seguir.
+    let entrada = prompt("Ingresá un texto");                     // si el usuario presiona "cancelar" el texto es null
 
-    if (texto == null){                   // si el usuario presiona cncelar, el texto es null y sale del bucle
+    if (entrada === null) {                                       // si texto ingresado es null, sale del bucle y el programa no pregunta más.
         break;
     }
 
-    if 
-} 
+    if (texto === "") {                                           //Si es la primera vez que se ingresa un texto
+        texto = entrada;                                          // se guarda la cadena en la variable texto, sin el guión
+    } else {
+        texto += "-" + entrada;                                   // cuando ingresa un segundo texto, primero coloca un guion y luego concatena el siguiente texto
+    }
 
+    resultado = confirm("¿Querés ingresar otra cadena de texto?"); // Si el usuario presiona "Aceptar", resultado sigue siendo true y el bucle repite.
+}
 
-
-
+alert("Cadenas concatenadas: " + texto);
 
 
 

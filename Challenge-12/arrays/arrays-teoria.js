@@ -70,8 +70,7 @@ let nombres = ["David", "Juan", "Kevin"];                           // se crea e
 for (let i = 0; i < nombres.length; i++){                       //(let i = 0)  se inicializa la variable en 0 (0 es el primer indice del array que en este caso sería "David")
                                                                 // i < nombres.length (condición: mientras i sea menor a la longitud del arreglo que en este caso es 3, que corra el bucle)           
                                                                 // i++ (a medida que corre, i va tomando diferentes valores, en este caso comienza con 0, 1, 2 y cuando llega a 3 se detiene)
-console.log(nombres[i]); 
-// nombres[i] (accede a los valores del array : 0, 1, 2 y los imprime)
+console.log(nombres[i]);                                        // nombres[i] (accede a los valores del array : 0, 1, 2 y los imprime)
     
 }
 
