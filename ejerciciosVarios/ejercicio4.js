@@ -12,5 +12,30 @@ let palabras = [];
 let entrada;
 
 // bloque 2 //
+do{
+    entrada = prompt("Ingresá una palabra (o escribí 'salir' para terminar):");
+
+    if (entrada !== null && entrada.toLowerCase() !== "salir" && entrada.trim() !== ""){
+        if (!palabras.includes(entrada)){
+            palabras.push(entrada);
+        }else{
+            alert("Esa palabra ya fue ingresada.");
+        }
+    }
+}while (entrada !== null && entrada.toLowerCase() !== "salir");
+
+/*
+ Este bloque:
+• Repite mientras el usuario no escriba "salir" ni cancele.
+• Evita entradas vacías.
+• Usa .includes() para evitar duplicados.
+• Guarda solo palabras únicas.
+  */
+
+// bloque 3 //
+document.writeln("Palabras ingresadas sin duplicados:<br>");
+for (let i = 0; i < palabras.length; i++) {
+  document.writeln("• " + palabras[i] + "<br>");
+}
 
 
