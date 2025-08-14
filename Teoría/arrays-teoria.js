@@ -40,7 +40,7 @@ miArray2.unshift("Agustin");
 console.log(miArray2);
  
 
-//////  Quitar elements de un array //////
+//////  Quitar elementos de un array //////
 
 // método pop: quita el último elemento del arreglo//
 miArray2.pop();
@@ -63,64 +63,48 @@ console.log(miArray2);
 console.log(inicio);
 
 
+
+
 ////////// Recorrer / iterar un array /////////
 
-let nombres = ["David", "Juan", "Kevin"];                           // se crea el array a recorrer
 
-for (let i = 0; i < nombres.length; i++){                       //(let i = 0)  se inicializa la variable en 0 (0 es el primer indice del array que en este caso sería "David")
+// 1) for clásico //
+let nombres4 = ["David", "Juan", "Kevin"];                           // se crea el array a recorrer
+
+for (let i = 0; i < nombres4.length; i++){                       //(let i = 0)  se inicializa la variable en 0 (0 es el primer indice del array que en este caso sería "David")
                                                                 // i < nombres.length (condición: mientras i sea menor a la longitud del arreglo que en este caso es 3, que corra el bucle)           
                                                                 // i++ (a medida que corre, i va tomando diferentes valores, en este caso comienza con 0, 1, 2 y cuando llega a 3 se detiene)
-console.log(nombres[i]);                                        // nombres[i] (accede a los valores del array : 0, 1, 2 y los imprime)
-    
+/* console.log(nombres4[i]); */
+console.log(`Nombre ${i}: ${nombres4[i]}`);
 }
+/* Ideal si necesito el índice o modificar el array en posiciones específicas */
 
 
+// 2) for off (recorrer valores directamente) //
+let nombres5 = ["David", "Juan", "Carlos"];
 
-
-////////////////////////////////////////////// OBJETO /////////////////////////////////////////////////////////////
-
-////////// Crear un abjeto /////////
-
-let persona = {
-    nombre: "David",                   // Al contrario del array, donde cada elemedo tenia un incice que lo identificaba, en los objetos se denominan llaves que guardan un valos único.
-    edad: 25,                          // Llave
-    comidaFavorita: "hamburguesa",     // Llave
-};
-
-
-// Acceder a una propiedad del objeto//
-let edad = persona.edad;
-console.log(edad);
-
-// Editar una propiedad del objeto//
-persona.edad = 32;
-console.log(persona);
-
-// Agregar un nueva propiedad al objeto //
-persona.deporteFavorito = "Tenis";
-console.log(persona);
-
-// Eliminar una propiedad del obejo //
-delete persona.comidaFavorita;
-console.log(persona);
-
-
-////////// Recorrer / iterar un objeto ///////////
-
-let persona1 = {
-    nombre:": Pablo",
-    edad:": " + 32,
-    comida:": Pizza",
-    deporte:": Futbol",
-};
-
-/* for (let key in persona1) {
-    document.writeln(key, persona1[key] + "<br>");
-} */
-
-for (let key in persona1){
-
-    console.log(key, persona1[key]);
+for (let nombre of nombres5) {
+  console.log("Hola " + nombre);
 }
+/* si solo te interesa el valor, no el índice */
 
+
+
+// 3) while (recorrer hasta cumplir una condición) //
+let edades = [12, 15, 18, 21];
+let i = 0;
+
+while (i < edades.length && edades[i] < 18) {
+  console.log("Menor de edad:", edades[i]);
+  i++;
+}
+/* Útil si quiere cortar el recorrido cuando se cumple una condición */
+
+
+
+// 4) map (transformar el array)
+let precios = [100, 200, 300];
+let conIVA = precios.map(p => p * 1.21);
+console.log(conIVA);
+/* para crear un nuevo array con modificaciones */
 
