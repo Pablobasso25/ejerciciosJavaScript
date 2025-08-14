@@ -39,7 +39,7 @@ do{
 
          // EJERCICIO 3 //
 
-let texto = "";                                                   // variable vacia para poder ir agregando cadenas de texto
+/* let texto = "";                                                   // variable vacia para poder ir agregando cadenas de texto
 let resultado = true;                                             // esta variable controla el bucle, mientras "resultado" sea true, el usuario va a poder seguir ingresanto cadenas de textos.
 
 while (resultado) {                                               // Se ejecuta el bucle mientras que el usuario quiera seguir.
@@ -58,7 +58,7 @@ while (resultado) {                                               // Se ejecuta 
     resultado = confirm("¿Querés ingresar otra cadena de texto?"); // Si el usuario presiona "Aceptar", resultado sigue siendo true y el bucle repite.
 }
 
-alert("Cadenas concatenadas: " + texto);
+alert("Cadenas concatenadas: " + texto); */
 
 
 
@@ -80,7 +80,7 @@ alert("Cadenas concatenadas: " + texto);
 
 
 
-/* const letrasDNI = [
+let letrasDNI = [
   "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X",
   "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"
 ];
@@ -88,23 +88,22 @@ alert("Cadenas concatenadas: " + texto);
 let entrada;
 
 do {
-  entrada = prompt("🆔 Ingresá tu número de DNI (0 a 99999999):");
+  entrada = prompt("Ingresá tu número de DNI (0 a 99999999):");
 
   if (entrada === null) {
-    break; // El usuario canceló
+    break;                                                            // El usuario cancela
   }
 
   let dni = parseInt(entrada);
 
   if (isNaN(dni)) {
-    alert("❌ Eso no es un número válido.");
+    alert("Número inválido");
   } else if (dni < 0 || dni > 99999999) {
-    alert("⚠️ El número debe estar entre 0 y 99.999.999.");
+    alert("El número debe estar entre 0 y 99.999.999.");
   } else {
     let resto = dni % 23;
     let letra = letrasDNI[resto];
-    alert(`✅ DNI: ${dni} → Letra: '${letra}'`);
+    alert(`DNI: ${dni} → Letra: '${letra}'`);
   }
 
 } while (true);
- */
