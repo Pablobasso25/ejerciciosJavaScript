@@ -53,7 +53,7 @@ if (numero % 2 == 0) {
 }
  */
 
-/* 9
+9
 let frase = prompt("Escribí una frase:");
 let vocales = "";
 
@@ -63,7 +63,7 @@ for (let i = 0; i < frase.length; i++) {
         vocales += letra;
         alert(`Las vocales que aparecen son: ${vocales}`);
     }
-} */
+}
 
 /* 10
 
