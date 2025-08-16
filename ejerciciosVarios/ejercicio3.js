@@ -1,7 +1,7 @@
 
 /* Crear un script que solicite al usuario ingresar edades mediante prompt.
 El ingreso debe continuar hasta que el usuario presione “Cancelar”.
-Al finalizar, mostrar cuántas edades son mayores o iguales a 18 */
+Al finalizar, mostrar cuántas edades son mayores o iguales a 18. */
 
 
 let edades = [];

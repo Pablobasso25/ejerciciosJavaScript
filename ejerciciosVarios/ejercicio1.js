@@ -30,7 +30,7 @@ document.writeln("Lista de nombres:<br>");
 for (let i = 0; i < nombres.length; i++){
     document.writeln("• " + nombres[i] + "<br>");
 }
-/* Recorro el array nombres con un for y muestro cada nombre precedido por un punto (•). Cada uno aparece en una nueva línea gracias al <br>*/
+/* Recorro el array nombres con un for y muestro cada nombre precedido por un punto (•). Cada uno aparece en una nueva línea gracias al <br>.*/
 
 
 

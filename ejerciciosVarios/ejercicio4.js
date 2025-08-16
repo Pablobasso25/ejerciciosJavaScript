@@ -24,7 +24,7 @@ do{
 /* Verifico que la entrada no sea null, que no sea 'salir' (sin importar mayúsculas o minúsculas), y que no esté vacía (trim() elimina espacios). Si pasa la validación, reviso si la palabra ya fue ingresada usando includes(). Si no está, la agrego al array. Si ya está, muestro una alerta. */
 
 }while (entrada !== null && entrada.toLowerCase() !== "salir");
-/* El bucle se repite mientras el usuario no escriba 'salir' ni presione Cancelar. */
+/* El bucle se repite mientras el usuario no escriba 'salir' ni presione Cancelar */
 
 
 document.writeln("Palabras ingresadas sin duplicados:<br>");  // titulo

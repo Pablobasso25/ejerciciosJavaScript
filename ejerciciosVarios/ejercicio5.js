@@ -38,7 +38,7 @@ for (let i = 0; i < numeros.length; i++) {
   if (numeros[i] < menor) menor = numeros[i];
   suma += numeros[i];
 }
-/* Inicializo mayor, menor y suma con el primer número del array. Luego recorro el array y actualizo el mayor y menor si encuentro valores más extremos. También acumulo la suma total. */
+/* Inicializo mayor, menor y suma con el primer número del array. Luego recorro el array y actualizo el mayor y menor si encuentro valores más extremos. También acumulo la suma total */
 
 let promedio = suma / numeros.length;
 /* Divido la suma total por la cantidad de elementos para obtener el promedio. */

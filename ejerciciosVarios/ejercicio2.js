@@ -1,7 +1,7 @@
 
 
 /* Crear un script que solicite al usuario ingresar 10 números.
-Al finalizar, mostrar solo los números pares */
+Al finalizar, mostrar solo los números pares. */
 
 let numeros = [];
 /* Declaro un array vacío llamado numeros, donde voy a guardar los valores numéricos que el usuario ingrese. */
