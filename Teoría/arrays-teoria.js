@@ -11,7 +11,7 @@ let cantidad = miArray.length;      // sirve para saber cuanto eslentos hay dent
 console.log(cantidad);
 
 
-/////// Acceder a los elementos de un array /////
+/////// Acceder a los elementos de un array //////
 
 let miArray1 = ["David", "Juan", "Kevin"];
 

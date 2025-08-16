@@ -2,7 +2,7 @@
 
 ////////////////////////////////////////////// OBJETO /////////////////////////////////////////////////////////////
 
-////////// Crear un abjeto /////////
+////////// Crear un abjeto //////////
 
 let persona = {
     nombre: "David",                   // Al contrario del array, donde cada elemedo tenia un incice que lo identificaba, en los objetos se denominan llaves que guardan un valos único.
