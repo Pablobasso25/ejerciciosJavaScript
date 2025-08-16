@@ -6,11 +6,16 @@ Usar un switch para imprimir un saludo diferente según el idioma (mínimo 7 idi
 
 
 
-let idioma = prompt("¿En que idioma te saludo?").toLowerCase();
+let idioma = prompt("¿En qué idioma te saludo?");     // se pide el idioma
 
+if (idioma === null || idioma.trim() === "") {        // se valida si se canceló o está vacío
+  alert("No ingresaste ningún idioma");
+} else {
+
+    idioma = idioma.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");  // pasa a minúsculas y quita las tildes
 
     switch (idioma) {
-        case "español":
+        case "espanol":
         alert("Hola, ¿como estás?")
             break;
         case "portugues":
@@ -22,16 +27,17 @@ let idioma = prompt("¿En que idioma te saludo?").toLowerCase();
         case "ingles":
         alert("Hi, how are you?")
             break;
-        case "alemán":
+        case "aleman":
         alert("Hallo, wie geht es dir?")
             break;
         case "italiano":
         alert("Ciao, come stai?")
             break;
-        case "japonés":
+        case "japones":
         alert("こんにちは、元気ですか")
             break;             
         default:
             alert("Ingresá un idioma válido");
             break;
     }
+}
