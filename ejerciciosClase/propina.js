@@ -8,7 +8,7 @@ Pedir al usuario que ingrese el total de la cuenta.
 Pedir al usuario que ingrese el porcentaje de propina que desea dejar.
 Calcular la cantidad de propina.
 Calcular el total a pagar incluyendo la propina.
-Imprimir la propina y el total a pagar. */
+Imprimir la propina y el total a pagar */
 
 let totCuenta
 let propina

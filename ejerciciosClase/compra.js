@@ -6,7 +6,7 @@ Descripción: Crea un programa que calcule el total de una compra después de ap
 Requisitos:
 
 Pedir al usuario que ingrese el precio de la compra.
-Pedir al usuario que ingrese el porcentaje de descuento (si hay).
+Pedir al usuario que ingrese el porcentaje de descuento (si hay)
 Calcular el total aplicando el descuento.
 Imprimir el total de la compra.
  */

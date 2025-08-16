@@ -6,7 +6,7 @@ Requisitos:
 
 Pedir al usuario que ingrese una temperatura en grados Celsius.
 Convertir la temperatura a grados Fahrenheit usando la fórmula: F=C×9/5+32
-Imprimir la temperatura en grados Fahrenheit. */
+Imprimir la temperatura en grados Fahrenheit */
 
 let tempC
 let tempF 
