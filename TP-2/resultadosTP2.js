@@ -37,7 +37,7 @@ do{
 
 
 
-         // EJERCICIO 3 //
+         /// EJERCICIO 3 ///
 
 /* let texto = "";                                                   // variable vacia para poder ir agregando cadenas de texto
 let resultado = true;                                             // esta variable controla el bucle, mientras "resultado" sea true, el usuario va a poder seguir ingresanto cadenas de textos.
