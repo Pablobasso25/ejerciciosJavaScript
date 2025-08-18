@@ -22,7 +22,8 @@ let peso;
 do{
     peso = prompt("Ingresá tu peso en kilogramos (ej: 70)");
     
-}while (peso === null || peso.trim() === "" || isNaN(peso));
+}while (peso === null || peso.trim() === "" || isNaN(peso));                  // isNaN(peso) verifica que sea un número
+
 peso = parseFloat(peso);
 
 
