@@ -8,7 +8,7 @@ if(edad>=18){
     alert("Ingrese un caracte valido o usted es menor de edad")
     } */
 
-            //EJERCICIO 2 //
+            ///EJERCICIO 2 ///
 
 /* let nota;
 
