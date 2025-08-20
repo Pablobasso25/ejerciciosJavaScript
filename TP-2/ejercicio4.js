@@ -4,7 +4,7 @@
 
 
 
-let suma = 0;                    // Acumulador inicializado
+/* let suma = 0;                    // Acumulador inicializado
 let continuar = true;               // Esto controla el ciclo siempre que sea true
 
 while (continuar){                 // se repite mientras el usuario quiera seguir ingresando números
@@ -24,4 +24,17 @@ while (continuar){                 // se repite mientras el usuario quiera segui
     }
 }
 
-alert(`Los números ingresados suman un total de: ${suma}`);  // si el usuario no quiere seguir agregando numeros, se corta el bucle y se imprime la variable suma que contiene la suma de todos los nùmeros ingresados.
+alert(`Los números ingresados suman un total de: ${suma}`);  // si el usuario no quiere seguir agregando numeros, se corta el bucle y se imprime la variable suma que contiene la suma de todos los nùmeros ingresados. */
+
+
+
+
+let contador = 10;
+
+while (contador >=0 ){
+    console.log(contador);
+    contador--
+    
+}
+
+console.log("Feliz año nuevo!!");
