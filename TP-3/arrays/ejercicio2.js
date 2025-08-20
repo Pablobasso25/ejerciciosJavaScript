@@ -1,20 +1,12 @@
 
+/* Crear un script que solicite al usuario mediante un prompt el nombre de ciudades y almacenarlas en un arreglo, cuando el usuario selecciona cancelar se debe mostrar el arreglo generado, luego realizar las siguientes acciones:
 
-            // EJERCICIO 1 //
-
-/* let meses = [
-  "• Enero", "• Febrero", "• Marzo", "• Abril", "• Mayo", "• Junio",
-  "• Julio", "• Agosto", "• Septiembre", "• Octubre", "• Noviembre", "• Diciembre"];
-
-for(let i = 0; i < 12; i++){
-  let mostrar = meses[i];
-  document.writeln(mostrar + "<br>");
-} */
-
-
-
-
-           // EJERCICIO 2 //
+Mostrar la longitud del arreglo.
+Mostrar en el documento web los ítems de las posiciones primera, tercera y última.
+Añade en última posición la ciudad de París.
+Escribe por pantalla el elemento que ocupa la segunda posición.
+Sustituye el elemento que ocupa la segunda posición por la ciudad de 'Barcelona'.
+ */
 
 let entrada;
 let ciudades = [];
@@ -26,7 +18,7 @@ do{
     ciudades.push(entrada);                               // el método push agrega todas las ciudades que ingresa el usuario al array "ciudades"
 
   }              
-}while(entrada !== null);                                 //significa que solo se termina el bucle si el usuario presiona cancelar por eso es null//
+}while(entrada !== null);                             //significa que solo se termina el bucle si el usuario presiona cancelar por eso es null/
 
 
 
@@ -58,6 +50,3 @@ document.writeln("• " + " La ciudad de " + ciudad2da + " fue reemplazada por l
 // añadir la ciudad de parís al final del arreglo //
 ciudades.push("París");
 document.writeln("• " + "La última cuidad agregada es: " + ciudades[ciudades.length -1] + "<br><br>");
-
-
-
