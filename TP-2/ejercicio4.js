@@ -36,5 +36,4 @@ while (contador >=0 ){
     contador--
     
 }
-
 console.log("Feliz año nuevo!!");

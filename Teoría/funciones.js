@@ -22,4 +22,6 @@ function saludar3(nombre2) {
     return `Hola ${nombre2} como estas?`                            // sirve para detener la funcion en ese punto 
 
 }
-saludar3('Pedro') 
+saludar3('Pedro')
+
+
