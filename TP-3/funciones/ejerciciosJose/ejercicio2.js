@@ -53,6 +53,63 @@ document.writeln("El número mayor es: " + encontrarMayor(numeros));
 
 
 
+///////////////////////////////¡¡¡¡¡ REVISARRRRRRR !!!!! //////////////////////////////////
+
+/* // 🔧 Función que recibe un array y devuelve el número mayor
+function encontrarMayor(arrayNumeros) {
+  let mayor = arrayNumeros[0];
+
+  for (let i = 1; i < arrayNumeros.length; i++) {
+    if (arrayNumeros[i] > mayor) {
+      mayor = arrayNumeros[i];
+    }
+  }
+
+  return mayor;
+}
+
+// 🧪 Pedimos al usuario cuántos números quiere ingresar
+let cantidad = prompt("¿Cuántos números vas a ingresar?");
+let numeros = [];
+
+if (
+  cantidad === null ||
+  cantidad.trim() === "" ||
+  isNaN(cantidad) ||
+  parseInt(cantidad) < 1
+) {
+  alert("Cantidad inválida. Debés ingresar un número mayor a 0.");
+} else {
+  cantidad = parseInt(cantidad);
+
+  // 🔁 Pedimos cada número y lo guardamos en el array
+  for (let i = 0; i < cantidad; i++) {
+    let entrada = prompt("Ingresá el número #" + (i + 1));
+
+    if (
+      entrada === null ||
+      entrada.trim() === "" ||
+      isNaN(entrada)
+    ) {
+      alert("Entrada inválida. Se usará 0 por defecto.");
+      numeros.push(0);
+    } else {
+      numeros.push(parseFloat(entrada));
+    }
+  }
+
+  // ➕ Calculamos el mayor usando la función
+  let mayor = encontrarMayor(numeros);
+
+  // 📤 Mostramos el resultado
+  document.writeln("Los números ingresados son: " + numeros.join(", ") + "<br>");
+  document.writeln("El número mayor es: " + mayor);
+}
+ */
+
+
+
+
 
 
 
