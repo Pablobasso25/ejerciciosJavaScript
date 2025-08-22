@@ -2,10 +2,6 @@
 
 // 1. Crea una función que reciba dos números y devuelva su suma
 
-// 2. Crea una función que reciba un array de números de devuelva el mayor de ellos
-
-// 3. Crea una función que reciba un string y devuelva el número de volcales que contiene
-
 
 /* let numero1 = parseInt(prompt("Ingrese el primer número"));
 let numero2 = parseInt(prompt("Ingrese el segundo número"));
