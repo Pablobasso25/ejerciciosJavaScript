@@ -51,61 +51,60 @@ document.writeln("El número mayor es: " + encontrarMayor(numeros));
 
 
 
+/* //////////////// Otra forma más dinámica de hacerlo //////////////
 
-
-///////////////////////////////¡¡¡¡¡ REVISARRRRRRR !!!!! //////////////////////////////////
-
-/* // 🔧 Función que recibe un array y devuelve el número mayor
-function encontrarMayor(arrayNumeros) {
-  let mayor = arrayNumeros[0];
-
-  for (let i = 1; i < arrayNumeros.length; i++) {
-    if (arrayNumeros[i] > mayor) {
-      mayor = arrayNumeros[i];
-    }
-  }
-
-  return mayor;
-}
-
-// 🧪 Pedimos al usuario cuántos números quiere ingresar
+// Pido al usuario cuántos números quiere ingresar
 let cantidad = prompt("¿Cuántos números vas a ingresar?");
 let numeros = [];
 
 if (
-  cantidad === null ||
-  cantidad.trim() === "" ||
-  isNaN(cantidad) ||
-  parseInt(cantidad) < 1
+  cantidad === null ||            // si se canceló la entrada 
+  cantidad.trim() === "" ||         // si está vacía o llena de espacios
+  isNaN(cantidad) ||              // si no es un número
+  parseInt(cantidad) < 1          // si es menor que 1
 ) {
-  alert("Cantidad inválida. Debés ingresar un número mayor a 0.");
+  alert("Cantidad inválida. Tenes que ingresar un número mayor a 0.");
 } else {
   cantidad = parseInt(cantidad);
-
-  // 🔁 Pedimos cada número y lo guardamos en el array
+  
+  // Se pide cada número y lo guardamos en el array
   for (let i = 0; i < cantidad; i++) {
-    let entrada = prompt("Ingresá el número #" + (i + 1));
-
+    let entrada = prompt("Ingresá el número #" + (i + 1));   // forma dinámica de pedir números, se suma 1 porque los indices comienzan en 0  
+    
     if (
-      entrada === null ||
-      entrada.trim() === "" ||
-      isNaN(entrada)
+      entrada === null ||          // El usuario presionó "Cancelar"
+      entrada.trim() === "" ||     // La entrada está vacía o son solo espacios
+      isNaN(entrada)               // La entrada no es un número
     ) {
       alert("Entrada inválida. Se usará 0 por defecto.");
-      numeros.push(0);
-    } else {
-      numeros.push(parseFloat(entrada));
+      numeros.push(0);            //evita que el programa se rompa por una entrada inválida y garantiza que el array siempre reciba un número en este caso un 0
+    } else {                      
+      numeros.push(parseFloat(entrada)); // si se ingesa un número válido se lo agrega al array "numeros"
     }
   }
-
-  // ➕ Calculamos el mayor usando la función
+  
+  
+  function encontrarMayor(arrayNumeros) {
+    let mayor = arrayNumeros[0];
+  
+    for (let i = 1; i < arrayNumeros.length; i++) {
+      if (arrayNumeros[i] > mayor) {
+        mayor = arrayNumeros[i];
+      }
+    }
+  
+    return mayor;
+  }
+  
+  
   let mayor = encontrarMayor(numeros);
-
-  // 📤 Mostramos el resultado
-  document.writeln("Los números ingresados son: " + numeros.join(", ") + "<br>");
+  
+  document.writeln("Los números ingresados son: " + numeros.join(", ") + "<br>");   //.join(", ") agega un aspacio despues de la coma.
   document.writeln("El número mayor es: " + mayor);
-}
- */
+} */
+
+
+
 
 
 

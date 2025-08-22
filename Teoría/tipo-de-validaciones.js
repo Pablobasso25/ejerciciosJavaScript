@@ -101,7 +101,7 @@ do {
 /* 
 • 	Acepta palabras de al menos 3 letras.
 • 	Evita duplicados.
-• 	Corta si se escribe . */
+• 	Corta si se escribe fin. */
 
 
 
