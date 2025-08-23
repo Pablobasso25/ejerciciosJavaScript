@@ -16,7 +16,7 @@
 
 
 
-let multiplo = [4, 9, 5];
+let multiplo = "";
 
 for (let num = 1; num <= 500; num++) {
     if (num % multiplo[0] === 0) {

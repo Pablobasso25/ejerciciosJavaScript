@@ -19,7 +19,7 @@ frase(texto);    // solo llamo a la función porque no necesito guardan nada en 
 
 
 // opción 2) con return
-let texto = prompt("Ingresá una frase");
+/* let texto = prompt("Ingresá una frase");
 
 function frase(texto) {
   if (texto === texto.toUpperCase()) {
@@ -37,4 +37,4 @@ document.writeln(resultado);
 
 //opción 2)
 let resultado = frase("HOLA como estAS");  // puedo manupular el valor sin que el usuario escriba en el prompt
-document.writeln(resultado); 
+document.writeln(resultado);  */
