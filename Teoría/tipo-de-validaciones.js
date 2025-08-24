@@ -162,3 +162,24 @@ do {
   isNaN(entrada) ||                   // Si no es número, repite
   parseFloat(entrada) <= 0            // Si no es mayor a 0, repite
 );
+
+
+
+//////// EJEMPLO DE UN BUCLE WHILE (TRUE) ///////////////////////
+//En este ejemplo, el bucle se repite hasta que el usuario ingrese una letra válida o escriba "salir"
+
+/* while (true) {
+  let entrada = prompt("Ingresá una letra (o escribí 'salir')");
+
+  if (entrada === "salir") {
+    break; // salimos del bucle manualmente
+  }
+
+  if (entrada.length === 1 && isNaN(entrada)) {
+    alert("Letra válida: " + entrada);
+    break; // también podrías salir acá si querés
+  } else {
+    alert("Entrada inválida. Intentá de nuevo.");
+  }
+} */
+
