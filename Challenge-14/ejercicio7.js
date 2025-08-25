@@ -42,7 +42,7 @@ let operador = prompt("Qué operación vas a realizar? (+, -, *, /)");
     }else {
         resultado = calculo(num1, num2, operador)
         alert ("El resultado es: " + resultado)
-        /* alert("El resultado es: " + calculo(num1, num2, operador)); */
+        /* alert("El resultado es: " + calculo(num1, num2, operador)); */  // otra forma de mostrar el resultado, antes comentar tambien "let resultado"
         break;
     }
     
