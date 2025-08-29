@@ -147,9 +147,3 @@ for (let i = 0; i < 3; i++) {
     alert("Entrada inválida. Intentá de nuevo.");
   }
 } */
-
-
-  /* Eliminar un elemento de un array según su posición: 
-Crea una función que reciba un array y una posición, y elimine el elemento con .splice(). */
-
-

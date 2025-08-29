@@ -4,7 +4,7 @@
 
 ////////// Crear un abjeto //////////
 
-let persona = {
+/* let persona = {
     nombre: "David",                   // Al contrario del array, donde cada elemedo tenia un incice que lo identificaba, en los objetos se denominan llaves que guardan un valos único.
     edad: 25,                          // Llave
     comidaFavorita: "hamburguesa",     // Llave
@@ -35,14 +35,71 @@ let persona1 = {
     edad:": " + 32,
     comida:": Pizza",
     deporte:": Futbol",
-};
+}; */
 
 /* for (let key in persona1) {
     document.writeln(key, persona1[key] + "<br>");
 } */
 
-for (let key in persona1){
+/* for (let key in persona1){
 
     console.log(key, persona1[key]);
+} */
+
+
+
+class animal{
+    constructor(especie,edad,color){  // estos parametros son definidos por mi 
+    this.especie = especie;    //this es como decir: " voy  crear una propiedad llamada: especie, edad o color "
+    this.edad = edad;
+    this.color = color
+    this.info = `Soy ${this.especie}, tengo ${this.edad} años y soy de color ${this.color}`;
+    }
+    //creacion de una función(método) tiene que estar creado dentro del objeto o clase
+    verInfo() {      // creo una función para mostrar la info
+        document.writeln(this.info + "<br>")
+    }
 }
+
+//instanciar clase
+let perro = new animal("perro", 5,"rojo");  // le paso los parametros 
+console.log(perro);
+
+// para acceder a una propiedad del objeto puedo mostrar por consola, con document.writeIn o guardarlo en una variable y luego mostrarlo. cualquiera de las opciones dependiendo el caso.
+console.log(perro.color);
+// o creando una variable 
+let color = perro.color;
+console.log(color);
+//acceder a la propiedad info
+document.writeln(perro.info + "<br>");
+console.log(perro.info);
+
+// si quiero crear otros animales ejemplo:
+let gato = new animal ("gato", 3, "negro");
+let pajaro = new animal ("pajaro", 2, "blanco");
+
+document.writeln(gato.info + "<br>");
+console.log(gato.info);
+
+document.writeln(pajaro.info + "<br>");
+console.log(pajaro.info);
+
+
+////// creación de metodos  ////// es una funcion dentro de la clase
+
+// para mostrar la info de otra forma, llamo a la función directamente 
+perro.verInfo();
+gato.verInfo();
+pajaro.verInfo();
+
+
+
+
+
+
+
+
+
+
+
 

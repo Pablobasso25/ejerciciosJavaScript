@@ -5,7 +5,6 @@ const persona = {
     nombre: "José",
     edad: 29,
     profesion: "Ingeniero",
-
 };
 
 // Accede y muestra su valor
@@ -20,4 +19,3 @@ delete persona.edad
 console.log(persona);
 
 // Agrega una función e involucrala
-
