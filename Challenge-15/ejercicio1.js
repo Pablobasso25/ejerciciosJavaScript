@@ -68,8 +68,9 @@ function buscarProductoPorNombre(lista, nombreBuscado) {
   }
   return null;    //si el bucle termina y no encontro el producto buscado, devulve null (incica que no hubo coincidencias)
 }
-
 console.log(buscarProductoPorNombre(productos, "MONITOR"));
 
+//(forma moderna)
 const monitor = productos.find(item => item.nombre.toLowerCase() === "monitor");
 console.log(monitor);
+
