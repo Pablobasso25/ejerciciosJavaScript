@@ -49,10 +49,10 @@ let persona1 = {
 
 
 class animal{
-    constructor(especie,edad,color){  // estos parametros son definidos por mi 
-    this.especie = especie;    //this es como decir: " voy  crear una propiedad llamada: especie, edad o color "
-    this.edad = edad;
-    this.color = color
+    constructor(especieParam,edadParam,colorParam){  // estos parametros son definidos por mi 
+    this.especie = especieParam;    //this es como decir: " voy  crear una propiedad llamada: especie, edad o color "
+    this.edad = edadParam;
+    this.color = colorParam;
     this.info = `Soy ${this.especie}, tengo ${this.edad} años y soy de color ${this.color}`;
     }
     //creacion de una función(método) tiene que estar creado dentro del objeto o clase
@@ -62,21 +62,21 @@ class animal{
 }
 
 //instanciar clase
-let perro = new animal("perro", 5,"rojo");  // le paso los parametros 
+const perro = new animal("perro", 5,"rojo");  // le paso los parametros 
 console.log(perro);
 
 // para acceder a una propiedad del objeto puedo mostrar por consola, con document.writeIn o guardarlo en una variable y luego mostrarlo. cualquiera de las opciones dependiendo el caso.
 console.log(perro.color);
 // o creando una variable 
-let color = perro.color;
+const color = perro.color;
 console.log(color);
 //acceder a la propiedad info
 document.writeln(perro.info + "<br>");
 console.log(perro.info);
 
 // si quiero crear otros animales ejemplo:
-let gato = new animal ("gato", 3, "negro");
-let pajaro = new animal ("pajaro", 2, "blanco");
+const gato = new animal ("gato", 3, "negro");
+const pajaro = new animal ("pajaro", 2, "blanco");
 
 document.writeln(gato.info + "<br>");
 console.log(gato.info);
