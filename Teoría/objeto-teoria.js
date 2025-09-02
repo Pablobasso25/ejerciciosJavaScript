@@ -4,7 +4,7 @@
 
 ////////// Crear un abjeto //////////
 
-/* let persona = {
+const persona = {
     nombre: "David",                   // Al contrario del array, donde cada elemedo tenia un incice que lo identificaba, en los objetos se denominan llaves que guardan un valos único.
     edad: 25,                          // Llave
     comidaFavorita: "hamburguesa",     // Llave
@@ -12,94 +12,99 @@
 
 
 // Acceder a una propiedad del objeto//
-let edad = persona.edad;
+// Notacióm punto
+let edad = persona.edad;    //si quiero guardar el valor en una variable
 console.log(edad);
+// Notación corchetes
+console.log(persona["nombre"]);
+
 
 // Editar una propiedad del objeto//
 persona.edad = 32;
 console.log(persona);
 
+
 // Agregar un nueva propiedad al objeto //
+// Notación punto
 persona.deporteFavorito = "Tenis";
 console.log(persona);
+// Notación corchetes
+persona["altura"] = 175;
+console.log(persona);
+
 
 // Eliminar una propiedad del obejo //
 delete persona.comidaFavorita;
 console.log(persona);
 
 
+
+////////// Agregar métodos (funciones) al objeto ////////////
+const persona1 = {
+    name: "Pablo",
+    age: 32,
+    alias: "polbasso",
+    walk: function () {
+        console.log("La persona camina");
+    }
+}
+//llamo a la función
+persona1.walk()
+
+
+////////// Anidación de objetos ////////
+const persona3 = {
+    name: "Pablo",
+    age: 32,
+    alias: "polbasso",
+    walk: function () {
+        console.log("La persona camina");
+    },
+    job: {
+        name: "Programador",
+        exp: 2,
+        work: function(){
+            console.log(`La persona de ${this.exp} años de experiencia, trabaja`); // la palabra reservada "this" hace referencia al objeto en este caso a "job", no a persona3
+        }
+    }
+}
+// Acceder a las propiedades
+console.log(persona3);
+console.log(persona3.name);
+console.log(persona3.job);
+console.log(persona3.job.name);
+persona3.job.work();
+
+
+//////// Igualdad de objetos (ejemplo: comparo la igualdad de persona1 con persona4) //////
+const persona4 = {
+    name: "Pablo",
+    age: 32,
+    alias: "polbasso",
+    walk: function () {
+        console.log("La persona camina");
+    }
+}
+console.log(persona1);
+console.log(persona4);
+
+console.log(persona1 == persona4);
+console.log(persona1 === persona4);
+console.log(persona1.name == persona4.name);
+
+
+
 ////////// Recorrer / iterar un objeto ///////////
 
-let persona1 = {
+let persona2 = {
     nombre:": Pablo",
     edad:": " + 32,
     comida:": Pizza",
     deporte:": Futbol",
-}; */
+};
 
-/* for (let key in persona1) {
-    document.writeln(key, persona1[key] + "<br>");
-} */
-
-/* for (let key in persona1){
-
-    console.log(key, persona1[key]);
-} */
-
-
-
-class animal{
-    constructor(especieParam,edadParam,colorParam){  // estos parametros son definidos por mi 
-    this.especie = especieParam;    //this es como decir: " voy  crear una propiedad llamada: especie, edad o color "
-    this.edad = edadParam;
-    this.color = colorParam;
-    this.info = `Soy ${this.especie}, tengo ${this.edad} años y soy de color ${this.color}`;
-    }
-    //creacion de una función(método) tiene que estar creado dentro del objeto o clase
-    verInfo() {      // creo una función para mostrar la info
-        document.writeln(this.info + "<br>")
-    }
+for (let key in persona2) {
+    console.log(key, persona2[key] + "<br>");
+    /* console.log(key + ": " + persona2[key]); */
+    
 }
-
-//instanciar clase
-const perro = new animal("perro", 5,"rojo");  // le paso los parametros 
-console.log(perro);
-
-// para acceder a una propiedad del objeto puedo mostrar por consola, con document.writeIn o guardarlo en una variable y luego mostrarlo. cualquiera de las opciones dependiendo el caso.
-console.log(perro.color);
-// o creando una variable 
-const color = perro.color;
-console.log(color);
-//acceder a la propiedad info
-document.writeln(perro.info + "<br>");
-console.log(perro.info);
-
-// si quiero crear otros animales ejemplo:
-const gato = new animal ("gato", 3, "negro");
-const pajaro = new animal ("pajaro", 2, "blanco");
-
-document.writeln(gato.info + "<br>");
-console.log(gato.info);
-
-document.writeln(pajaro.info + "<br>");
-console.log(pajaro.info);
-
-
-////// creación de metodos  ////// es una funcion dentro de la clase
-
-// para mostrar la info de otra forma, llamo a la función directamente 
-perro.verInfo();
-gato.verInfo();
-pajaro.verInfo();
-
-
-
-
-
-
-
-
-
-
-
-
