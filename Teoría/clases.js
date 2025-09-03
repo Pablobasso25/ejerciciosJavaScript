@@ -82,12 +82,77 @@ persona2.walk()
 
 ////////////////////        Propiedades privadas         ////////////////////////
 class PersonaPrivada {
+
+    #bank     //propiedad privada
+
     constructor(name, age, alias, bank){  
         this.name = name;
         this.age = age;
         this.alias = alias,
-        this.bank = bank
+        this.#bank = bank
+    }
+    pay (){
+        this.#bank
     }
 }
 //creo una nueva persona
-const persona3 = new PersonaPrivada ()
+const persona3 = new PersonaPrivada ("pablo", 35, "polbasso2", "4532532342342343");
+console.log(persona3);
+//console.log(persona3.bank); //solo la clase tiene acceso a la propiedad privada "bank"
+//persona3.bank = "new 4532532342342343" // tampoco se puede acceder
+
+
+//////////////////        Getters y Setters       ///////////////////
+
+class GetPersona {
+
+    #name
+    #age
+    #alias
+
+
+    constructor (name, age, alias) {
+        this.#name = name,
+        this.#age = age,
+        this.#alias = alias
+    }
+
+    get name(){                     //se puede acceder dentro de las clases a las propiedades, se crea una función que retorne el valor 
+        return this.#name           // get permite leer el valor (lectura pero no de escritura)
+    }
+}
+//creo otra persona
+persona4 = new GetPersona ("pablo", 35, "polbasso25");
+console.log(persona4);
+
+//accedo a la lectura del nombre gracias a la función "get"
+console.log(persona4.name);
+
+
+
+class GetSetPersona {
+
+    #name
+    #age
+    #alias
+    #bank
+
+    constructor (name, age, alias, bank) {
+        this.#name = name,
+        this.#age = age,
+        this.#alias = alias
+    }
+
+    get name(){                     //se puede acceder dentro de las clases a las propiedades, se crea una función que retorne el valor 
+        return this.#name           // get permite leer el valor (lectura pero no de escritura)
+    }
+
+    set 
+}
+//creo otra persona
+persona5 = new GetPersona ("pablo", 35, "polbasso25", "4532532342342343");
+console.log(persona5);
+
+//accedo a la lectura del nombre gracias a la función "get"
+console.log(persona5.name);
+
