@@ -147,7 +147,11 @@ class GetSetPersona {
         return this.#name           // get permite leer el valor (lectura pero no de escritura)
     }
 
-    set 
+    set (nuevoTipo){
+        if (nuevoTipo.length > 0){
+            this.#name = nuevoTipo;
+        }
+    }
 }
 //creo otra persona
 persona5 = new GetPersona ("pablo", 35, "polbasso25", "4532532342342343");
