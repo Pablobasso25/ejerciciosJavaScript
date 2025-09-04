@@ -130,7 +130,7 @@ console.log(persona4.name);
 
 
 
-class GetSetPersona {
+class GetPersona {
 
     #name
     #age

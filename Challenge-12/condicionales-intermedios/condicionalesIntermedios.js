@@ -248,7 +248,7 @@ if (isNaN(edad) || edad <= 0) {
   }
 } */
 
-/*            EJERCICIO 10
+/*            //EJERCICIO 10
 
 let color = prompt("Ingresá el color del semáforo (rojo, amarillo, verde)").toLowerCase();
 
@@ -260,5 +260,4 @@ if (color === "rojo") {
   alert("✅ Avanzar");
 } else {
   alert("❌ Color inválido");
-}
- */
+} */
