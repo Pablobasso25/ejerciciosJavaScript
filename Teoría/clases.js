@@ -103,33 +103,6 @@ console.log(persona3);
 
 
 //////////////////        Getters y Setters       ///////////////////
-
-/* class GetPersona {
-
-    #name
-    #age
-    #alias
-
-
-    constructor (name, age, alias) {
-        this.#name = name,
-        this.#age = age,
-        this.#alias = alias
-    }
-
-    get name(){                     //se puede acceder dentro de las clases a las propiedades, se crea una función que retorne el valor 
-        return this.#name           // get permite leer el valor (lectura pero no de escritura)
-    }
-}
-//creo otra persona
-persona4 = new GetPersona ("pablo", 35, "polbasso25");
-console.log(persona4);
-
-//accedo a la lectura del nombre gracias a la función "get"
-console.log(persona4.name);
- */
-
-
 class GetSetPersona {
 
     // se activan con el método "get"
@@ -170,4 +143,40 @@ persona5.bank = "saddsads5546665";
 console.log(persona5.bank);   // no lo muestra proque hay que crear un get con este nuevo valor de "bank"
 
 
+/////////////////////////////  Herencia de clases  //////////////////////////////
+class Animales {
+    constructor (name){
+        this.name = name;
+    }
 
+    sonido (){
+        console.log("Emite un sonido genérico");
+        
+    }
+
+}
+
+class NuevoAnimal extends Animales{
+    
+    constructor(name,edad) {
+        super(name);                  //Hereda de su super clase que seria "Animales"
+        this.edad = edad              // Agrego parametros nuevos que solo son de "NuevoAnimal"
+    }
+
+    
+}
+
+const Dog = new NuevoAnimal ("Tobbi", 2, "hola");
+
+console.log(Dog);
+console.log(Dog.sonido());
+
+
+////////////////////////////  Métodos estaticos  ///////////////////////////  (No hace falta instanciar la clase)
+class OperacionesMatematicas{
+
+    static suma(a, b) {
+        return a + b
+    }
+}
+console.log(OperacionesMatematicas.suma(5, 10));
