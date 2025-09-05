@@ -104,7 +104,7 @@ console.log(persona3);
 
 //////////////////        Getters y Setters       ///////////////////
 
-class GetPersona {
+/* class GetPersona {
 
     #name
     #age
@@ -127,36 +127,47 @@ console.log(persona4);
 
 //accedo a la lectura del nombre gracias a la función "get"
 console.log(persona4.name);
+ */
 
 
+class GetSetPersona {
 
-class GetPersona {
-
+    // se activan con el método "get"
     #name
     #age
     #alias
-    #bank
+    #bank      
 
     constructor (name, age, alias, bank) {
         this.#name = name,
         this.#age = age,
         this.#alias = alias
+        this.#bank = bank
     }
 
     get name(){                     //se puede acceder dentro de las clases a las propiedades, se crea una función que retorne el valor 
-        return this.#name           // get permite leer el valor (lectura pero no de escritura)
+        return this.#name           // get permite leer el valor (lectura pero no de escritura) pero no se puede modificar
     }
+    
+   /*  get bank (){
+        return this.#bank
+    } */
 
-    set (nuevoTipo){
-        if (nuevoTipo.length > 0){
-            this.#name = nuevoTipo;
+    set bank(nuevoBank){                 // set te permite modificar el valor pero no te permite verlo
+        if (nuevoBank.length > 0){       // para porder ver el valor modificado, se tiene que crear un nuevo "get" y luego mostrar por pantalla el valor con console.log
+            this.#bank = nuevoBank;
         }
     }
 }
 //creo otra persona
-persona5 = new GetPersona ("pablo", 35, "polbasso25", "4532532342342343");
+persona5 = new GetSetPersona ("pablo", 35, "polbasso25", "4532532342342343");
 console.log(persona5);
-
 //accedo a la lectura del nombre gracias a la función "get"
 console.log(persona5.name);
+
+// cambio el valor de un propiedad privada (bank)
+persona5.bank = "saddsads5546665";
+console.log(persona5.bank);   // no lo muestra proque hay que crear un get con este nuevo valor de "bank"
+
+
 
