@@ -76,3 +76,60 @@ resultado8 = cadena8.split(",");
 
 console.log(resultado8);
 
+// substring  (retorna un pedazo de la cadena ,el primer parametro si esta incluido y el segundo no lo incluye)
+
+let cadena9 = "Hola como estas ? ";
+
+resultado9 = cadena9.substring(0,5);
+
+console.log(resultado9);
+
+// toLowerCase() convierte una cadena a minusculas
+
+let cadena10 = "HOLA COMO ESTAS  ? ";
+
+resultado10 = cadena10.toLowerCase();
+
+console.log(resultado10);
+
+// toUpperCase() convierte una cadena a mayusculas
+
+let cadena11 = "Hola como estas ? ";
+
+resultado11 = cadena11.toUpperCase();
+
+console.log(resultado11);
+
+
+// devuelve una cadena de texto
+
+let cadena12 = ["pedro", "matias"];
+
+resultado12 = cadena12.toString();
+
+console.log(resultado12);
+
+
+// trim() elimina los espacios en blanco del principio y del final
+
+let cadena13 = "   Hola como   ";
+
+resultado13 = cadena13.trim();
+
+console.log(resultado13);
+
+// trimEnd() elimina los espacios del final 
+
+let cadena14 = "   Hola como   ";
+
+resultado14 = cadena14.trimEnd();
+
+console.log(resultado14);
+
+// trimStart() elimina los espacios del principio
+
+let cadena15 = "   Hola como   ";
+
+resultado15 = cadena15.trimEnd();
+
+console.log(resultado15);
