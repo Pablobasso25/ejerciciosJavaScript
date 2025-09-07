@@ -1,16 +1,17 @@
 
 
-// Crear un sistema para mostrar la particularidad de 3 celulares 
+// 1) Crear un sistema para mostrar la particularidad de 3 celulares
+
 // Cada celular debe tener: color, peso, resolución de pantalla, resolución de camara y memoria ram
 // Cada celular debe poder pernder, reiniciar, tomar fotos y grabar
 
 
 class Celular{
-    constructor (color, peso, tamaño, rpc, ram){
+    constructor (color, peso, tamaño, rdc, ram){
         this.color = color;
         this.peso = peso;
         this.tamaño = tamaño;
-        this.resolucionDeCamara = rpc;
+        this.resolucionDeCamara = rdc;
         this.memoriaRam = ram;
         this.encendido = false
     }
@@ -53,6 +54,8 @@ class Celular{
     }
 }
 
+
+// creo nuevos objetos
 const celular1 = new Celular("Rojo", "150g", "5", "full hd", "2GB");
 const celular2 = new Celular("Negro", "155g", "5.4", "full hd", "2GB");
 const celular3 = new Celular("Blanco", "165g", "5.9", "hd", "1GB");
@@ -70,4 +73,35 @@ document.writeln(`
     `);
 
 
-// implementar todas las cualidades de los celulares anteriores en los celulares de alta gama
+// 2) implementar todas las cualidades de los celulares anteriores en los celulares de alta gama
+
+// heredo desde la class "Celular" 
+class CelularAltaGama extends Celular {
+    constructor(color, peso, tamaño, rdc, ram, rdce){
+        super(color, peso, tamaño, rdc, ram);
+        this.resolucionDeCamaraExtra = rdce;
+    }
+
+    // agrego nuevos funciones
+    grabarVideoLento(){
+        alert("Estás grabando en camara lenta");
+    }
+
+    reconocimientoFacial(){
+        alert("Inicio de reconocimiento facial");
+    }
+
+    infoAltaGama(){
+        return this.mobileInfo() + `Resolución de camara trasera: <b>${this.resolucionDeCamaraExtra}</b></br>`;
+    }
+}
+
+//creo nuevos objetos
+const celular4 = new CelularAltaGama("verde", "160gr", "5.5", "full hd", "3GB", "4k");
+const celular5 = new CelularAltaGama("azul", "155gr", "6", "hd", "4GB", "4k");
+
+document.writeln(`
+    ${celular4.infoAltaGama()} </br>
+    ${celular5.infoAltaGama()}
+    `)
+
