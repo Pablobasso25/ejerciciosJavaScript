@@ -73,6 +73,9 @@ document.writeln(`
     `);
 
 
+
+
+
 // 2) implementar todas las cualidades de los celulares anteriores en los celulares de alta gama
 
 // heredo desde la class "Celular" 
