@@ -34,25 +34,23 @@ class GetSetPersona {
         this.#dni = dni
     }
 
-    presentarse () {
-        return `Hola, soy ${this._nombre} y tengo ${this.edad} años.`
-    }
-
-
-
+    
     get profesion (){
         return this.#profesion
     }
 
     
     /* get dni(){            // descomentar para ver el nuevo valor !!
-        return this.#dni
+    return this.#dni
     } */
-
-    set dni(NuevoDni){
-        this.#dni = NuevoDni;
+   
+   set dni(NuevoDni){
+       this.#dni = NuevoDni;
     }
-
+    
+    presentarse () {
+        return `Hola, soy ${this._nombre} y tengo ${this.edad} años.`
+    }
 }
 
 // Utiliza los get y set y muestra sus valores
