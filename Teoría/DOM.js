@@ -121,3 +121,16 @@ const form = document.querySelector("form")
 form.addEventListener("submit", (event) => {
     // Código
 })
+
+
+
+//////////////////////////////  Clases, classList y métodos de classLists ////////////////////////////////////
+
+/* const titulo = document.querySelector(".titulo");
+
+titulo.classList.add("grande"); */  // agrega un clase al elemento que se puede modificar en css
+
+document.addEventListener("DOMContentLoaded", () => {
+    const titulo = document.querySelector(".titulo");
+    titulo.classList.add("grande");
+});
