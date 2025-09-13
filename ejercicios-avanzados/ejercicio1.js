@@ -30,11 +30,41 @@ class Cuenta {
     informacionCuenta() {
         return `Hola ${this.nombre}, tu estado actual de cuenta es: $${this.saldo}`;
     }
+
+
+    // Método para transferir
+    transferirA(destinatario, monto){
+        if (typeof monto === "number" &&   // Verifica que el monto sea un número (no texto, ni NaN, ni undefined)
+            monto > 0 &&                   // Asegura que el monto sea positivo
+            monto <= this.saldo &&         // Verifica que la cuenta actual (this) tenga suficiente saldo para hacer la transferencia
+            destinatario &&                // Verifica que el destinatario exista (no sea undefined, null, etc.)
+            destinatario !== this)         // // Asegura que no se esté transfiriendo a la misma cuenta.
+            {        
+            this.saldo -= monto;
+            destinatario.ingresar(monto);   // destinatario ya es una instancia de la clase "Cuenta" por lo tanto puedo agregarle otros métodos, en este caso el de ingresarle dinero pasandole como parametro la el monto
+            return `Transferiste $${monto} a ${destinatario.nombre}`;
+            }
+            if ( typeof monto !== "number" || monto <= 0) {
+                return "Monto inválido"
+            }
+            if (monto > this.saldo){
+                return "Saldo insuficiente"
+            }
+            if (destinatario === this){
+                return "No podés transferir a la misma cuenta"
+            }
+            if (!destinatario){
+                return "La cuenta destinataria no existe"
+            }
+        }
 }
+
+//////////////////////// CREACIÓN DE MÚLTIPLES CUENTAS ///////////////////////////////////
 
 // array contenedor de cuentas
 let cuentasCreadas = [];
 let crearOtra;
+
 
 // Bucle para crear múltiples cuentas
 
@@ -56,16 +86,18 @@ do {
 } while (crearOtra === "si"); // se repide el bucle mientras el usuario ingrese "si"
 
 
+/////////////////////////////////  FUNCIÓN QUE DESPLIEGA UN MENU INTERACTIVO PARA EL USUARIO (hace uso de los métodos creados en la clase) /////////////////////////////////
 
 //ahora, creo una nueva función fuera del constructor porque no forma parte del comportamiento interno de cada cuenta sino que es aplicada sobre una instancia ya creada
-
 function operarConCuenta(cuenta) {  // el parametro "cuenta" es simbólico, podria llamarse de cualquier otra forma , mas adelante cuando llamo a la función le doy el parametro verdadero
     let entrada;
+
     do {
         entrada = prompt(
   "¿Qué querés hacer?\n" +
   "- ingresar\n" +
   "- extraer\n" +
+  "- transferir\n" +
   "- ver\n" +
   "- salir"
 ).toLowerCase();
@@ -89,17 +121,26 @@ function operarConCuenta(cuenta) {  // el parametro "cuenta" es simbólico, podr
                 alert(cuenta.informacionCuenta());
             }
         }
+        if (entrada == "transferir"){
+            realizarTransferenci
+        }
         if (entrada == "ver") {
             alert(cuenta.informacionCuenta());
         }
     } while (entrada !== "salir");
 }
 
+
+/////////////////////////// BUSCAR LAS CUENTAS CREADAS /////////////////////////////////////////////////
+
+// se muestra las cuentas creadas disponibles
 let nombreDeCuentas = cuentasCreadas.map(c => "- " + c.nombre).join("\n");
 alert (`Tus cuentas disponibles son:\n${nombreDeCuentas}`)
 
+
 // Búsqueda de la cuenta por el nombre
-let resultado;   // se la declara fuera del bucle para poder utilizarla luego cuando llamo a la función
+let resultado;                    // se la declara fuera del bucle para poder utilizarla luego cuando llamo a la función
+
 do{
     let buscarCuenta = prompt(`¿A que cuenta querés ingresar?\n${nombreDeCuentas}`).toLowerCase();
     resultado = cuentasCreadas.find((cuenta) => cuenta.nombre.toLowerCase() === buscarCuenta); // el parametro "cuenta" es simbólico, podria llamarse de cualquier otra forma
@@ -110,5 +151,16 @@ do{
     }
 } while (!resultado)  // si se encuentra una cuenta válida, sale del bucle y contunua
 
-    operarConCuenta(resultado); // si se encuentra la cuenta, se pasa la pasa como parametro a la función y se opera con ella
+operarConCuenta(resultado); // si se encuentra la cuenta, se pasa la pasa como parametro a la función y se opera con ella
+
+
+
+///////////////////////////////// FUNCIÓN PARA HACER TRANSFERENCIAS (hace uso del metodo creado en la clase (transferirA)) /////////////////////////////////////////
+
+function realizarTransferencia (cuentaOrigen){
+    
+}
+
+
+
 
