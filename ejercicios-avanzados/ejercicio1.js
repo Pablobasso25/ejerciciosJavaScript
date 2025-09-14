@@ -28,7 +28,7 @@ class Cuenta {
 
     // Método para mostrar información de la cuenta
     informacionCuenta() {
-        return `Hola ${this.nombre}, tu estado actual de cuenta es: $${this.saldo}`;
+        return `Hola ${this.nombre}, tu saldo actual es: $${this.saldo}`;
     }
 
 
@@ -98,7 +98,7 @@ function operarConCuenta(cuenta) {  // el parametro "cuenta" es simbólico, podr
   "- ingresar\n" +
   "- extraer\n" +
   "- transferir\n" +
-  "- ver\n" +
+  "- ver saldo disponible\n" +
   "- salir"
 ).toLowerCase();
        
@@ -158,7 +158,7 @@ operarConCuenta(resultado); // si se encuentra la cuenta, se pasa la pasa como p
 ///////////////////////////////// FUNCIÓN PARA HACER TRANSFERENCIAS (hace uso del metodo creado en la clase (transferirA)) /////////////////////////////////////////
 
 function realizarTransferencia (cuentaOrigen){
-    
+
 }
 
 
