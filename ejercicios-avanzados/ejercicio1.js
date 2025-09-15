@@ -28,7 +28,7 @@ class Cuenta {
 
     // Método para mostrar información de la cuenta
     informacionCuenta() {
-        return `Hola ${this.nombre}, tu saldo actual es: $${this.saldo}`;
+        return `Hola ${this.nombre}, tu saldo es: $${this.saldo}`;
     }
 
 
