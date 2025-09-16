@@ -1,5 +1,5 @@
 
-// Crear un sistema de multiples cuentas bancarias 
+// Desarrollar un sistema en JavaScript que permita crear múltiples cuentas bancarias, operar con ellas de forma individual y realizar transferencias entre cuentas, utilizando programación orientada a objetos y validaciones interactivas.
 
 class Cuenta {
     constructor(titular, saldoInicial = 0) {
