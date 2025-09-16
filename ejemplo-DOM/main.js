@@ -83,15 +83,15 @@ filterInput.addEventListener("keyup", function () {    // keyup se activa cuando
 const draggable = document.getElementById('draggable');
 const dropzone = document.getElementById('dropzone');
 
-/* draggable.addEventListener('dragstart', function() {
-    setTimeout(() => { this.style.display = 'none'; }, 0);
-}); */
+draggable.addEventListener('dragstart', function() {
+    setTimeout(() => { this.style.display = 'none'; }, 0);  // esto evita que se vea el elemento cuando se comienza a arrastrar
+});
 
-dropzone.addEventListener('dragover', function(e) {
+dropzone.addEventListener('dragover', function(e) {     // evento mientras se arrstra
     e.preventDefault();
 });
 
-dropzone.addEventListener('drop', function() {
+dropzone.addEventListener('drop', function() {          // evento cuando se suelta
     draggable.style.display = 'block';
-    this.append(draggable);
+    this.append(draggable);                            // cuando se suelta, se añade como hijo de dropzone
 });
