@@ -17,7 +17,8 @@ class Persona {
     constructor (nombre, edad, dni, sexo, peso, altura, anioDeNacimiento){
         this.nombre = nombre,
         this.edad = edad,
-        this.dni = dni,
+        /* this.dni = dni */
+        this.dni = Math.floor(Math.random() * 90000000) + 10000000;
         this.sexo = sexo,
         this.peso = peso,
         this.altura = altura,
@@ -25,17 +26,40 @@ class Persona {
     }
 
     //métodos
+    mostrarDatos(){
+      document.writeln
+      (`<strong>Nombre: </strong>${this.nombre}<br>
+        <strong>Edad: </strong>${this.edad}<br>
+        <strong>Dni: </strong>${this.dni}<br>
+        <strong>Sexo: </strong>${this.sexo}<br>
+        <strong>Peso: </strong>${this.peso}<br>
+        <strong>Altura: </strong>${this.altura}<br>
+        <strong>Año de nacimiento: </strong>${this.anioDeNacimiento}<br>`)
+    }
     mostrarGeneracion (){
         const generacion = generaciones.find(g => this.anioDeNacimiento >= g.inicio && this.anioDeNacimiento <= g.fin); //find () Recorre el array generaciones y devuelve el primer objeto que cumpla la condición
         //const generacion, si encuentra una coincidencia, guarda el objeto completo de esa generación.
 
 
         if (generacion){
-            alert(`${this.nombre} pertenece a ${generacion.nombre}\nRasgo característico: ${generacion.rasgo}`);
+            document.writeln(`<strong>Generación: </strong> ${generacion.nombre}<br><strong>Rasgo característico:</strong> ${generacion.rasgo}<br> `);
         }else{
             alert ("No se encontró una generación correspondiente.")
         }
     }
+
+    esMayorDeEdad(){
+      if (this.edad >= 18){
+        document.writeln("<em>¡Sos mayor de edad!<em><br><br>");
+      }else{
+        document.writeln("<em>¡Sos menor de edad!<em><br><br>")
+      }
+    }
+
+    /* generaDNI() {   // si activo este método, tengo que descomentar "this.dni = dni" y comentar "this.dni = Math.floor(Math.random() * 90000000) + 10000000;" en el constructor
+    this.dni = Math.floor(Math.random() * 90000000) + 10000000;
+    } */
+
 
     
 }
@@ -73,5 +97,14 @@ const generaciones = [
     rasgo: "Austeridad"
   }
 ];
-const persona1 = new Persona ("pablo", 32, "40902304", "M", 85, 175, 1950);
+const persona1 = new Persona ("Pablo", 32, null, "M", 85, 175, 1950);
+const persona2 = new Persona ("José", 15, null, "M", 65, 160, 2009)
+/* persona1.generaDNI() */
+persona1.mostrarDatos()
 persona1.mostrarGeneracion()
+persona1.esMayorDeEdad()
+
+/* persona2.generaDNI() */
+persona2.mostrarDatos()
+persona2.mostrarGeneracion()
+persona2.esMayorDeEdad()
