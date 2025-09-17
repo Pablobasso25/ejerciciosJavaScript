@@ -28,15 +28,15 @@ const instancia3 = new Producto ("FRT2356", "Ventilador", 78906);
 nuevosObjetos.push(instancia3);
 
 // Bucle para recorrey el array y mostrar
-/* 
+
 for (let producto of nuevosObjetos) {  //Recorre el array nuevosObjetos elemento por elemento
   producto.imprimirDatos();            // En cada vuelta del bucle, guarda el elemento actual en la variable producto
-}    */                                   // luego ejecuta el metodo "imprimirDatos()" sobre ese producto
+}                                      // luego ejecuta el metodo "imprimirDatos()" sobre ese producto
 
 // versión más compacta de esto:
-for (let i = 0; i < nuevosObjetos.length; i++) {
+/* for (let i = 0; i < nuevosObjetos.length; i++) {
   nuevosObjetos[i].imprimirDatos();
-}
+} */
 
 
 
