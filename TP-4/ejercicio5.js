@@ -17,7 +17,7 @@ class Persona {
     constructor (nombre, edad, dni, sexo, peso, altura, anioDeNacimiento){
         this.nombre = nombre,
         this.edad = edad,
-        /* this.dni = dni */
+        /*   */
         this.dni = Math.floor(Math.random() * 90000000) + 10000000;
         this.sexo = sexo,
         this.peso = peso,
