@@ -16,7 +16,7 @@ const cardText = document.createElement ('p');
 const btn = document.createElement ('a');
 
 // agregando clases y atributos a las etiquetas 
-columnaTarjeta.className = 'col';
+columnaTarjeta.className = 'col mt-5';
 card.className = 'card';
 card.style.width = '18rem' ;
 img.className = 'card-img-top';
@@ -27,7 +27,7 @@ cardTitle.className = 'card-title';
 cardTitle.textContent = `${autor.nombre}`;
 cardText.className = 'card-text';
 cardText.textContent = `${autor.descripcion}`;
-btn.className = 'btn btn-primary';
+btn.className = 'btn btn-secondary';
 btn.setAttribute('href', '#');
 btn.textContent = 'Ver perfil';
 
