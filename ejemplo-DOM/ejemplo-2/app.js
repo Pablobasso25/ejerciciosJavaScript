@@ -6,6 +6,21 @@ const autor = {
 
 }
 
+// creando la etiquetas
+const columnaTarjeta = document.createElement ('div');
+const card = document.createElement ('div');
+const img = document.createElement ('img');
+const cardBody = document.createElement ('div');
+const cardTitle = document.createElement ('h5');
+const cardText = document.createElement ('p');
+const btn = document.createElement ('a');
+
+// agregando clases y atributos a las etiquetas 
+columnaTarjeta.className = 'col';
+
+
+const 
+
 
 const columnaTarjeta = document.createElement ("div")   // creo el nodo etiqueta "div"
 columnaTarjeta.className = "col"                        // llamo al div y le agrego una clase
