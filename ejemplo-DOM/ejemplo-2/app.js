@@ -17,12 +17,39 @@ const btn = document.createElement ('a');
 
 // agregando clases y atributos a las etiquetas 
 columnaTarjeta.className = 'col';
+card.className = 'card';
+card.style.width = '18rem' ;
+img.className = 'card-img-top';
+img.setAttribute('src', `${autor.imagen}`);
+img.setAttribute('alt', `${autor.nombre}`);
+cardBody.className = 'card-body';
+cardTitle.className = 'card-title';
+cardTitle.textContent = `${autor.nombre}`;
+cardText.className = 'card-text';
+cardText.textContent = `${autor.descripcion}`;
+btn.className = 'btn btn-primary';
+btn.setAttribute('href', '#');
+btn.textContent = 'Ver perfil';
+
+// agrego los hijos a los padres
+const row = document.querySelector('.row');   // contenedor padre que no tuvo modificaciones pero puede tenerlas 
+row.appendChild(columnaTarjeta);
+columnaTarjeta.appendChild(card);
+card.appendChild(img);
+card.appendChild(cardBody);
+cardBody.appendChild(cardTitle);
+cardBody.appendChild(cardText);
+cardBody.appendChild(btn);
 
 
-const 
 
 
-const columnaTarjeta = document.createElement ("div")   // creo el nodo etiqueta "div"
+
+
+
+
+
+/* const columnaTarjeta = document.createElement ("div")   // creo el nodo etiqueta "div"
 columnaTarjeta.className = "col"                        // llamo al div y le agrego una clase
 
 // creo un template string (el objetivo es que tarjetaAutor se un contenido de columnaTarjeta)
@@ -41,7 +68,7 @@ const tarjetaAutor = `<div class="card" style="width: 18rem;">
                 </div>`
 
 columnaTarjeta.innerHTML = tarjetaAutor    //agrego contenido html al nodo "div" ahora columnaTarjeta tiene todo el contenido y pasa a ser un hijo
-document.querySelector("#contenedor_tarjeta").append(columnaTarjeta)  // llamo al nodo padre en este caso el div contenedor de la card y le agego "columnaTarjeta"
+document.querySelector("#contenedor_tarjeta").append(columnaTarjeta)  // llamo al nodo padre en este caso el div contenedor de la card y le agego "columnaTarjeta" */
 
 
 
