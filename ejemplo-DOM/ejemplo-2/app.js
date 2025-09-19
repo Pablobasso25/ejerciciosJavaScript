@@ -67,6 +67,10 @@ const modificarAutor = (event) => {
     autor.nombre = nombre;
     autor.usuario = usuario;
     autor.email = email;
+    autor.email = email;
+    autor.email = email;
+    autor.email = email;
+    autor.email = email;
 }
 
 crearTarjeta()
