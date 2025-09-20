@@ -24,8 +24,9 @@ const generarNumeroMagico = () => {
     numeroMagico= Math.floor(Math.random() * 10) + 1;
     console.log("Número mágico generado", numeroMagico);
 
+    //// activa el boton una vez que se presiona "iniciar juego"
     botonEnviar.classList.remove('opacity-0');
-    botonEnviar.disabled = false;  // activa el boton una vez que se presiona "iniciar juego"
+    botonEnviar.disabled = false;  
 
 };
 
@@ -33,19 +34,32 @@ const generarNumeroMagico = () => {
 document.getElementById('comenzarJuego').addEventListener('click', generarNumeroMagico);
 
 // capturo el número que el usuario ingresa
-const numeroIngresado = document.getElementById('numero').value;
+const numeroIngresado = parseInt(document.getElementById('numero').value);
 
 // comparo el número ingresado con el generado anteriormente
 
 const verificarNumero = () => {
   if (numeroIngresado == numeroMagico) {
-    alert("¡Adivinaste el número!");
-  } else if (numeroIngresado < numeroMagico) {
-    alert("El número es mayor");
-  } else {
-    alert("El número es menor");
-  }
+  mostrarMensaje("🎉 ¡Adivinaste el número!", "success");
+} else if (numeroIngresado < numeroMagico) {
+  mostrarMensaje("📉 El número es mayor", "warning");
+} else {
+  mostrarMensaje("📈 El número es menor", "warning");
+}
 };
 
 
 document.getElementById('formulario').addEventListener('submit', verificarNumero);
+
+
+
+
+const mostrarMensaje = (texto, tipo) => {
+  const alert = document.getElementById('alert');
+  const mensaje =document.createElement(('div'));
+  mensaje.classList.add(alert, `alert-${tipo}`);
+  mensaje.textContent= `${texto}`;
+
+ alert.appendChild(div);
+ div.appendChild(mensaje);
+};
