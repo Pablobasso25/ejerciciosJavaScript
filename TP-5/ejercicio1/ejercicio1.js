@@ -23,6 +23,8 @@ input.setAttribute("placeholder", 'Ingresá un número del 1 al 10');
 //modifico el botón "comenzar juego"
 const botonComenzar = document.getElementById('comenzarJuego');
 
+
+
 // Función para generar número mágico
 let numeroMagico;
 
@@ -43,26 +45,30 @@ document.getElementById('comenzarJuego').addEventListener('click', generarNumero
 
 
 // comparo el número ingresado con el generado anteriormente utilizando una función 
+// Contador de partidas ganadas
+let partidasGanadas = 0;
+
 
 const verificarNumero = (event) => {
   event.preventDefault(); // evita que el formulario recargue
-
+  
   // capturo el número que el usuario ingresa
   const numeroIngresado = parseInt(document.getElementById("numero").value);
-
   if (numeroIngresado == numeroMagico) {   // si el numero coincide, hace todo lo demas 
-    // 1- mostrar mensaje
+    // 1- Actualizar contador de partidas y mostrar mensaje
+    partidasGanadas++;
     mostrarMensaje("🎉 ¡Adivinaste el número!", "success");
-    // 2- desactivar boton de enviar y bajarle la opacidad
+    // 2- actualizo el contador de partidas ganadas
+    document.getElementById("contadorPartidas").textContent = `Partidas ganadas: ${partidasGanadas}`;
+    // 3- desactivar boton de enviar y bajarle la opacidad
     botonEnviar.disabled = true;
     botonEnviar.classList.add('opacity-50');
-    // 3- cambiar el texto del botón "comenzar juego" por "reiniciar"
+    // 4- cambiar el texto del botón "comenzar juego" por "reiniciar"
     botonComenzar.textContent = 'Reiniciar juego'
-    botonComenzar.classList.remove('btn-success');
-    botonComenzar.classList.add('btn-primary');
+    botonComenzar.classList.remove('btn-success');  // Quitar color anterior
+    botonComenzar.classList.add('btn-primary');    // Agregar nuevo color
 
-
-    // 4- asignarle nueva funcionalidad (creo una nueva función dentro de otra función)
+    // 5- asignarle nueva funcionalidad (creo una nueva función dentro de otra función)
     botonComenzar.onclick = () => {
     // Reiniciar juego
     generarNumeroMagico(); //llama a la función y genera un nuevo número mágco
@@ -71,9 +77,8 @@ const verificarNumero = (event) => {
     botonEnviar.classList.remove('opacity-50'); // reactiva el boton que estaba apagado
     document.getElementById("numero").value = "";
     botonComenzar.textContent = "Comenzar juego";
-    botonComenzar.classList.remove('btn-primary');
-    botonComenzar.classList.add('btn-success');
-
+    botonComenzar.classList.remove('btn-primary'); // Quitar color de reinicio
+    botonComenzar.classList.add('btn-success');  // Volver al color original
     botonComenzar.onclick = generarNumeroMagico; // restaurar funcionalidad original
     
 
