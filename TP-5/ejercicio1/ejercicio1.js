@@ -16,7 +16,6 @@ titulo.style.fontSize = '35px';
 
 
 // Función para generar número mágico
-
 let numeroMagico;
 
 const generarNumeroMagico = () => {
@@ -33,22 +32,26 @@ const generarNumeroMagico = () => {
 // llamo a la función cuando se presiona "comenzar juego"
 document.getElementById('comenzarJuego').addEventListener('click', generarNumeroMagico);
 
-// capturo el número que el usuario ingresa
-const numeroIngresado = parseInt(document.getElementById('numero').value);
 
-// comparo el número ingresado con el generado anteriormente
 
-const verificarNumero = () => {
+// comparo el número ingresado con el generado anteriormente utilizando una función 
+
+const verificarNumero = (event) => {
+  event.preventDefault(); // evita que el formulario recargue
+
+  // capturo el número que el usuario ingresa
+  const numeroIngresado = parseInt(document.getElementById("numero").value);
+
   if (numeroIngresado == numeroMagico) {
-  mostrarMensaje("🎉 ¡Adivinaste el número!", "success");
-} else if (numeroIngresado < numeroMagico) {
-  mostrarMensaje("📉 El número es mayor", "warning");
-} else {
-  mostrarMensaje("📈 El número es menor", "warning");
-}
+    mostrarMensaje("🎉 ¡Adivinaste el número!", "success");
+  } else if (numeroIngresado < numeroMagico) {
+    mostrarMensaje("⛔ El número es mayor", "warning");
+  } else {
+    mostrarMensaje("⛔ El número es menor", "warning");
+  }
 };
 
-
+// llamo a la función cuando presiona "enviar"
 document.getElementById('formulario').addEventListener('submit', verificarNumero);
 
 
@@ -56,10 +59,16 @@ document.getElementById('formulario').addEventListener('submit', verificarNumero
 
 const mostrarMensaje = (texto, tipo) => {
   const alert = document.getElementById('alert');
-  const mensaje =document.createElement(('div'));
-  mensaje.classList.add(alert, `alert-${tipo}`);
-  mensaje.textContent= `${texto}`;
+  /* document.getElementById("formulario").reset() */
+    /* alert.reset()   // limpiar mensajes anteriores */
+    alert.innerHTML = ""; // limpiar mensajes anteriores
 
- alert.appendChild(div);
- div.appendChild(mensaje);
+
+
+  const mensaje =document.createElement('div');
+  mensaje.classList.add('alert', `alert-${tipo}`);
+  mensaje.textContent = texto;
+
+ alert.appendChild(mensaje);
+ 
 };
