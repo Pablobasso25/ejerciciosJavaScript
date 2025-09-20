@@ -58,6 +58,10 @@ const verificarNumero = (event) => {
     botonEnviar.classList.add('opacity-50');
     // 3- cambiar el texto del botón "comenzar juego" por "reiniciar"
     botonComenzar.textContent = 'Reiniciar juego'
+    botonComenzar.classList.remove('btn-success');
+    botonComenzar.classList.add('btn-primary');
+
+
     // 4- asignarle nueva funcionalidad (creo una nueva función dentro de otra función)
     botonComenzar.onclick = () => {
     // Reiniciar juego
@@ -67,6 +71,9 @@ const verificarNumero = (event) => {
     botonEnviar.classList.remove('opacity-50'); // reactiva el boton que estaba apagado
     document.getElementById("numero").value = "";
     botonComenzar.textContent = "Comenzar juego";
+    botonComenzar.classList.remove('btn-primary');
+    botonComenzar.classList.add('btn-success');
+
     botonComenzar.onclick = generarNumeroMagico; // restaurar funcionalidad original
     
 
