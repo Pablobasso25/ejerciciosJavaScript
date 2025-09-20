@@ -7,13 +7,21 @@ const botonEnviar = document.querySelector('#formulario button');
 botonEnviar.classList.add('opacity-0');
 botonEnviar.disabled = true;
 
+//modifico body
 const body = document.querySelector('body');
 body.classList.add('bg-dark');
 
+//modifico h1
 const titulo = document.querySelector('h1');
 titulo.classList.add('text-center', 'text-white', 'mt-5');
 titulo.style.fontSize = '35px';
 
+//modifico input
+const input = document.querySelector('input')
+input.setAttribute("placeholder", 'Ingresá un número del 1 al 10');
+
+//modifico el botón "comenzar juego"
+const botonComenzar = document.getElementById('comenzarJuego');
 
 // Función para generar número mágico
 let numeroMagico;
@@ -42,13 +50,37 @@ const verificarNumero = (event) => {
   // capturo el número que el usuario ingresa
   const numeroIngresado = parseInt(document.getElementById("numero").value);
 
-  if (numeroIngresado == numeroMagico) {
+  if (numeroIngresado == numeroMagico) {   // si el numero coincide, hace todo lo demas 
+    // 1- mostrar mensaje
     mostrarMensaje("🎉 ¡Adivinaste el número!", "success");
+    // 2- desactivar boton de enviar y bajarle la opacidad
+    botonEnviar.disabled = true;
+    botonEnviar.classList.add('opacity-50');
+    // 3- cambiar el texto del botón "comenzar juego" por "reiniciar"
+    botonComenzar.textContent = 'Reiniciar juego'
+    // 4- asignarle nueva funcionalidad (creo una nueva función dentro de otra función)
+    botonComenzar.onclick = () => {
+    // Reiniciar juego
+    generarNumeroMagico(); //llama a la función y genera un nuevo número mágco
+    mostrarMensaje("🔄 Nuevo número generado", "info");
+    botonEnviar.disabled = false;   // reactiva el boton que estaba apagado
+    botonEnviar.classList.remove('opacity-50'); // reactiva el boton que estaba apagado
+    document.getElementById("numero").value = "";
+    botonComenzar.textContent = "Comenzar juego";
+    botonComenzar.onclick = generarNumeroMagico; // restaurar funcionalidad original
+    
+
+  };
+
+
   } else if (numeroIngresado < numeroMagico) {
     mostrarMensaje("⛔ El número es mayor", "warning");
   } else {
     mostrarMensaje("⛔ El número es menor", "warning");
   }
+
+  document.getElementById("numero").value = "";
+
 };
 
 // llamo a la función cuando presiona "enviar"
@@ -59,15 +91,13 @@ document.getElementById('formulario').addEventListener('submit', verificarNumero
 
 const mostrarMensaje = (texto, tipo) => {
   const alert = document.getElementById('alert');
-  /* document.getElementById("formulario").reset() */
-    /* alert.reset()   // limpiar mensajes anteriores */
-    alert.innerHTML = ""; // limpiar mensajes anteriores
+    alert.innerHTML = "";                           // limpiar mensajes anteriores
 
 
 
   const mensaje =document.createElement('div');
   mensaje.classList.add('alert', `alert-${tipo}`);
-  mensaje.textContent = texto;
+  mensaje.textContent = `${texto}`;
 
  alert.appendChild(mensaje);
  
