@@ -95,7 +95,15 @@ const crearTarea = (event) => {
 
 // limpia el input despuesd de agregar una tarea
     formularioTarea.reset();
-  }
+
+// muestro un mensaje flotante al agregar una tarea
+  const toast = new bootstrap.Toast(document.getElementById('toastAgregar'), {
+  delay: 2000, //tiempo en milisegundos (3 segundos)
+  autohide: true //se oculta automáticamente
+});
+toast.show();
+
+}
   
 
 // Función para eliminar una tarea de la lista
@@ -103,7 +111,11 @@ const crearTarea = (event) => {
   const tarea = event.target.closest('.list-group-item');  //event.target: es el botón que fue clickeado ---- closest('.list-group-item') busca el contenedor que contiene a la lista de tareas
   
   tarea.classList.add('fade-out');  // activa la transición visual
-  setTimeout(() => tarea.remove(), 500); // setTimeout espera a que la animación termine antes de eliminar el nodo
+  setTimeout(() => tarea.remove(), 500); // setTimeout espera a que la animación termine antes de eliminar el nodo ---- 500 tiene que coincidir con el tiempo que se le dio en CSS sino no funciona 
+
+  // muestro un mensaje flotante al eliminar una tarea
+  const toast = new bootstrap.Toast(document.getElementById('toastEliminar'));
+  toast.show();
 }
 
 
