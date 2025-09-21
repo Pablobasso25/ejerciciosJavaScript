@@ -7,7 +7,7 @@ const row = document.createElement('div');
 row.className = 'd-flex justify-content-center';
 
 const col = document.createElement('div');
-col.className = 'col-3 card bg-dark text-center p-5 mt-5';
+col.className = 'col-3 card bg-dark text-center p-5 mt-5 mb-5 shadow';
 
 const h2 = document.createElement('h2');
 h2.setAttribute('id', 'reloj');

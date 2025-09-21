@@ -3,9 +3,10 @@
     transition: opacity 0.5s ease;
 }
 
+
 #formularioTarea input::placeholder {
-  color: #017baf;       /* naranja */
-  font-style: italic;   /* cursiva */
+  color: #017baf;      
+  font-style: italic; 
   opacity: 0.8;
 }
 
