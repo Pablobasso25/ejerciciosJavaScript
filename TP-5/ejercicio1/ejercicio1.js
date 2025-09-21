@@ -45,8 +45,8 @@ document.getElementById('comenzarJuego').addEventListener('click', generarNumero
 
 
 // comparo el número ingresado con el generado anteriormente utilizando una función 
-// Contador de partidas ganadas
-let partidasGanadas = 0;
+
+let partidasGanadas = 0;    // Contador de partidas ganadas
 
 
 const verificarNumero = (event) => {
