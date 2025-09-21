@@ -43,3 +43,30 @@ setInterval(actualizarReloj, 1000);  // cada segundo, se ejecuta actualizarReloj
 
 //////////////////////////////// lista de tareas /////////////////////////////////////
 
+const crearTarea = (event) => {
+    event.preventDefault();
+
+    const inputTarea = document.getElementById("inputTarea").value.trim();
+
+    const alert = document.createElement('div');
+    const strong = document.createElement('strong');
+    const botonEliminar = document.createElement('button');
+    alert.className = 'alert alert-info alert-dismissible fade show';
+    alert.setAttribute('role', 'alert');
+    strong.textContent = inputTarea;
+    botonEliminar.className = 'btn-close';
+    botonEliminar.setAttribute('data-bs-dismiss', 'alert');
+    botonEliminar.setAttribute('aria-label', 'close');
+
+    const listaTareas = document.querySelector("#listaTareas");
+    listaTareas.appendChild(alert);
+    alert.appendChild(strong);
+    alert.appendChild(botonEliminar);
+
+    formularioTarea.reset();
+
+}
+
+formularioTarea.addEventListener("submit", crearTarea);
+
+

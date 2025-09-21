@@ -20,21 +20,16 @@
       <!-- Título -->
       <div class="card text-center mb-4">
           <h2 class="card-title text-info">📝 Lista de Tareas</h2>
-      </div>
-
-      <!-- Formulario de entrada -->
-      <form id="formularioTarea" class="d-flex mb-3">
-        <input type="text" id="inputTarea" class="form-control me-2" placeholder="Escribí una tarea...">
-        <button type="submit" class="btn btn-success">Agregar</button>
-      </form>
+        </div>
+          
+          <!-- Formulario de entrada -->
+          <form id="formularioTarea" class="d-flex mb-3">
+              <input type="text" id="inputTarea" class="form-control me-2" placeholder="Escribí una tarea...">
+              <button type="submit" class="btn btn-success">Agregar</button>
+            </form>
 
       <!-- Lista de tareas -->
-       <div class="row row-gap-3">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-       </div>
+       <div id="listaTareas" class="row row-gap-3"></div>
     </div>
   </div>
 </div>
