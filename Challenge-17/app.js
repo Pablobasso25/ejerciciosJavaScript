@@ -112,9 +112,28 @@ toast.show();
   
   tarea.classList.add('fade-out');  // activa la transición visual
   setTimeout(() => tarea.remove(), 500); // setTimeout espera a que la animación termine antes de eliminar el nodo ---- 500 tiene que coincidir con el tiempo que se le dio en CSS sino no funciona 
+  
+  //llamo a la función mostrarToast
+  mostrarToast('Tarea eliminada con exito', 'bg-dark');
+}
 
-  // muestro un mensaje flotante al eliminar una tarea
-  const toast = new bootstrap.Toast(document.getElementById('toastEliminar'));
+//función para el toast (mensaje flotante)
+
+function mostrarToast(mensaje, color = 'bg-dark') {   // bg-dark por defecto, luego se lo cambia cuando se llam a la función 
+
+  const toastElemento = document.getElementById('toastGlobal');
+  const toastTexto = document.getElementById('toastMensaje');
+
+  toastTexto.textContent = mensaje;
+
+  // Limpiar clases previas y aplicar nuevo color
+  toastElemento.className = `toast align-items-center text-white ${color} border-0`;
+
+  const toast = new bootstrap.Toast(toastElemento, {
+    delay: 2000,
+    autohide: true
+  });
+
   toast.show();
 }
 
