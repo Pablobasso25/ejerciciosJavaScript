@@ -38,3 +38,8 @@ const actualizarReloj = () => {
 };
 
 setInterval(actualizarReloj, 1000);  // cada segundo, se ejecuta actualizarReloj() y actualiza la hora en pantalla
+
+
+
+//////////////////////////////// lista de tareas /////////////////////////////////////
+
