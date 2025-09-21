@@ -43,35 +43,50 @@ setInterval(actualizarReloj, 1000);  // cada segundo, se ejecuta actualizarReloj
 
 //////////////////////////////// lista de tareas /////////////////////////////////////
 
-const crearTarea = (event) => {
-    event.preventDefault();
+const crearTarea = (event => {
+  event.preventDefault();
 
-    const inputTarea = document.getElementById("inputTarea").value.trim();
+  const inputTarea = document.getElementById('inputTarea').value.trim();
 
-    const alert = document.createElement('div');
-    const strong = document.createElement('strong');
-    const botonEliminar = document.createElement('button');
-    const botonEditar = document.createElement('button');
-    alert.className = 'alert alert-info alert-dismissible fade show';
-    alert.setAttribute('role', 'alert');
-    strong.textContent = inputTarea;
-    botonEliminar.className = 'btn-close';
-    botonEliminar.setAttribute('data-bs-dismiss', 'alert');
-    botonEliminar.setAttribute('aria-label', 'close');
-    botonEditar.textContent = '📝';
-    botonEditar.className = 'btn btn-warning';
+  const listGroupItem = document.createElement('div');
+  listGroupItem.className = ('list-group-item d-flex justify-content-between align-items-center');
+  
+  const tareaContent = document.createElement('span');
+  tareaContent.className = 'flex-grow-1';
+  tareaContent.textContent = inputTarea;
 
-    const listaTareas = document.querySelector("#listaTareas");
-    listaTareas.appendChild(alert);
-    alert.appendChild(strong);
-    alert.appendChild(botonEliminar);
-    alert.appendChild(botonEditar);
+  const btnGroup = document.createElement('div');
+  btnGroup.className = 'btn-group';
+
+  const iconoEditar = document.createElement('i');
+  iconoEditar.className = ('fa-solid fa-pen-to-square');
+
+  const iconoEliminar = document.createElement ('i');
+  iconoEliminar.className = ('fa-solid fa-xmark')
+
+
+  const btnEditar = document.createElement('button');
+  btnEditar.className = ('btn btn-warning btn-sm');
+  btnEditar.appendChild(iconoEditar);
+
+  const btnEliminar = document.createElement('button');
+  btnEliminar.className = ('btn btn-danger btn-sm');
+  btnEliminar.appendChild(iconoEliminar);
+
+
+  const listaTareas = document.querySelector("#listaTareas");
+    listaTareas.appendChild(listGroupItem);
+    listGroupItem.appendChild(tareaContent);
+    listGroupItem.appendChild(btnGroup)
+    btnGroup.appendChild(btnEditar);
+    btnGroup.appendChild(btnEliminar);
 
 
     formularioTarea.reset();
-
-}
+})
 
 formularioTarea.addEventListener("submit", crearTarea);
+
+
 
 
