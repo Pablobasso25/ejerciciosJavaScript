@@ -2,3 +2,27 @@
     opacity: 0;
     transition: opacity 0.5s ease;
 }
+
+#formularioTarea input::placeholder {
+  color: #017baf;       /* naranja */
+  font-style: italic;   /* cursiva */
+  opacity: 0.8;
+}
+
+#formularioTarea input:focus {
+  color: #ffffff;
+  font-style: italic;
+  background-color: #000000;
+  border-color: #787879;
+  outline: none;
+}
+
+.card-title {
+    color: rgb(151, 152, 151);
+}
+
+.list-group-item{
+    /* background-color: rgb(41, 41, 41); */
+    color: rgb(255, 255, 255);
+    /* font-weight: bold; */
+}

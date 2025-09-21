@@ -55,7 +55,7 @@ const crearTarea = (event) => {
 
 //creo el contendedor de la tarea
   const listGroupItem = document.createElement('div');
-  listGroupItem.className = ('list-group-item d-flex justify-content-between align-items-center');
+  listGroupItem.className = ('list-group-item d-flex justify-content-between align-items-center bg-dark');
 
 //creo el contenido de la tarea 
   const tareaContent = document.createElement('span');
@@ -76,7 +76,7 @@ const crearTarea = (event) => {
 
 // creo el botón de editar y le agrego el ícono y llamo a la función que va a ejecutar al hacerle click
   const btnEditar = document.createElement('button');
-  btnEditar.className = ('btn btn-warning btn-sm');
+  btnEditar.className = ('btn btn-secondary btn-sm mx-2');
   btnEditar.appendChild(iconoEditar);
 
 // creo el botón de eliminar y le agrego el ícono y llamo a la función que va a ejecutar al hacerle click
@@ -96,13 +96,8 @@ const crearTarea = (event) => {
 // limpia el input despuesd de agregar una tarea
     formularioTarea.reset();
 
-// muestro un mensaje flotante al agregar una tarea
-  const toast = new bootstrap.Toast(document.getElementById('toastAgregar'), {
-  delay: 2000, //tiempo en milisegundos (3 segundos)
-  autohide: true //se oculta automáticamente
-});
-toast.show();
-
+// llamo a la función agregarToast para que muestre un mensaje al agregar una tarea
+  mostrarToast('Tarea agregada con éxito', 'bg-success')
 }
   
 
@@ -114,11 +109,10 @@ toast.show();
   setTimeout(() => tarea.remove(), 500); // setTimeout espera a que la animación termine antes de eliminar el nodo ---- 500 tiene que coincidir con el tiempo que se le dio en CSS sino no funciona 
   
   //llamo a la función mostrarToast
-  mostrarToast('Tarea eliminada con exito', 'bg-dark');
+  mostrarToast('Tarea eliminada con exito', 'bg-secondary');
 }
 
 //función para el toast (mensaje flotante)
-
 function mostrarToast(mensaje, color = 'bg-dark') {   // bg-dark por defecto, luego se lo cambia cuando se llam a la función 
 
   const toastElemento = document.getElementById('toastGlobal');
