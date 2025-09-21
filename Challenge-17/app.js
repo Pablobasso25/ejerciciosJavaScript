@@ -41,39 +41,51 @@ setInterval(actualizarReloj, 1000);  // cada segundo, se ejecuta actualizarReloj
 
 
 
+
+
+
 //////////////////////////////// lista de tareas /////////////////////////////////////
 
-const crearTarea = (event => {
+const crearTarea = (event) => {
   event.preventDefault();
 
-  const inputTarea = document.getElementById('inputTarea').value.trim();
+  const inputTarea = document.getElementById('inputTarea');
+  const texto = inputTarea.value.trim();
+  if (texto === "") return;
 
+//creo el contendedor de la tarea
   const listGroupItem = document.createElement('div');
   listGroupItem.className = ('list-group-item d-flex justify-content-between align-items-center');
-  
+
+//creo el contenido de la tarea 
   const tareaContent = document.createElement('span');
   tareaContent.className = 'flex-grow-1';
-  tareaContent.textContent = inputTarea;
+  tareaContent.textContent = texto;
 
+//creo el grupo de botones 
   const btnGroup = document.createElement('div');
   btnGroup.className = 'btn-group';
 
+// creo el ícono de editar
   const iconoEditar = document.createElement('i');
   iconoEditar.className = ('fa-solid fa-pen-to-square');
 
+// creo el ícono de eliminar
   const iconoEliminar = document.createElement ('i');
   iconoEliminar.className = ('fa-solid fa-xmark')
 
-
+// creo el botón de editar y le agrego el ícono y llamo a la función que va a ejecutar al hacerle click
   const btnEditar = document.createElement('button');
   btnEditar.className = ('btn btn-warning btn-sm');
   btnEditar.appendChild(iconoEditar);
 
+// creo el botón de eliminar y le agrego el ícono y llamo a la función que va a ejecutar al hacerle click
   const btnEliminar = document.createElement('button');
   btnEliminar.className = ('btn btn-danger btn-sm');
   btnEliminar.appendChild(iconoEliminar);
+  btnEliminar.addEventListener('click', eliminarTarea);     //  Esto conecta el botón con una función que se va a ejecutar al hacer clic.
 
-
+// ensamblo todos los elementos 
   const listaTareas = document.querySelector("#listaTareas");
     listaTareas.appendChild(listGroupItem);
     listGroupItem.appendChild(tareaContent);
@@ -81,12 +93,20 @@ const crearTarea = (event => {
     btnGroup.appendChild(btnEditar);
     btnGroup.appendChild(btnEliminar);
 
-
+// limpia el input despuesd de agregar una tarea
     formularioTarea.reset();
-})
+  }
+  
+
+// Función para eliminar una tarea de la lista
+  function eliminarTarea(event) {
+  const tarea = event.target.closest('.list-group-item');  //event.target: es el botón que fue clickeado ---- closest('.list-group-item') busca el contenedor que contiene a la lista de tareas
+  
+  tarea.classList.add('fade-out');  // activa la transición visual
+  setTimeout(() => tarea.remove(), 500); // setTimeout espera a que la animación termine antes de eliminar el nodo
+}
+
 
 formularioTarea.addEventListener("submit", crearTarea);
-
-
 
 
