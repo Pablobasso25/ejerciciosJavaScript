@@ -51,17 +51,22 @@ const crearTarea = (event) => {
     const alert = document.createElement('div');
     const strong = document.createElement('strong');
     const botonEliminar = document.createElement('button');
+    const botonEditar = document.createElement('button');
     alert.className = 'alert alert-info alert-dismissible fade show';
     alert.setAttribute('role', 'alert');
     strong.textContent = inputTarea;
     botonEliminar.className = 'btn-close';
     botonEliminar.setAttribute('data-bs-dismiss', 'alert');
     botonEliminar.setAttribute('aria-label', 'close');
+    botonEditar.textContent = '📝';
+    botonEditar.className = 'btn btn-warning';
 
     const listaTareas = document.querySelector("#listaTareas");
     listaTareas.appendChild(alert);
     alert.appendChild(strong);
     alert.appendChild(botonEliminar);
+    alert.appendChild(botonEditar);
+
 
     formularioTarea.reset();
 
