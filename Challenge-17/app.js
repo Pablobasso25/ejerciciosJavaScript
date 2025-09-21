@@ -78,6 +78,8 @@ const crearTarea = (event) => {
   const btnEditar = document.createElement('button');
   btnEditar.className = ('btn btn-secondary btn-sm mx-2');
   btnEditar.appendChild(iconoEditar);
+  btnEditar.addEventListener('click', editarTarea);
+
 
 // creo el botón de eliminar y le agrego el ícono y llamo a la función que va a ejecutar al hacerle click
   const btnEliminar = document.createElement('button');
@@ -99,7 +101,56 @@ const crearTarea = (event) => {
 // llamo a la función agregarToast para que muestre un mensaje al agregar una tarea
   mostrarToast('Tarea agregada con éxito', 'bg-success')
 }
+
+
+// Función para editar una tarea de la lista
+function editarTarea(event) {
+  const boton = event.target.closest('button');
+  const tarea = boton.closest('.list-group-item');
+  const textoOriginal = tarea.querySelector('span');
   
+  // Crear input con el texto actual
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'form-control me-2';
+  input.value = textoOriginal.textContent;
+
+  // Reemplazar el span por el input
+  tarea.replaceChild(input, textoOriginal);
+
+  // Cambiar ícono a “guardar”
+  boton.innerHTML = '<i class="fa-solid fa-check"></i>';
+
+  // Cambiar evento del botón a guardar
+  boton.removeEventListener('click', editarTarea);
+  boton.addEventListener('click', () => guardarTarea(input, boton));
+}
+
+// Función para guardar la tarea editada
+function guardarTarea(input, boton) {
+  const nuevoTexto = input.value.trim();
+  if (nuevoTexto === "") return; // ✅ validación básica
+
+  const tarea = boton.closest('.list-group-item');
+
+  // Crear nuevo span con el texto actualizado
+  const nuevoSpan = document.createElement('span');
+  nuevoSpan.className = 'flex-grow-1';
+  nuevoSpan.textContent = nuevoTexto;
+
+  // Reemplazar el input por el span
+  tarea.replaceChild(nuevoSpan, input);
+
+  // Restaurar ícono de “editar”
+  boton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+
+  // Restaurar evento original
+  boton.removeEventListener('click', guardarTarea); // ❌ no funciona así directamente
+  boton.addEventListener('click', editarTarea);
+
+  // Mostrar toast de confirmación
+  mostrarToast(`Tarea actualizada.`, 'bg-info');
+}
 
 // Función para eliminar una tarea de la lista
   function eliminarTarea(event) {
