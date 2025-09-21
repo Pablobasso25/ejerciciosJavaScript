@@ -129,27 +129,27 @@ function editarTarea(event) {
 // Función para guardar la tarea editada
 function guardarTarea(input, boton) {
   const nuevoTexto = input.value.trim();
-  if (nuevoTexto === "") return; // ✅ validación básica
+  if (nuevoTexto === "") return;  
 
   const tarea = boton.closest('.list-group-item');
 
-  // Crear nuevo span con el texto actualizado
+  // Creo nuevo span con el texto actualizado
   const nuevoSpan = document.createElement('span');
   nuevoSpan.className = 'flex-grow-1';
   nuevoSpan.textContent = nuevoTexto;
 
-  // Reemplazar el input por el span
+  // Reemplazo el input por el span
   tarea.replaceChild(nuevoSpan, input);
 
-  // Restaurar ícono de “editar”
+  // vuelvo a poner el ícono de “editar”
   boton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
 
-  // Restaurar evento original
-  boton.removeEventListener('click', guardarTarea); // ❌ no funciona así directamente
+  // Restauro el evento original
+  boton.removeEventListener('click', guardarTarea); 
   boton.addEventListener('click', editarTarea);
 
   // Mostrar toast de confirmación
-  mostrarToast(`Tarea actualizada.`, 'bg-info');
+  mostrarToast('Tarea actualizada con Exito.', 'bg-info');
 }
 
 // Función para eliminar una tarea de la lista
