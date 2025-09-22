@@ -64,7 +64,7 @@ const crearTarea = (event) => {
   }
   // verificar mínimo de caracteres
   if (texto.length < 3) {
-    mostrarToast("La tarea debe tener al menos 3 caracteres.", "bg-warning");
+    mostrarToast("La tarea debe tener al menos 3 caracteres.", "bg-danger");
     inputTarea.focus();
     return;
   }
@@ -187,7 +187,7 @@ function guardarTarea(input, boton) {
   boton.addEventListener("click", editarTarea);
 
   // Mostrar toast de confirmación
-  mostrarToast("Tarea actualizada con Exito.", "bg-info");
+  mostrarToast("Tarea actualizada con Exito.", "bg-success");
 }
 
 // Función para eliminar una tarea de la lista
@@ -198,7 +198,7 @@ function eliminarTarea(event) {
   setTimeout(() => tarea.remove(), 500); // setTimeout espera a que la animación termine antes de eliminar el nodo ---- 500 tiene que coincidir con el tiempo que se le dio en CSS sino no funciona
 
   //llamo a la función mostrarToast
-  mostrarToast("Tarea eliminada con exito", "bg-secondary");
+  mostrarToast("Tarea eliminada.", "bg-secondary");
 }
 
 //función para el toast (mensaje flotante)
