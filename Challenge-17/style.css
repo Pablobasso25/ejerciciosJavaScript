@@ -3,6 +3,12 @@
     transition: opacity 0.5s ease;
 }
 
+ .list-group-item{
+    border-left:4px solid  #017baf98;
+    border-top:4px solid  #017baf8f;
+    margin-bottom: 10px;
+} 
+
 
 #formularioTarea input::placeholder {
   color: #017baf;      

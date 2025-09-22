@@ -7,7 +7,8 @@ const row = document.createElement('div');
 row.className = 'd-flex justify-content-center';
 
 const col = document.createElement('div');
-col.className = 'col-3 card bg-dark text-center p-5 mt-5 mb-5 shadow';
+col.className = 'col-3 card bg-dark text-center p-5 mt-5 mb-5 shadow-sm';
+/* col.setAttribute('id', 'shadow') */
 
 const h2 = document.createElement('h2');
 h2.setAttribute('id', 'reloj');
@@ -51,7 +52,29 @@ const crearTarea = (event) => {
 
   const inputTarea = document.getElementById('inputTarea');
   const texto = inputTarea.value.trim();
-  if (texto === "") return;
+
+  // verificar si no se ingresa espacios vacíos
+  if (texto === "") {
+    mostrarToast('El contenido no puede estar vacío.', 'bg-danger');
+    inputTarea.focus();
+    return;
+    
+  }  
+// verificar si hay tareas repetidas
+  const todasLasTareas = document.querySelectorAll("#listaTareas span");
+const existe = Array.from(todasLasTareas).some(span => span.textContent === texto);
+
+if (existe) {
+  mostrarToast("Ya existe una tarea con ese texto.", "bg-danger");
+  inputTarea.focus();
+  return;
+}
+// verificar mínimo de caracteres
+if (texto.length < 3) {
+  mostrarToast("La tarea debe tener al menos 3 caracteres.", "bg-warning");
+  inputTarea.focus();
+  return;
+}
 
 //creo el contendedor de la tarea
   const listGroupItem = document.createElement('div');
@@ -129,7 +152,29 @@ function editarTarea(event) {
 // Función para guardar la tarea editada
 function guardarTarea(input, boton) {
   const nuevoTexto = input.value.trim();
-  if (nuevoTexto === "") return;  
+
+// verificar si no se ingresa espacios vacíos
+  if (nuevoTexto === "") {
+    mostrarToast('El contenido no puede estar vacío.', 'bg-danger');
+    input.focus();
+    return;
+    
+  }  
+// verificar si hay tareas repetidas
+  const todasLasTareas = document.querySelectorAll("#listaTareas span");
+const existe = Array.from(todasLasTareas).some(span => span.textContent === nuevoTexto);
+
+if (existe) {
+  mostrarToast("Ya existe una tarea con ese texto.", "bg-danger");
+  input.focus();
+  return;
+}
+// verificar mínimo de caracteres
+if (nuevoTexto.length < 3) {
+  mostrarToast("La tarea debe tener al menos 3 caracteres.", "bg-danger");
+  input.focus();
+  return;
+}
 
   const tarea = boton.closest('.list-group-item');
 
