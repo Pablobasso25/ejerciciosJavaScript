@@ -37,6 +37,8 @@ const actualizarReloj = () => {
 
 setInterval(actualizarReloj, 1000); // cada segundo, se ejecuta actualizarReloj() y actualiza la hora en pantalla
 
+
+
 //////////////////////////////// lista de tareas /////////////////////////////////////
 
 const crearTarea = (event) => {
@@ -120,7 +122,7 @@ const crearTarea = (event) => {
 
 // Función para editar una tarea de la lista
 function editarTarea(event) {
-  const boton = event.target.closest("button");
+  const boton = event.target.closest("button");   // closest busca la etiqueta padre
   const tarea = boton.closest(".list-group-item");
   const textoOriginal = tarea.querySelector("span");
 

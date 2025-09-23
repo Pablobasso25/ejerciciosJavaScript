@@ -63,18 +63,18 @@ class Persona {
 
 //array de objetos que contiene todas las generaciones 
 const generaciones = [
-  {
+   {
     nombre: "Generación Z",
     inicio: 1994,
     fin: 2010,
     rasgo: "Irreverencia"
-  },
-  {
+   },
+   {
     nombre: "Generación Y / Millennials",
     inicio: 1981,
     fin: 1993,
     rasgo: "Frustración"
-  },
+   },
   {
     nombre: "Generación X",
     inicio: 1969,
