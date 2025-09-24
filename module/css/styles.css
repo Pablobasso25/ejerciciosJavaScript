@@ -1,0 +1,11 @@
+
+.card-meme{
+    height: 200px;
+    border: 0;
+
+}
+
+.card-meme img {
+    min-height: 300 px;
+    border-radius: 10px;
+}
