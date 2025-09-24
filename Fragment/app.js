@@ -24,8 +24,35 @@ lista.appendChild(fragment);
 
 // 2- opción 2 de contruir elementos
 
-const lista2 = document.querySelector('#lista');
 
-const arrayPaises2 = ["Argentina", "Perú", "México"];
+const lista2 = document.querySelector('#lista2');
+
+const arrayPaises2 = ["Chile", "Bolivia", "Ecuador"];
 
 const fragment2 = document.createDocumentFragment();
+/* <ul class="lista2">
+        <li class="list">
+            <b>Pais:</b>
+            <span class="text-primary">Aquí va el pais</span>
+        </li>
+    </ul> */
+
+arrayPaises2.forEach ((pais) => {
+
+    const li = document.createElement('li');
+    li.className = 'list';
+
+    const b = document.createElement('b')
+    b.textContent = 'Pais: ';
+    
+    const span = document.createElement ('span');
+    span.className = 'text-primary';
+    span.textContent = pais;
+
+    li.appendChild(b);
+    li.appendChild(span);
+    fragment2.appendChild(li);
+    
+});
+
+lista2.appendChild(fragment2);
