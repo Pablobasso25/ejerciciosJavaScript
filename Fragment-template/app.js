@@ -1,5 +1,5 @@
 
-// 1- opción 1 de construir elementos 
+///////////////////////////// opción 1 de construir elementos (fragment) /////////////////////////////// 
 
 const lista = document.querySelector('#lista');
 
@@ -22,7 +22,7 @@ lista.appendChild(fragment);
 
 
 
-// 2- opción 2 de contruir elementos
+//////////////////////////// opción 2 de construir elementos (fragment)  ////////////////////////////
 
 
 const lista2 = document.querySelector('#lista2');
@@ -56,3 +56,32 @@ arrayPaises2.forEach ((pais) => {
 });
 
 lista2.appendChild(fragment2);
+
+
+
+
+/////////////////////////////////// opción 3 de construir elementos  (template) ////////////////////////////////////////
+
+//template es una plantilla de HTML que se puede repetir varias veces no importa donde esté ubicada, solo tiene que estar dentro de "body"
+// el template se utiliza para cuando tengo elementos muy complejos 
+
+const lista3 = document.querySelector('#lista3');
+
+const fragment3 = document.createDocumentFragment();
+
+const liTemplate = document.querySelector('#liTemplate')
+
+const arrayPaises3 = ["Brasil", "Colombia", "Uruguay"];
+
+
+arrayPaises3.forEach((pais) => {
+    
+    //  hago un clon de la constante y lo guardo
+    const clone = liTemplate.content.firstElementChild.cloneNode(true);
+    clone.querySelector('span').textContent = pais;
+
+    // el fragment evita el reflow
+    fragment3.appendChild(clone);
+})
+
+lista3.appendChild(fragment3);
