@@ -1,13 +1,34 @@
+document.addEventListener('DOMContentLoaded', () =>{
+  fetchData()
+})
 
-fetch('../data.json')
-  .then(res => {
-    if (!res.ok) throw new Error("No se pudo cargar el archivo JSON");
-    return res.json();
-  })
-  .then(datos => {
-    console.log(datos);
-    // Acá podés usar los datos para renderizar tarjetas, tablas, etc.
-  })
-  .catch(error => console.error("Error al cargar datos:", error));
+import {Gift} from './clases.js'     // import la class creada en otro fichero
 
-console.log(datos);
+const fetchData = async () => {
+  try {
+    
+    const res = await fetch ('data/data.json')   // petición: primero ejecuta "data.json" y luego da una respuesta
+    const data = await res.json()
+    
+     
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
+
+const cuerpoTabla = document.querySelector('#cuerpo-tabla')
+
+//función para cargar la tabla (contenido)
+
+const cargarTabla = () => {
+
+  fetchData.map((item)=> {    //recorre cada elemento de la gift card
+
+    // y por cada elemento que devuelve, creo una fila con sus celdas
+    
+
+  })
+}
+
+

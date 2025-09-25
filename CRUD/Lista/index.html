@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,63 @@
             </div>
         </div>
         <div class="row">
-            <div class="col"></div>
+            <div class="col-12 col-md-6 offset-md-3">
+                <h3>Agregar nueva Gift Card</h3>
+                <form>
+                    <div class="row mt-3 ">
+                        <div class="col">
+                            <label>Gift</label>
+                            <input type="text" class="form-control" itemref="gift" required>
+                        </div>
+                        <div class="col">
+                            <label>Tipo</label>
+                            <select id="tipo" class="form-control">
+                                <option value="Suscripción">Suscripción</option>
+                                <option value="Compra">Compra</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <label>Tiempo</label>
+                            <select id="tiempo" class="form-control">
+                                <option value="1 mes">1 mes</option>
+                                <option value="3 meses">3 meses</option>
+                                <option value="5 meses">5 meses</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label>Precio</label>
+                            <input type="number" class="form-control" id="precio" required>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <input type="text" id="imagen" class="form-control" required placeholder="URL de la imagen">
+                        </div>
+                    </div>
+                    <div class="mt-3 d-flex justify-content-end">
+                        <button class="btn btn-info">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <h3>Tabla de contenido</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Gift</th>
+                            <th>tipo</th>
+                            <th>Tiempo</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla"></tbody>
+                </table>
+            </div>
         </div>
     </div>
 
