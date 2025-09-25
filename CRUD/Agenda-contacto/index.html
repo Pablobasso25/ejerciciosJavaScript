@@ -1,129 +1,255 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Agenda de contactos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- metadatos -->
+    <meta name="description" content="agenda de contactos" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>AGENDA CONTACTOS</title>
   </head>
-
-<header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Agenda</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Agenda</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Acerca de</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-</header>
-<main class="container my-4">
-    <section>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Agenda</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Acerca de</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container my-4">
+      <section>
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h1 class="mb-0">Agenda de contactos</h1>
-            <button type="button" class="btn btn-primary" id="btnAgregarContacto">
-                <i class="bi bi-person-plus-fill"></i> Agregar contacto
-            </button>
+          <h1 class="mb-0">Agenda de Contactos</h1>
+          <button type="button" class="btn btn-primary" id="btnAgregarContacto">
+            <i class="bi bi-person-plus-fill"></i> Agregar Contacto
+          </button>
         </div>
         <div class="table-responsive">
-            <table class="table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Teléfono</th>
-                        <th scope="col">Foto</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row"></th>
-                        <td>Juan</td>
-                        <td>Perez</td>
-                        <td>12135456123</td>
-                        <td>
-                            <img src="" alt="" class="img-thumnail img-table">
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-info btn-sm me-2 btn-ver-detalle"><i class="bi bi-eye"></i></button>
-                            <button type="button" class="btn btn-warning btn-sm me-2 btn-editar"><i class="bi bi-pencil"></i></button>
-                            <button type="button" class="btn btn-danger btn-sm me-2 btn-eliminar"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"></th>
+                <td>Juan</td>
+                <td>Perez</td>
+                <td>238477288</td>
+                <td>
+                  <img src="" alt="" class="img-thumnail img-table" />
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-sm me-2 btn-ver-detalle"
+                  >
+                    <i class="bi bi-eye"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-sm me-2 btn-editar"
+                  >
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-sm me-2 btn-borrar"
+                  >
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-    </section>
-    <!-- Modal de contacto -->
-     <div class="modal-fade" id="contactoModal" tabindex="-1" aria-labelledby="contactoModalLabel" aria-hidden="true">
+      </section>
+      <!-- modal contacto -->
+      <div
+        class="modal fade"
+        id="contactoModal"
+        tabindex="-1"
+        aria-labelledby="contactoModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="contactoModalLabel">Agregar contacto</h5>
-                </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
-                <div class="modal-body">
-                    <form id="formContacto">
-                        <input type="hidden" id="contactoId">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" required minlength="3">
-                                    <div class="invalid-feedback">Por favor ingrese un nombre válido (entre 3 y 50 caracteres)</div>
-                                    <div class="valid-feedback">Este dato el válido</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Apellido</label>
-                                    <input type="text" class="form-control" id="apellido" required minlength="3">
-                                    <div class="invalid-feedback">Por favor ingrese un apellido válido (entre 3 y 50 caracteres)</div>
-                                    <div class="valid-feedback">Este dato el válido</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Teléfono</label>
-                                    <input type="tel" class="form-control" id="telefono" required minlength="3">
-                                    <div class="invalid-feedback">Por favor ingrese un telefono válido (entre 3 y 50 caracteres)</div>
-                                    <div class="valid-feedback">Este dato el válido</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" required minlength="3">
-                                    <div class="invalid-feedback">Por favor ingrese un email válido (entre 3 y 50 caracteres)</div>
-                                    <div class="valid-feedback">Este dato el válido</div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="contactoModalLabel">
+                Agregar Contacto
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
+            <div class="modal-body">
+              <form id="formContacto" novalidate>
+                <input type="hidden" id="contactoId" />
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="nombre" class="form-label">Nombre</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nombre"
+                        required
+                        minlength="3"
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa un nombre válido (entre 2 y 50 caracteres).
+                      </div>
+                      <div class="valid-feedback">
+                        Este seria el mensaje que esta todo ok!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="apellido" class="form-label">Apellido</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="apellido"
+                        required
+                        minlength="3"
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa un apellido válido (mínimo 3
+                        caracteres).
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="telefono" class="form-label">Teléfono</label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="telefono"
+                        required
+                        pattern="[0-9]{10}"
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa un teléfono válido (10 dígitos
+                        numéricos).
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa un email válido.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="imagen" class="form-label"
+                      >URL de la Foto (Opcional)</label
+                    >
+                    <input
+                      type="url"
+                      class="form-control"
+                      id="imagen"
+                      placeholder="Ej: https://example.com/imagen.jpg"
+                    />
+                    <div class="invalid-feedback">
+                      Por favor ingresa una URL de imagen válida.
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="empresa" class="form-label">Empresa</label>
+                      <input type="text" class="form-control" id="empresa" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="puestoTrabajo" class="form-label"
+                        >Puesto de Trabajo</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="puestoTrabajo"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div class="mb-3">
+                      <label for="direccion" class="form-label"
+                        >Dirección</label
+                      >
+                      <input type="text" class="form-control" id="direccion" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="notas" class="form-label">Notas</label>
+                  <textarea class="form-control" id="notas" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Guardar Contacto
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-     </div>
-</main>
-
-
-
-  <body>
-    <h1>Hello, world!</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+      </div>
+    </main>
+    <footer></footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
     <script src="./js/app.js" type="module"></script>
-</body>
+  </body>
 </html>
