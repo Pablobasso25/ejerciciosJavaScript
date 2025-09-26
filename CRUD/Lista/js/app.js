@@ -6,6 +6,21 @@ let datos = [];
 
 // Capturo el cuerpo de la tabla
 const cuerpoTabla = document.querySelector('#cuerpo-tabla');
+// capturo modal desde bootstrap (via javascript)
+const myModal = new bootstrap.Modal(document.getElementById('modalGift'))
+
+
+// función para mostrar el modal 
+window.mostrarModal = (id) => {
+
+    const gift = datos.find((item) => item.id === id);  
+    document.querySelector('#giftModal').value = gift.gift;
+    document.querySelector('#tipoModal').value = gift.tipo;
+    document.querySelector('#tiempoModal').value = gift.tiempo;
+    document.querySelector('#precioModal').value = gift.precio;
+    document.querySelector('#imagenModal').value = gift.imagen;
+    myModal.show()
+}
 
 // Función asincrónica para obtener los datos del archivo JSON
 const fetchData = async () => {
@@ -51,6 +66,7 @@ const cargarTabla = () => {
     const iconoEditar = document.createElement('i');
     iconoEditar.className = 'bi bi-pencil';
     btnEditar.appendChild(iconoEditar);
+    btnEditar.addEventListener("click", () => mostrarModal(item.id));
 
     // Botón eliminar
     const btnEliminar = document.createElement('button');
