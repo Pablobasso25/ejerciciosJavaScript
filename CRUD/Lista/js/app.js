@@ -13,6 +13,8 @@ const myModal = new bootstrap.Modal(document.getElementById('modalGift'))
 // función para mostrar el modal 
 window.mostrarModal = (id) => {
 
+    document.querySelector('#formModal').setAttribute('data-id', id);
+
     const gift = datos.find((item) => item.id === id);  
     document.querySelector('#giftModal').value = gift.gift;
     document.querySelector('#tipoModal').value = gift.tipo;
@@ -127,6 +129,40 @@ const borrarGift = (id) => {                              // Declara una funció
 };
 
 //Función para editar un Gift
+const actualizarGift = (event) => {
+  event.preventDefault();
+
+  const form = document.querySelector('#formModal');
+  const id = parseInt(form.getAttribute('data-id')); // recupero el id guardado
+
+  const index = datos.findIndex((item) => item.id === id);
+  if (index === -1) return;
+
+  // Capturo los valores actualizados del modal
+  const gift = document.querySelector('#giftModal').value.trim();
+  const tipo = document.querySelector('#tipoModal').value;
+  const tiempo = document.querySelector('#tiempoModal').value;
+  const precio = parseFloat(document.querySelector('#precioModal').value);
+  const imagen = document.querySelector('#imagenModal').value.trim();
+
+  // Validaciones básicas
+  if (gift === '' || gift.length < 3) {
+    alert('El nombre del gift no puede estar vacío ni tener menos de 3 caracteres.');
+    return;
+  }
+
+  // Actualizo el objeto en el array
+  datos[index].gift = gift;
+  datos[index].tipo = tipo;
+  datos[index].tiempo = tiempo;
+  datos[index].precio = precio;
+  datos[index].imagen = imagen;
+
+  // Cierro el modal y actualizo la tabla
+  myModal.hide();
+  cargarTabla();
+};
+
 
 
 // Evento para cargar los datos al iniciar
@@ -137,4 +173,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Evento para agregar nuevos gifts
 document.querySelector('#formGift').addEventListener('submit', agregarGift);
+
+// Evento para actualizar los datos una vez modificados
+document.querySelector('#formModal').addEventListener('submit', actualizarGift);
 
