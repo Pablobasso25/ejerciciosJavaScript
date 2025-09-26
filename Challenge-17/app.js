@@ -144,7 +144,7 @@ function editarTarea(event) {
 }
 
 // Función para guardar la tarea editada
-function guardarTarea(input, boton) {
+function guardarTarea(input, boton) { 
   const nuevoTexto = input.value.trim();
 
   // verificar si no se ingresa espacios vacíos
