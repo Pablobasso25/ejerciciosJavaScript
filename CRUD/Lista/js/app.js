@@ -59,6 +59,7 @@ const cargarTabla = () => {
     const iconoEliminar = document.createElement('i');
     iconoEliminar.className = 'bi bi-trash';
     btnEliminar.appendChild(iconoEliminar);
+    btnEliminar.addEventListener("click", () => borrarGift(item.id));
 
     // Ensamblo botones
     contenedorBtn.appendChild(btnEditar);
@@ -95,6 +96,17 @@ const agregarGift = (event) => {
   // Limpio el formulario y actualizo la tabla
   document.querySelector('#formGift').reset();
   cargarTabla();
+};
+
+//Función para eliminar un Gift
+const borrarGift = (id) => {
+  const gift = datos.find((item) => item.id === id);
+  const confirmar = confirm(`¿Eliminar la gift card "${gift.gift}"?`);
+
+  if (confirmar) {
+    datos = datos.filter((item) => item.id !== id);  //crea un nuevo array sin ese elemento
+    cargarTabla();
+  }
 };
 
 // Evento para cargar los datos al iniciar
