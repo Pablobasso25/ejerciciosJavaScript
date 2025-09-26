@@ -99,15 +99,19 @@ const agregarGift = (event) => {
 };
 
 //Función para eliminar un Gift
-const borrarGift = (id) => {
-  const gift = datos.find((item) => item.id === id);
-  const confirmar = confirm(`¿Eliminar la gift card "${gift.gift}"?`);
+const borrarGift = (id) => {                              // Declara una función llamada "borrarGift" que recibe un parámetro "id".
+  const gift = datos.find((item) => item.id === id);      // Uso el método "find" para encontrar el primer elemento que cumpla la condición y lo guardo en la variable 
+  const confirmar = confirm(`¿Eliminar la gift card "${gift.gift}"?`); //El texto incluye el nombre de la gift card (`gift.gift`) para que sea más claro
 
-  if (confirmar) {
-    datos = datos.filter((item) => item.id !== id);  //crea un nuevo array sin ese elemento
-    cargarTabla();
+  if (confirmar) {                                        // devuelve true o false
+    datos = datos.filter((item) => item.id !== id);       // Crea un nuevo array con todos los elementos excepto el que tiene el "id" que se quiere eliminar
+                                                          // se Usa .filter() para recorrer el array y conservar solo los que no coinciden con ese "id".
+    cargarTabla();                                        // se Vuelve a renderizar la tabla en pantalla con el array actualizado                                                     
   }
 };
+
+//Función para editar un Gift
+
 
 // Evento para cargar los datos al iniciar
 document.addEventListener('DOMContentLoaded', async () => {
