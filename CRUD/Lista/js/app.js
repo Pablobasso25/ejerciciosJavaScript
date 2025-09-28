@@ -10,7 +10,7 @@ const cuerpoTabla = document.querySelector('#cuerpo-tabla');
 const myModal = new bootstrap.Modal(document.getElementById('modalGift'))
 
 
-// función para mostrar el modal 
+// 1- función para mostrar el modal 
 window.mostrarModal = (id) => {
 
     document.querySelector('#formModal').setAttribute('data-id', id);
@@ -24,7 +24,7 @@ window.mostrarModal = (id) => {
     myModal.show()
 }
 
-// Función asincrónica para obtener los datos del archivo JSON
+// 2- Función asincrónica para obtener los datos del archivo JSON
 const fetchData = async () => {
   try {
     const res = await fetch('data/data.json'); // await: es como decir : Esperá a que esta tarea termine antes de seguir con la siguiente línea
@@ -36,7 +36,7 @@ const fetchData = async () => {
   }
 };
 
-// Función para cargar la tabla con los datos actuales
+// 3- Función para cargar la tabla con los datos actuales
 const cargarTabla = () => {
   cuerpoTabla.innerHTML = ''; // Limpia la tabla antes de renderizar
 
@@ -95,7 +95,7 @@ const cargarTabla = () => {
   });
 };
 
-// Función para agregar un nuevo gift
+// 4- Función para agregar un nuevo gift
 const agregarGift = (event) => {
   event.preventDefault();
 
@@ -116,7 +116,9 @@ const agregarGift = (event) => {
   cargarTabla();
 };
 
-//Función para eliminar un Gift
+
+
+// 5- Función para eliminar un Gift
 const borrarGift = (id) => {                              // Declara una función llamada "borrarGift" que recibe un parámetro "id".
   const gift = datos.find((item) => item.id === id);      // Uso el método "find" para encontrar el primer elemento que cumpla la condición y lo guardo en la variable 
   const confirmar = confirm(`¿Eliminar la gift card "${gift.gift}"?`); //El texto incluye el nombre de la gift card (`gift.gift`) para que sea más claro
@@ -128,15 +130,15 @@ const borrarGift = (id) => {                              // Declara una funció
   }
 };
 
-//Función para editar un Gift
+// 6- Función para editar un Gift
 const actualizarGift = (event) => {
   event.preventDefault();
 
   const form = document.querySelector('#formModal');
-  const id = parseInt(form.getAttribute('data-id')); // recupero el id guardado
+  const id = parseInt(form.getAttribute('data-id')); // recupero el id del gift que se esta editando-- Este id  fue guardado previamente con "form.setAttribute('data-id', id)" cuando se abrio el modal
 
-  const index = datos.findIndex((item) => item.id === id);
-  if (index === -1) return;
+  const index = datos.findIndex((item) => item.id === id);  //Busca la posición del gift en el array 'datos'
+  if (index === -1) return;                                 //Si no lo encuentra (-1), sale de la función sin hacer nada
 
   // Capturo los valores actualizados del modal
   const gift = document.querySelector('#giftModal').value.trim();
@@ -151,7 +153,7 @@ const actualizarGift = (event) => {
     return;
   }
 
-  // Actualizo el objeto en el array
+  // Actualiza el objeto en el array 'datos' con los nuevos valores ingresados en el modal
   datos[index].gift = gift;
   datos[index].tipo = tipo;
   datos[index].tiempo = tiempo;

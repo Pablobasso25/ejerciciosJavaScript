@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-dark">
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-body">
+            <h2 class="card-title text-center mb-4">Calculadora</h2>
+            <form id="calc-form">
+              <div class="mb-3">
+                <label for="num1" class="form-label">Número 1</label>
+                <input type="number" id="num1" class="form-control" placeholder="Ingresa el primer número">
+              </div>
+
+              <div class="mb-3">
+                <label for="num2" class="form-label">Número 2</label>
+                <input type="number" id="num2" class="form-control" placeholder="Ingresa el segundo número">
+              </div>
+
+              <div class="mb-3">
+                <label for="operacion" class="form-label">Operación</label>
+                <select id="operacion" class="form-select">
+                  <option value="" disabled selected>Selecciona una operación</option>
+                  <option value="suma">➕ Suma</option>
+                  <option value="resta">➖ Resta</option>
+                  <option value="multiplicacion">✖️ Multiplicación</option>
+                  <option value="division">➗ División</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100">Calcular</button>
+            </form>
+
+            <div class="mt-4">
+              <h5>Resultado:</h5>
+              <p id="resultado" class="alert alert-info">Esperando datos...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
+

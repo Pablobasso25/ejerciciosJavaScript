@@ -1,0 +1,12 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+#resultado {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
