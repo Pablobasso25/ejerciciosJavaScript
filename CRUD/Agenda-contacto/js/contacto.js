@@ -25,15 +25,15 @@ export default class Contacto {
     notas
   ) {
     this.#id = crypto.randomUUID();
-    this.#nombre = nombre;
-    this.#apellido = apellido;
-    this.#telefono = telefono;
-    this.#email = email;
-    this.#imagen = imagen;
-    this.#empresa = empresa;
-    this.#puestoTrabajo = puestoTrabajo;
-    this.#direccion = direccion;
-    this.#notas = notas;
+    this.#nombre;
+    this.#apellido;
+    this.#telefono;
+    this.#email;
+    this.#imagen;
+    this.#empresa;
+    this.#puestoTrabajo;
+    this.#direccion;
+    this.#notas;
   }
 
   //getters
@@ -118,5 +118,20 @@ export default class Contacto {
 
   set notas(nuevasNotas) {
     this.#notas = nuevasNotas;
+  }
+
+  toJSON() {
+    return {
+        id: this.id,
+        nombre: this.nombre,
+        apellido: this.apellido,
+        telefono: this.telefono,
+        email: this.email,
+        imagen: this.imagen,
+        empresa: this.empresa,
+        puestoTrabajo: this.puestoTrabajo,
+        direccion: this.direccion,
+        notas: this.notas,
+    };
   }
 }
