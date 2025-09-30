@@ -25,15 +25,15 @@ export default class Contacto {
     notas
   ) {
     this.#id = crypto.randomUUID();
-    this.#nombre;
-    this.#apellido;
-    this.#telefono;
-    this.#email;
-    this.#imagen;
-    this.#empresa;
-    this.#puestoTrabajo;
-    this.#direccion;
-    this.#notas;
+    this.#nombre = nombre;
+    this.#apellido = apellido;
+    this.#telefono = telefono;
+    this.#email = email;
+    this.#imagen = imagen;
+    this.#empresa = empresa;
+    this.#puestoTrabajo = puestoTrabajo;
+    this.#direccion = direccion;
+    this.#notas = notas;
   }
 
   //getters

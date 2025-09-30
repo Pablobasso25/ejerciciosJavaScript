@@ -22,6 +22,7 @@ const guardarLocalStorage = () => {
 
 const crearContacto = () => {
   const contactoNuevo = new Contacto(
+    null,
     inputNombre.value,
     inputApellido.value,
     inputTelefono.value,
