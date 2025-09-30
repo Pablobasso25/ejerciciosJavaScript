@@ -51,6 +51,7 @@ const crearContacto = () => {
 
 
     limpiarFormulario();
+    dibujarFila(contactoNuevo, agenda.length)
     
 };
 
