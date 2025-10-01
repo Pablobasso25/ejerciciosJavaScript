@@ -12,6 +12,10 @@ const inputNotas = document.getElementById("notas");
 const inputImagen = document.getElementById("imagen");
 const inputPuestoTrabajo = document.getElementById("puestoTrabajo");
 const inputEmpresa = document.getElementById("empresa");
+const tbody = document.getElementById("tablaContactosBody");
+const tabla = document.querySelector(".table-responsive");
+const seccionDetalles = document.getElementById("seccionDetallesContacto");
+const seccionTablaContactos = document.getElementById("seccionTablaContactos");
 
 const agenda = JSON.parse(localStorage.getItem("agendaKey")) || []; 
 console.log(agenda);
@@ -51,7 +55,7 @@ const crearContacto = () => {
     title: "Contacto creado",
     text: `El contacto ${inputNombre.value} fue creado exitosamente`,
     icon: "success",
-    confirmButtonText: "ok"
+    confirmButtonText: "OK"
     });
 
 
@@ -63,6 +67,15 @@ const crearContacto = () => {
 function limpiarFormulario(){
 
     formularioContacto.reset();
+}
+
+const cargarContactos = () => {
+  if (agenda.length !== 0){
+    agenda.map((itemContacto, indice) => dibujarFila(itemContacto, indice + 1))
+  } else {
+    mostrarNoHayDisponibles();
+    
+  }
 }
 
 // función para agregar a la fila
@@ -99,7 +112,12 @@ const dibujarFila = (itemContacto, fila) => {
               </tr>`
 }
 
-
+const mostrarNoHayDisponibles = () => {
+  const parrafo = document.createElement ("p");
+  parrafo.classList.add("text-center");
+  parrafo.textContent = "No hay contactos disponibles";
+  tabla.appendChild(parrafo);
+}
 
 const modalFormularioContacto = new bootstrap.Modal(
   document.getElementById("contactoModal")
@@ -115,19 +133,52 @@ formularioContacto.addEventListener("submit", (e) => {
     crearContacto();
 });
 
-// setItem()
+cargarContactos ();
+
+// setItem()   →    guardar informacion en el localStorage
 /* localStorage.setItem("clave", "valor");
 - Guarda un dato en el navegador bajo una clave específica.
 - El dato debe ser un string. Si querés guardar un objeto o array, usás JSON.stringify().
 
+→ Ejemplo:
+const usuario = { nombre: "Pablo", nivel: "Avanzado" };   objeto que se convierte en texto JSON
+localStorage.setItem("usuarioKey", JSON.stringify(usuario));
  */
+
 
 // getItem()
 /* localStorage.getItem("clave");
 - Recupera el dato guardado bajo esa clave.
-- Devuelve un string, así que si se guarda un objeto, se lo tiene que convertir a texto (string) con JSON.parse().
+- Devuelve un string, así que si se guardó un objeto o array, se lo tiene que convertir de texto a objeto con JSON.parse().
 
- */
+→ Ejemplo:
+const usuarioGuardado = JSON.parse(localStorage.getItem("usuarioKey"));   texto que se convierte en objeto o array
+console.log(usuarioGuardado.nombre); // "Pablo"
+*/
 
 
 // localStorage solo almacena texto (string) por lo tanto hay que convertir con JSON.parse antes de almacenarlo 
+
+
+
+// JSON.stringify() y JSON.parse() 
+// Son dos métodos que te permiten convertir entre objetos JavaScript y texto JSON, para poder guardar, enviar o recuperar datos
+
+//JSON.stringify()
+/* Convierte un objeto JavaScript en un string JSON.
+
+→ Ejemplo: 
+const persona = { nombre: "Pablo", edad: 32 };
+const texto = JSON.stringify(persona);
+console.log(texto); // '{"nombre":"Pablo","edad":32}'
+*/
+
+
+//JSON.parse() 
+/* Convierte un string JSON en un objeto JavaScript
+
+→ Ejemplo:
+const texto = '{"nombre":"Pablo","edad":30}';
+const persona = JSON.parse(texto);
+console.log(persona.nombre); // "Pablo"
+ */
