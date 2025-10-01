@@ -13,8 +13,12 @@ const inputImagen = document.getElementById("imagen");
 const inputPuestoTrabajo = document.getElementById("puestoTrabajo");
 const inputEmpresa = document.getElementById("empresa");
 
-const agenda = JSON.parse(localStorage.getItem("agendaKey")) || [];
+const agenda = JSON.parse(localStorage.getItem("agendaKey")) || []; 
 console.log(agenda);
+//localStorage.getItem("agendaKey") → Busca en el almacenamiento local del navegador (localStorage) el valor guardado con la clave "agendaKey".
+// JSON.parse → - Convierte ese string JSON en un objeto JavaScript real.
+// || [] → Si no hay nada guardado (es null), uso un array vacío como valor por defecto  
+
 
 const guardarLocalStorage = () => {
     localStorage.setItem("agendaKey", JSON.stringify(agenda));
@@ -111,4 +115,19 @@ formularioContacto.addEventListener("submit", (e) => {
     crearContacto();
 });
 
+// setItem()
+/* localStorage.setItem("clave", "valor");
+- Guarda un dato en el navegador bajo una clave específica.
+- El dato debe ser un string. Si querés guardar un objeto o array, usás JSON.stringify().
 
+ */
+
+// getItem()
+/* localStorage.getItem("clave");
+- Recupera el dato guardado bajo esa clave.
+- Devuelve un string, así que si se guarda un objeto, se lo tiene que convertir a texto (string) con JSON.parse().
+
+ */
+
+
+// localStorage solo almacena texto (string) por lo tanto hay que convertir con JSON.parse antes de almacenarlo 
