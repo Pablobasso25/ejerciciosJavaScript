@@ -80,36 +80,97 @@ const cargarContactos = () => {
 
 // función para agregar a la fila
 const dibujarFila = (itemContacto, fila) => {
-
+  if (tabla.children.length === 2) {
+    tabla.children [1].remove();
+  }
     tbody.innerHTML += `<tr>
                 <th scope="row">${fila} </th>
                 <td>${itemContacto.nombre} </td>
                 <td>${itemContacto.apellido} </td>
                 <td>${itemContacto.telefono} </td>
                 <td>
-                  <img src="${itemContacto.imagen} " alt="${itemContacto.nombre} " class="img-thumnail img-table" />
+                  <img src=${itemContacto.imagen} alt=${itemContacto.nombre} class="img-thumbnail img-table w-100" />
                 </td>
                 <td>
                   <button
                     type="button"
                     class="btn btn-info btn-sm me-2 btn-ver-detalle"
+                    onclick = "verDetalle('${itemContacto.id}')"
                   >
                     <i class="bi bi-eye"></i>
                   </button>
                   <button
                     type="button"
                     class="btn btn-warning btn-sm me-2 btn-editar"
+                    onclick = "prepararContacto('${itemContacto.id}')"
                   >
                     <i class="bi bi-pencil"></i>
                   </button>
                   <button
                     type="button"
                     class="btn btn-danger btn-sm me-2 btn-borrar"
+                    onclick = "borrarContacto('${itemContacto.id}')"
                   >
                     <i class="bi bi-trash"></i>
                   </button>
                 </td>
               </tr>`
+};
+
+window.borrarContacto = (id) => {
+  Swal.fire({
+  title: "Estas seguro de eliminar el contacto?",
+  text: "No podes revertir este paso",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Borrar",
+  cancelButtonText: "Cancelar"
+}).then((result) => {
+  console.log(result);
+  
+  if (result.isConfirmed) {
+    // busca la posición del elemento que quiiero borrar
+    const indiceContacto = agenda.findIndex((contacto) => contacto.id === id);
+
+    
+    agenda.splice(indiceContacto, 1);
+
+    guardarLocalStorage();
+
+    tbody.children[indiceContacto].remove();
+    if (tbody.children.length === 0){
+      mostrarNoHayDisponibles();
+    };
+
+    const filasRestantes = tbody.children;
+    for (let i = 0; i < filasRestantes.length; i++) {
+      const celdasIndice = filasRestantes[i].querySelector('th');
+      if (celdasIndice){
+        celdasIndice.textContent = i + 1;
+      };
+      
+    };
+
+
+    Swal.fire({
+      title: "Contacto eliminado",
+      text: "El contacto fue eliminado con éxito",
+      icon: "success"
+    });
+    console.log(agenda);
+    
+  }
+});
+}
+
+window.prepararContacto = (id) => {
+
+}
+
+window.verDetalle = (id) => {
+
 }
 
 const mostrarNoHayDisponibles = () => {
