@@ -1,6 +1,7 @@
 
 import { Gift } from './clases.js'; // Importo la clase Gift
 
+
 // Variable global para almacenar los datos
 let datos = [];
 
@@ -113,6 +114,8 @@ const agregarGift = (event) => {
 
   // Limpio el formulario y actualizo la tabla
   document.querySelector('#formGift').reset();
+
+  localStorage.setItem("datos", JSON.stringify(datos));
   cargarTabla();
 };
 
@@ -165,13 +168,47 @@ const actualizarGift = (event) => {
   cargarTabla();
 };
 
+/* // función para averiguar si la información de JSON esta en localStorage
+export const cargaDeDatos = () =>{
 
+    const baseDeDatos = JSON.parse(localStorage.getItem("datos"));
+
+    if (!baseDeDatos){  //si no existe la baseDeDatos, que la cree
+        localStorage.setItem("datos", JSON.stringify(datos)); //convierte el array en un string
+
+    }
+} */
+const mostrarDatosLocalStorage = () => {
+  const datosGuardados = JSON.parse(localStorage.getItem("datos"));
+
+  if (Array.isArray(datosGuardados)) {
+    datos = datosGuardados; // Actualiza la variable global
+    cargarTabla();          // Renderiza la tabla con esos datos
+  } else {
+    console.log("No hay datos válidos en localStorage.");
+  }
+};
 
 // Evento para cargar los datos al iniciar
 document.addEventListener('DOMContentLoaded', async () => {
+  const datosGuardados = JSON.parse(localStorage.getItem("datos"));
+
+  if (Array.isArray(datosGuardados)) {
+    datos = datosGuardados;
+  } else {
+    datos = await fetchData(); // Si no hay datos en localStorage, carga desde JSON
+    localStorage.setItem("datos", JSON.stringify(datos)); // Guarda en localStorage
+  }
+
+  cargarTabla();
+});
+
+
+/* // Evento para cargar los datos al iniciar
+document.addEventListener('DOMContentLoaded', async () => {
   datos = await fetchData(); // Carga inicial de datos
   cargarTabla();             // Renderiza la tabla
-});
+}); */
 
 // Evento para agregar nuevos gifts
 document.querySelector('#formGift').addEventListener('submit', agregarGift);
