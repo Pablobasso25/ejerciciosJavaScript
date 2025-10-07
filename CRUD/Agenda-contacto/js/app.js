@@ -16,7 +16,9 @@ const tbody = document.getElementById("tablaContactosBody");
 const tabla = document.querySelector(".table-responsive");
 const seccionDetalles = document.getElementById("seccionDetallesContacto");
 const seccionTablaContactos = document.getElementById("seccionTablaContactos");
-
+const tituloModal = document.getElementById('contactoModalLabel')
+let inputID = document.getElementById('contactoId');
+let estoyCreando = true;
 const agenda = JSON.parse(localStorage.getItem("agendaKey")) || []; 
 console.log(agenda);
 //localStorage.getItem("agendaKey") → Busca en el almacenamiento local del navegador (localStorage) el valor guardado con la clave "agendaKey".
@@ -89,7 +91,7 @@ const dibujarFila = (itemContacto, fila) => {
                 <td>${itemContacto.apellido} </td>
                 <td>${itemContacto.telefono} </td>
                 <td>
-                  <img src=${itemContacto.imagen} alt=${itemContacto.nombre} class="img-thumbnail img-table w-100" />
+                  <img src=${itemContacto.imagen} alt=${itemContacto.nombre} class="img-thumbnail img-table" width= 50px />
                 </td>
                 <td>
                   <button
@@ -165,12 +167,73 @@ window.borrarContacto = (id) => {
 });
 }
 
+
 window.prepararContacto = (id) => {
 
+  const contactoBuscado = agenda.find((contacto) => contacto.id === id);
+
+  inputNombre.value = contactoBuscado.nombre,
+  inputApellido.value = contactoBuscado.apellido,
+  inputEmail.value = contactoBuscado.email,
+  inputDireccion.value = contactoBuscado.direccion,
+  inputEmpresa.value = contactoBuscado.empresa,
+  inputImagen.value = contactoBuscado.imagen,
+  inputNotas.value = contactoBuscado.notas,
+  inputPuestoTrabajo.value = contactoBuscado.puestoTrabajo,
+  inputTelefono.value = contactoBuscado.telefono,
+  inputID = id,
+
+  estoyCreando = false;
+
+  modalFormularioContacto.show();
+
+  tituloModal.textContent = 'Editar contacto'
 }
 
-window.verDetalle = (id) => {
 
+const editarContacto = () => {
+
+  const indiceContacto = agenda.findIndex((contacto) => contacto.id === inputID)
+
+  agenda[indiceContacto].nombre = inputNombre.value,
+  agenda[indiceContacto].apellido = inputApellido.value,
+  agenda[indiceContacto].email = inputEmail.value,
+  agenda[indiceContacto].direccion = inputDireccion.value,
+  agenda[indiceContacto].empresa = inputEmpresa.value,
+  agenda[indiceContacto].imagen = inputImagen.value,
+  agenda[indiceContacto].notas = inputNotas.value,
+  agenda[indiceContacto].puestoTrabajo = inputPuestoTrabajo.value,
+  agenda[indiceContacto].telefono = inputTelefono.value,
+
+  //actualizando en el localStorage
+  guardarLocalStorage ()
+
+  //actualizar la tabla con los nuevo datos 
+  const filaEditada = tbody.children[indiceContacto]
+
+  if(filaEditada){
+    filaEditada.children[1].textContent = agenda[indiceContacto].nombre;
+    filaEditada.children[2].textContent = agenda[indiceContacto].apellido;
+    filaEditada.children[3].textContent = agenda[indiceContacto].telefono;
+    filaEditada.children[4].children[0].src = agenda[indiceContacto].imagen;
+    
+    modalFormularioContacto.hide();
+
+    /* Swal.fire({
+      title: "Contacto actualizado",
+      text:  "`El contacto ${agenda} fue eliminado con éxito`,
+      icon: "success",
+
+    }); */
+    
+  }
+}
+
+
+
+window.verDetalle = (id) => {
+  const contactoBuscado = agenda.find((contacto) => contacto.id === id)
+  
 }
 
 const mostrarNoHayDisponibles = () => {
@@ -191,7 +254,12 @@ btnAgregarContacto.addEventListener("click", () => {
 formularioContacto.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    crearContacto();
+    // aqui tengo que crear/editar
+  if(estoyCreando){
+    crearContacto()
+  } else{
+    editarContacto()
+  }
 });
 
 cargarContactos ();
