@@ -232,9 +232,43 @@ const editarContacto = () => {
 
 
 window.verDetalle = (id) => {
-  const contactoBuscado = agenda.find((contacto) => contacto.id === id)
-  
-}
+  const contactoBuscado = agenda.find((contacto) => contacto.id === id);  // Busca en el array "agenda" el contacto con el "id" que coincida con el que se pasó como argumento. find() devuelve elprimer contacto que cumpla con la condicion
+  if (!contactoBuscado) return;
+  /* - Si agenda no tiene ningún contacto con ese id, entonces contactoBuscado será undefined.
+     - La condición !contactoBuscado pasa a ser true.
+     - Entonces return evita que el resto del código se ejecute
+ */
+
+  // Ocultar tabla y mostrar detalle
+  seccionTablaContactos.classList.add("d-none"); // Oculta la sección de la tabla de contactos agregando la clase d-none
+  document.getElementById("seccionDetalleContacto").classList.remove("d-none"); // una vez ocultada la tabla de contactos, muestro la sección detalle de contacto   
+
+  // Actualizar breadcrumb (barra de navegación)
+  document.getElementById("breadCrumbContactName").textContent = contactoBuscado.nombre; // actualiza el nombre del contacto
+
+  // Actualizar encabezado
+  document.getElementById("detalleFoto").src = contactoBuscado.imagen; //imagen
+  document.getElementById("detalleFoto").alt = `Foto de ${contactoBuscado.nombre}`;//texto en el caso de que la imagen no cargue
+  document.getElementById("detalleNombreApellido").textContent = `${contactoBuscado.nombre} ${contactoBuscado.apellido}`; // nombre y apellido
+  document.getElementById("detalleEmail").textContent = contactoBuscado.email;  //email
+
+  // Actualizar lista de información de contacto
+  document.getElementById("detalleTelefono").textContent = contactoBuscado.telefono;
+  document.getElementById("detalleEmailInfo").textContent = contactoBuscado.email;
+  document.getElementById("detalleCompany").textContent = contactoBuscado.empresa;
+  document.getElementById("detalleJobTitle").textContent = contactoBuscado.puestoTrabajo;
+  document.getElementById("detalleLocation").textContent = contactoBuscado.direccion;
+
+  // Actualizar notas
+  document.getElementById("detalleNotes").textContent = contactoBuscado.notas;
+};
+
+document.getElementById("btnVolverTabla").addEventListener("click", () => {       //Escucha el clic en el botón "Volver a la tabla"
+  document.getElementById("seccionDetalleContacto").classList.add("d-none");      //Oculta la sección de detalle del contacto
+  seccionTablaContactos.classList.remove("d-none");                               //Vuelve a mostrar la tabla de contactos
+});
+
+
 
 const mostrarNoHayDisponibles = () => {
   const parrafo = document.createElement ("p");
@@ -263,6 +297,7 @@ formularioContacto.addEventListener("submit", (e) => {
 });
 
 cargarContactos ();
+
 
 // setItem()   →    guardar informacion en el localStorage
 /* localStorage.setItem("clave", "valor");

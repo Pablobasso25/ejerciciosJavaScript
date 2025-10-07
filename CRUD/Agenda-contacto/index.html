@@ -67,10 +67,86 @@
               </tr>
             </thead>
             <tbody id="tablaContactosBody">
-              
             </tbody>
           </table>
         </div>
+            </section>
+       <section class="d-none" id="seccionDetalleContacto">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.html" id="breadCrumbContacts">Contactos</a>
+            </li>
+            <li
+              class="breadcrumb-item active"
+              aria-current="page"
+              id="breadCrumbContactName"
+            >
+              susana
+            </li>
+          </ol>
+        </nav>
+        <article class="card mb-3">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <img
+                id="detalleFoto"
+                src="https://images.pexels.com/photos/1848565/pexels-photo-1848565.jpeg"
+                class="rounded-circle me-3 img-table"
+                alt="Foto de contacto"
+              />
+              <div>
+                <h2 class="card-title mb-0" id="detalleNombreApellido">
+                  Susana
+                </h2>
+                <p class="card-subtitle text-muted" id="detalleEmail">
+                  susana@gmail.com
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  id="btnMessageDetail"
+                >
+                  <i class="bi bi-whatsapp"></i>
+                </button>
+              </div>
+            </div>
+            <hr />
+            <h4>Información de contacto</h4>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <i class="bi bi-telephone"></i> Teléfono:
+                <span id="detalleTelefono">382677888</span>
+              </li>
+              <li class="list-group-item">
+                <i class="bi bi-envelope"></i> Email:
+                <span id="detalleEmailInfo">susana@gmail.com</span>
+              </li>
+              <li class="list-group-item">
+                <i class="bi bi-building"></i> Empresa:
+                <span id="detalleCompany">RollingCode</span>
+              </li>
+              <li class="list-group-item">
+                <i class="bi bi-person"></i> Puesto de trabajo:
+                <span id="detalleJobTitle">Adminitrativo</span>
+              </li>
+              <li class="list-group-item">
+                <i class="bi bi-map"></i> Dirección:
+                <span id="detalleLocation">San Miguel de Tucumán</span>
+              </li>
+            </ul>
+            <h5 class="mt-4">Notas</h5>
+            <p id="detalleNotes">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque,
+              voluptate. Consectetur ex exercitationem, necessitatibus doloribus
+              dolore repellendus tempora accusantium aut beatae ipsa veniam
+              temporibus quasi, nemo sint tempore suscipit eveniet!
+            </p>
+          </div>
+        </article>
+        <button class="btn btn-secondary mt-3" id="btnVolverTabla">
+          <i class="bi bi-arrow-left-short"></i> Volver a la tabla
+        </button>
       </section>
       <!-- modal contacto -->
       <div
