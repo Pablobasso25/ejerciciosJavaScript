@@ -1,4 +1,5 @@
 import Contacto from "./contacto.js";
+import { validarCantidadCaracteres, validarEmail } from "./validaciones.js";
 
 const btnAgregarContacto = document.getElementById("btnAgregarContacto");
 console.log(btnAgregarContacto);
@@ -31,6 +32,10 @@ const guardarLocalStorage = () => {
 }
 
 const crearContacto = () => {
+  if (validacion ()) {
+
+  
+
   const contactoNuevo = new Contacto(
     null,
     inputNombre.value,
@@ -63,6 +68,11 @@ const crearContacto = () => {
 
     limpiarFormulario();
     dibujarFila(contactoNuevo, agenda.length)
+    
+  } else{
+    console.log('error');
+    
+  }
     
 };
 
@@ -227,6 +237,18 @@ const editarContacto = () => {
     }); */
     
   }
+}
+
+const validacion = () => {
+  let datosValidos = true;
+  if (!validarCantidadCaracteres (inputNombre, 2, 50)){
+    datosValidos = false;
+  } if (!validarCantidadCaracteres (inputApellido, 3, 50)){
+    datosValidos = false;
+  } if (!validarEmail (inputEmail)){
+    datosValidos = false;
+  } 
+  return datosValidos;
 }
 
 
