@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es_AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="Productos, marcas, home, decoracion, Rolling Code"
+    />
+    <meta
+      name="description"
+      content="Panel de administración"
+    />
+    <meta name="author" content="Desarrollado por Pablo Basso" />
+    <title>Challenge 19</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="./media/logo-mercado-liebre.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg bg-custom shadow py-3 sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              class="nav-logo"
+              src="./media/logo-mercado-liebre.svg"
+              alt=""
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item" id="navCrearCuenta">
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#registroModal"
+                  ><i class="far fa-id-card me-2"></i
+                  ><span> Creá tu cuenta</span></a
+                >
+              </li>
+              <li class="nav-item" id="navIngresar">
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                >
+                  <i class="fas fa-sign-in-alt me-2"></i><span>Ingresá</span></a
+                >
+              </li>
+              <li class="nav-item" id="navMisCompras" style="display: none">
+                <a class="nav-link" href="#"
+                  ><i class="fas fa-shopping-basket me-2"></i
+                  ><span>Mis compras</span></a
+                >
+              </li>
+              <li class="nav-item" id="navUsuario" style="display: none">
+                <a class="nav-link fw-bold text-primary-emphasis" href="#">
+                  <i class="far fa-user me-2"></i
+                  ><span id="nombreActivo"></span>
+                </a>
+              </li>
+              <button
+                id="navAdmin"
+                style="display: none"
+                class="nav-link btn btn-secondary btn-sm ms-2"
+                onclick="location.href='./pages/admin.html'"
+              >
+                Panel Admin
+              </button>
+              <li
+                class="nav-item mt-1"
+                id="navCerrarSesion"
+                style="display: none"
+              >
+                <button
+                  class="btn btn-outline-danger btn-sm ms-2"
+                  id="btnCerrarSesion"
+                >
+                  Cerrar sesión
+                </button>
+              </li>
+            </ul>
+            <div class="barra-busqueda ms-auto">
+              <div class="input-con-icono">
+                <input
+                  type="text"
+                  id="buscador"
+                  placeholder="Buscar productos, marcas..."
+                />
+                <i class="fa fa-search" id="botonBuscar"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Portada  -->
+      <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./media/D_NQ_630123-MLA86276689967_062025-OO.webp"
+              class="d-block w-100"
+              alt="banner1"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./media/D_NQ_743265-MLA86102144515_062025-OO.webp"
+              class="d-block w-100"
+              alt="banner2"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./media/D_NQ_767480-MLA86280604571_062025-OO.webp"
+              class="d-block w-100"
+              alt="banner3"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./media/D_NQ_803967-MLA86466180635_062025-OO.webp"
+              class="d-block w-100"
+              alt="banner4"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./media/D_NQ_944395-MLA83017655050_032025-OO.webp"
+              class="d-block w-100"
+              alt="banner5"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleRide"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleRide"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Productos destacados -->
+      <section class="seccion-destacados bg-custom-section">
+        <div class="container">
+          <div class="titulo-ofertas">
+            <h4 class="mt-4 titulares fw-bold">Productos destacados</h4>
+          </div>
+          <div class="row g-3 mt-3">
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="producto-card2 bg-white">
+                <span class="etiqueta-descuento">-10%</span>
+                <div class="card-img-box">
+                  <img src="media/tv.webp" alt="Smart TV" />
+                </div>
+                <div class="fw-bold">Smart TV Quint 43 Pulgadas Qt3</div>
+                <div class="precio-original">$450.000</div>
+                <div class="precio-descuento">$405.000</div>
+                <div class="envio-gratis">
+                  <i class="fas fa-shipping-fast me-2"></i> Envío gratis
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="producto-card2 bg-white">
+                <span class="etiqueta-descuento">-10%</span>
+                <div class="card-img-box">
+                  <img src="media/audifono.webp" alt="Auriculares" />
+                </div>
+                <div class="fw-bold">
+                  <a href="./pages/detallesDelProducto.html"
+                    >Auriculares Sony WH-1000XM5</a
+                  >
+                </div>
+                <div class="precio-original">$50.000</div>
+                <div class="precio-descuento">$45.000</div>
+                <div class="envio-gratis">
+                  <i class="fas fa-shipping-fast me-2"></i> Envío gratis
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="producto-card2 bg-white">
+                <span class="etiqueta-descuento">-10%</span>
+                <div class="card-img-box">
+                  <img src="media/licor.webp" alt="Licor" />
+                </div>
+                <div class="fw-bold">Licor Sheridan 750cc Origen Irlanda</div>
+                <div class="precio-original">$22.000</div>
+                <div class="precio-descuento">$19.800</div>
+                <div class="envio-gratis">
+                  <i class="fas fa-shipping-fast me-2"></i> Envío gratis
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="producto-card2 bg-white">
+                <span class="etiqueta-descuento">-10%</span>
+                <div class="card-img-box">
+                  <img src="media/convertidorTV.webp" alt="Decodificador" />
+                </div>
+                <div class="fw-bold">Convertidor Smart Tv 4k Ultra Hd</div>
+                <div class="precio-original">$150.000</div>
+                <div class="precio-descuento">$135.000</div>
+                <div class="envio-gratis">
+                  <i class="fas fa-shipping-fast me-2"></i> Envío gratis
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="producto-card2 bg-white">
+                <span class="etiqueta-descuento">-10%</span>
+                <div class="card-img-box">
+                  <img src="media/proyector.webp" alt="Proyector" />
+                </div>
+                <div class="fw-bold">Proyector Portatil 4k Wifi Bluetooth</div>
+                <div class="precio-original">$256.000</div>
+                <div class="precio-descuento">$230.400</div>
+                <div class="envio-gratis">
+                  <i class="fas fa-shipping-fast me-2"></i> Envío gratis
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="producto-card2 bg-white">
+                <span class="etiqueta-descuento">-10%</span>
+                <div class="card-img-box">
+                  <img src="media/jagger.webp" alt="Licor jaguermaister" />
+                </div>
+                <div class="fw-bold">jaguermaister 700ml - Licor</div>
+                <div class="precio-original">$55.000</div>
+                <div class="precio-descuento">$49.500</div>
+                <div class="envio-gratis">
+                  <i class="fas fa-shipping-fast me-2"></i> Envío gratis
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="producto-card2 bg-white">
+                <span class="etiqueta-descuento">-10%</span>
+                <div class="card-img-box">
+                  <img src="media/asus.webp" alt="Notebook Asus" />
+                </div>
+                <div class="fw-bold">Notebook Asus Vivobook</div>
+                <div class="precio-original">$1.250.000</div>
+                <div class="precio-descuento">$1.125.000</div>
+                <div class="envio-gratis">
+                  <i class="fas fa-shipping-fast me-2"></i> Envío gratis
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="producto-card2 bg-white">
+                <span class="etiqueta-descuento">-10%</span>
+                <div class="card-img-box">
+                  <img src="media/iphone.webp" alt="Iphone 15 pro Max" />
+                </div>
+                <div class="fw-bold">Iphone Pro Max 256GB</div>
+                <div class="precio-original">$1.560.000</div>
+                <div class="precio-descuento">$1.404.000</div>
+                <div class="envio-gratis">
+                  <i class="fas fa-shipping-fast me-2"></i> Envío gratis
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- Footer -->
+    <footer>
+      <section class="footer-copyright text-center text-muted py-3">
+        <div class="container">
+          <small
+            >Copyright © 1999–2025 <strong></strong> Todos
+            los derechos reservados.</small
+          >
+        </div>
+      </section>
+    </footer>
+
+    <!-- Modal de login -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary-emphasis" id="loginModalLabel">
+              Ingresá a tu cuenta
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+
+          <div class="modal-body bg-body-secondary">
+            <form>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="loginUsuario"
+                  placeholder="Nombre de usuario"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginPassword"
+                  placeholder="Contraseña"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary w-100">
+                Ingresar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div
+      class="modal fade"
+      id="registroModal"
+      tabindex="-1"
+      aria-labelledby="registroModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registroModalLabel">
+              Registro de usuario
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+
+          <div class="modal-body bg-body-secondary">
+            <form id="formRegistro">
+              <!-- Imagen de perfil -->
+              <div class="text-center mb-3">
+                <img
+                  src="https://static.vecteezy.com/system/resources/thumbnails/027/951/137/small_2x/stylish-spectacles-guy-3d-avatar-character-illustrations-png.png"
+                  alt="Foto de perfil"
+                  width="100"
+                  class="rounded-circle mb-2"
+                />
+                <div>
+                  <input
+                    type="file"
+                    class="form-control w-auto mx-auto"
+                    id="fotoPerfil"
+                  />
+                  <small class="text-muted">Agregar foto de perfil</small>
+                </div>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input
+                    id="nombreCompleto"
+                    type="text"
+                    class="form-control"
+                    placeholder="Nombre y Apellido"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    id="nombreUsuarioRegistro"
+                    type="text"
+                    class="form-control is-valid"
+                    placeholder="Nombre de usuario"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    id="email"
+                    type="email"
+                    class="form-control"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div class="col-6">
+                  <input
+                    id="domicilio"
+                    type="text"
+                    class="form-control"
+                    placeholder="Domicilio"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Rol -->
+              <div class="mt-4">
+                <label class="form-label fw-bold">Rol:</label>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="rol"
+                    id="vendedor"
+                    value="vendedor"
+                  />
+                  <label class="form-check-label" for="vendedor"
+                    >Vendedor</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="rol"
+                    id="comprar"
+                    value="comprar"
+                  />
+                  <label class="form-check-label" for="comprar"
+                    >Comprador</label
+                  >
+                </div>
+              </div>
+
+              <!-- Contraseñas -->
+              <div class="row mt-4">
+                <div class="col-md-6">
+                  <input
+                    id="password"
+                    type="password"
+                    class="form-control"
+                    placeholder="Contraseña"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    id="confirmPassword"
+                    type="password"
+                    class="form-control"
+                    placeholder="Confirmar contraseña"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Botones -->
+              <div class="d-flex justify-content-center mt-4">
+                <button type="submit" class="btn btn-primary w-50 me-2">
+                  Registrarme
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
