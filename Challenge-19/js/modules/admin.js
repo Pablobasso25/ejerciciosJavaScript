@@ -34,29 +34,21 @@ document.querySelector("#formProducto").addEventListener("submit", (event) => {
 
   // Capturamos los valores del formulario
   const nombre = document.querySelector("#nombreAdmin").value;
-  const opiniones = document.querySelector("#opinionesAdmin").value;
-  const precioOriginal = document.querySelector("#precioOriginalAdmin").value;
-  const precioDesProducto = document.querySelector("#precioDescAdmin").value;
-  const descuentoProducto = document.querySelector("#descuentoProductoAdmin").value;
-  const vendedorProducto = document.querySelector("#nombreVendedorAdmin").value;
-  const cantidadVentas = document.querySelector("#cantidadVentasAdmin").value;
-  const imagen1 = document.querySelector("#imagen1ProductoAdmin").value;
-  const imagen2 = document.querySelector("#imagen2ProductoAdmin").value;
-  const imagen3 = document.querySelector("#imagen3ProductoAdmin").value;
+  const descripcionProducto = document.querySelector("#descripcionAdmin").value;
+  const precioProducto = document.querySelector("#precioAdmin").value;
+  const categoriaProducto = document.querySelector("#categoriaAdmin").value;
+  const imagenProducto = document.querySelector("#imagenAdmin").value;
+  const stockProducto = document.querySelector("#stockAdmin").value;
 
   // Creamos el nuevo producto
   const nuevoProducto = new Producto(
     id,
-    imagen1,
-    imagen2,
-    imagen3,
+    imagenProducto,
     nombre,
-    opiniones,
-    precioOriginal,
-    precioDesProducto,
-    descuentoProducto,
-    vendedorProducto,
-    cantidadVentas
+    descripcionProducto,
+    precioProducto,
+    categoriaProducto,
+    stockProducto,
   );
 
   // Lo agregamos al array y lo guardamos

@@ -89,49 +89,34 @@
                   <input type="text" class="form-control" id="nombreAdmin" required />
                 </div>
                 <div class="col">
-                  <label>Opiniones</label>
-                     <input type="number" class="form-control" id="opinionesAdmin" required />
+                  <label>Descripción del producto</label>
+                     <input type="text" class="form-control" id="descripcionAdmin" required />
                   </select>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col">
-                  <label>Precio original</label>
-                    <input type="number" class="form-control" id="precioOriginalAdmin" required />
+                  <label>Precio </label>
+                    <input type="number" class="form-control" id="precioAdmin" required />
                 </div>
                 <div class="col">
-                  <label>Precio con descuento</label>
-                  <input type="number" class="form-control" id="precioDescAdmin" required />
+                  <label>Categoría</label>
+                  <select name="categiria" id="categoriaAdmin" class="form-control">
+                    <option value="1 mes">Hogar</option>
+                    <option value="3 meses">Electrodomesticos</option>
+                    <option value="5 meses">Limpieza</option>
+                  </select>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col">
-                  <label>Descuento</label>
-                    <input type="text" class="form-control" id="descuentoProductoAdmin" required />
+                   <label>Imagen</label>
+                 <input type="text" class="form-control" id="imagenAdmin" required />
                 </div>
                 <div class="col">
-                  <label>Nombre del venderor</label>
-                  <input type="text" class="form-control" id="nombreVendedorAdmin" required />
+                    <label>Stock</label>
+                    <input type="number" class="form-control" id="stockAdmin" required />
                 </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col">
-                  <label>Cantidad de ventas</label>
-                 <input type="number" class="form-control" id="cantidadVentasAdmin" required />
-                </div>
-                <div class="col">
-                   <label>Imagen 1</label>
-                 <input type="text" class="form-control" id="imagen1ProductoAdmin" required />
-                </div>
-                <div class="col">
-                   <label>Imagen 2</label>
-                 <input type="text" class="form-control" id="imagen2ProductoAdmin" required />
-                </div>
-                <div class="col">
-                   <label>Imagen 3</label>
-                 <input type="text" class="form-control" id="imagen3ProductoAdmin" required />
-                </div>
-              </div>
               <div class="mt-3 d-flex justify-content-end">
                 <button class="btn btn-info">Cargar</button>
               </div>
@@ -144,14 +129,28 @@
             <table class="table table-striped">
               <thead>
                 <tr>
+                  <th>Id</th>
                   <th>Nombre</th>
+                  <th>Categoría</th>
                   <th>Precio</th>
-                  <th>Descuento</th>
-                  <th>Vendedor</th>
-                  <th></th>
+                  <th>Stock</th>
                 </tr>
               </thead>
               <tbody id="cuerpo-tabla"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-8 offset-md-2">
+            <h3>Usuarios registrados</h3>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Rol</th>
+                </tr>
+              </thead>
+              <tbody id="tablaUsuarios"></tbody>
             </table>
           </div>
         </div>
