@@ -3,7 +3,7 @@
 
 import { Producto } from "./productos.js";
 import { obtenerProductos, guardarProductos } from "./storage.js";
-import { renderizarTabla } from "./ui.js";
+import { renderizarTabla } from "./renderizado.js";
 import { restaurarSesion, esAdmin} from "./sesion.js";
 
 

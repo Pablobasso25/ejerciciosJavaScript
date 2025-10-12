@@ -1,19 +1,20 @@
-// js/modules/storage.js
-const CLAVE = "productos";
+// Este módulo centraliza el acceso a localStorage
 
+const CLAVE_STORAGE = "datos"; // Clave única para guardar los productos
+
+/**
+ * Obtiene todos los productos guardados en localStorage
+ * @returns {Array} - Array de productos o array vacío si no hay nada
+ */
 export function obtenerProductos() {
-  return JSON.parse(localStorage.getItem(CLAVE)) || [];
+  const datos = localStorage.getItem(CLAVE_STORAGE);
+  return datos ? JSON.parse(datos) : [];
 }
 
+/**
+ * Guarda el array completo de productos en localStorage
+ * @param {Array} productos - Array de productos actualizado
+ */
 export function guardarProductos(productos) {
-  localStorage.setItem(CLAVE, JSON.stringify(productos));
-}
-
-export function eliminarProducto(id) {
-  const productos = obtenerProductos().filter(p => p.id !== id);
-  guardarProductos(productos);
-}
-
-export function obtenerProductoPorId(id) {
-  return obtenerProductos().find(p => p.id === id);
+  localStorage.setItem(CLAVE_STORAGE, JSON.stringify(productos));
 }
