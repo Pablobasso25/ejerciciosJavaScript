@@ -62,7 +62,7 @@ function validarUsuario(usuario, confirmPassword) {
   }
 
   // Verifica que el email no esté duplicado en localStorage
-  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  const usuarios = JSON.parse(localStorage.getItem('usuarios_app')) || [];
   const emailDuplicado = usuarios.some(u => u.email === usuario.email);
   if (emailDuplicado) {
     return { ok: false, mensaje: "Este email ya está registrado" };
@@ -75,9 +75,10 @@ function validarUsuario(usuario, confirmPassword) {
 
 // Función que guarda el nuevo usuario en localStorage
 function guardarUsuario(usuario) {
-  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []; // Recupera la lista actual o crea una nueva
+  const usuarios = JSON.parse(localStorage.getItem('usuarios_app')) || []; // Recupera la lista actual o crea una nueva
   usuarios.push(usuario); // Agrega el nuevo usuario
-  localStorage.setItem('usuarios', JSON.stringify(usuarios)); // Guarda la lista actualizada
+  localStorage.setItem('usuarios_app', JSON.stringify(usuarios)); // Guarda la lista actualizada
+  console.log("Usuario guardado:", usuario);
 }
 
 // Función que muestra mensajes al usuario (éxito o error)

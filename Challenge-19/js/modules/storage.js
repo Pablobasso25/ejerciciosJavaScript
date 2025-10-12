@@ -1,6 +1,6 @@
 // Este módulo centraliza el acceso a localStorage
 
-const CLAVE_STORAGE = "datos"; // Clave única para guardar los productos
+const CLAVE_STORAGE = "productos_app"; // Clave única para guardar los productos
 
 /**
  * Obtiene todos los productos guardados en localStorage

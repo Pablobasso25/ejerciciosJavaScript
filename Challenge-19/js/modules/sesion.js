@@ -1,15 +1,15 @@
 export function restaurarSesion() {
-  const usuarioLocal = JSON.parse(localStorage.getItem("usuarioActivo"));
-  const usuarioSession = JSON.parse(sessionStorage.getItem("usuarioActivo"));
+  const usuarioLocal = JSON.parse(localStorage.getItem("usuarioActivo_app"));
+  const usuarioSession = JSON.parse(sessionStorage.getItem("usuarioActivo_app"));
 
   if (!usuarioSession && usuarioLocal) {
-    sessionStorage.setItem("usuarioActivo", JSON.stringify(usuarioLocal));
+    sessionStorage.setItem("usuarioActivo_app", JSON.stringify(usuarioLocal));
     actualizarNavbar(); // ← esto actualiza el navbar después de restaurar
   }
 }
 
 export function actualizarNavbar() {
-  const usuarioActivo = JSON.parse(sessionStorage.getItem("usuarioActivo")); //Recupera el usuario logueado desde "sessionStorage", si no hay sesión activa, "usuarioActivo será "null
+  const usuarioActivo = JSON.parse(sessionStorage.getItem("usuarioActivo_app")); //Recupera el usuario logueado desde "sessionStorage", si no hay sesión activa, "usuarioActivo será "null
 
   // se capturan los elementos del DOM que se van a mostrar u ocultar segun el estado de la sesión
   const navUsuario = document.getElementById("navUsuario"); //el saludo con el nombre del usuario
@@ -45,7 +45,7 @@ export function actualizarNavbar() {
 
   
 
-  if (usuarioActivo.rol === "vender") {
+  if (usuarioActivo.rol === "vendedor")  {
     navMisCompras.style.display = "none"; // oculta el botón "mis compras"
     navAdmin.style.display = "block"; // muestra el botón si es vendedor
   } else {
@@ -58,8 +58,8 @@ export function actualizarNavbar() {
 
 // funcion para cerrar sesión
 export function cerrarSesion() {
-  sessionStorage.removeItem("usuarioActivo"); // Elimina el usuario logueado de sessionStorage, cerrando la sesión
-  localStorage.removeItem("usuarioActivo"); // Elimina también el dato persistente en localStorage
+  sessionStorage.removeItem("usuarioActivo_app"); // Elimina el usuario logueado de sessionStorage, cerrando la sesión
+  localStorage.removeItem("usuarioActivo_app"); // Elimina también el dato persistente en localStorage
   actualizarNavbar(); // Llama a actualizarNavbar() para que el navbar se actualice y refleje que ya no hay sesión activa
   alert("Sesión cerrada correctamente"); // mensaje de confirmación al usuario
 }
@@ -73,6 +73,7 @@ export function cerrarSesion() {
 
 // función para saber si es administrador
 export function esAdmin() {
-  const usuarioActivo = JSON.parse(sessionStorage.getItem("usuarioActivo"));
-  return usuarioActivo?.rol === "vender";
+  const usuarioActivo = JSON.parse(sessionStorage.getItem("usuarioActivo_app"));
+  return usuarioActivo?.rol === "vendedor";
+
 }

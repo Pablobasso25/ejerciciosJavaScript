@@ -1,5 +1,5 @@
 // 1. Leemos los productos guardados en localStorage
-const productos = JSON.parse(localStorage.getItem("datos")) || [];
+const productos = JSON.parse(localStorage.getItem("productos_app")) || [];
 
 // 2. Obtenemos el ID del producto desde la URL (ej: detallesDelProducto.html?id=3)
 const params = new URLSearchParams(window.location.search);

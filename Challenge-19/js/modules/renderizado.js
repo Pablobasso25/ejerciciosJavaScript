@@ -18,10 +18,11 @@ export function renderizarTabla(productos) {
 
     // Creacion de cada celda con los datos clave
     fila.innerHTML = `
+      <td>${producto.id}</td>
       <td>${producto.nombre}</td>
-      <td>$${producto.precioOriginal}</td>
-      <td>${producto.descuentoProducto}</td>
-      <td>${producto.vendedorProducto}</td>
+      <td>${producto.categoria}</td>
+      <td>$${producto.precio}</td>
+      <td>${producto.stock}</td>
       <td>
         <button class="btn btn-warning btn-sm me-2" onclick="mostrarModal(${producto.id})">
           <i class="bi bi-pencil"></i>
@@ -47,15 +48,11 @@ window.mostrarModal = (id) => {
   // Cargamos los datos en los inputs del modal
   document.querySelector("#formModal").setAttribute("data-id", id);
   document.querySelector("#nombreModal").value = producto.nombre;
-  document.querySelector("#opinionesModal").value = producto.opiniones;
-  document.querySelector("#precioOriginalModal").value = producto.precioOriginal;
-  document.querySelector("#precioDescModal").value = producto.precioDesProducto;
-  document.querySelector("#descuentoProductoModal").value = producto.descuentoProducto;
-  document.querySelector("#nombreVendedorModal").value = producto.vendedorProducto;
-  document.querySelector("#cantidadVentasModal").value = producto.cantidadVentas;
-  document.querySelector("#imagen1ProductoModal").value = producto.imagen1;
-  document.querySelector("#imagen2ProductoModal").value = producto.imagen2;
-  document.querySelector("#imagen3ProductoModal").value = producto.imagen3;
+  document.querySelector("#descripcionModal").value = producto.descripcion;
+  document.querySelector("#precioModal").value = producto.precio;
+  document.querySelector("#categoriaModal").value = producto.categoria;
+  document.querySelector("#imagenModal").value = producto.imagen;
+  document.querySelector("#stockModal").value = producto.stock;
 
   modal.show(); // Mostramos el modal
 };

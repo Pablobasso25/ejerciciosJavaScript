@@ -1,7 +1,7 @@
 
 // Maneja todo el flujo del panel de administración
 
-import { Producto } from "./productos.js";
+import { Producto } from "./producto.js";
 import { obtenerProductos, guardarProductos } from "./storage.js";
 import { renderizarTabla } from "./renderizado.js";
 import { restaurarSesion, esAdmin} from "./sesion.js";
@@ -10,7 +10,7 @@ import { restaurarSesion, esAdmin} from "./sesion.js";
 // Verifica si hay sesión activa y si el usuario tiene rol "vendedor"
 restaurarSesion(); // Restaura sesión si viene de otra página
 
-const usuarioActivo = JSON.parse(sessionStorage.getItem("usuarioActivo"));
+const usuarioActivo = JSON.parse(sessionStorage.getItem("usuarioActivo_app"));
 
 if (!usuarioActivo || !esAdmin()) {
   alert("Acceso denegado. Esta sección es solo para vendedores.");
