@@ -1,74 +1,248 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panel de Productos</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/style.css" />
-</head>
-<body class="bg-light">
-
-  <div class="container py-5">
-    <h1 class="mb-4 text-center">Panel de Administración - Productos</h1>
-
-    <!-- Formulario de carga -->
-    <form id="formProducto" class="row g-3 mb-5">
-      <div class="col-md-6">
-        <input id="nombre" class="form-control" placeholder="Nombre" required />
-      </div>
-      <div class="col-md-6">
-        <input id="categoria" class="form-control" placeholder="Categoría" required />
-      </div>
-      <div class="col-md-12">
-        <textarea id="descripcion" class="form-control" placeholder="Descripción" required></textarea>
-      </div>
-      <div class="col-md-4">
-        <input id="precio" type="number" class="form-control" placeholder="Precio" required />
-      </div>
-      <div class="col-md-4">
-        <input id="stock" type="number" class="form-control" placeholder="Stock" required />
-      </div>
-      <div class="col-md-4">
-        <input id="imagen" type="url" class="form-control" placeholder="URL de imagen" required />
-      </div>
-      <div class="col-12 text-end">
-        <button type="submit" class="btn btn-primary">Agregar producto</button>
-      </div>
-    </form>
-
-    <!-- Tabla -->
-    <table class="table table-bordered table-hover bg-white">
-      <thead class="table-dark">
-        <tr>
-          <th>ID</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Categoría</th><th>Imagen</th><th>Stock</th><th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody id="cuerpo-tabla"></tbody>
-    </table>
-  </div>
-
-  <!-- Modal de edición -->
-  <div class="modal fade" id="modalEditar" tabindex="-1">
-    <div class="modal-dialog">
-      <form id="formEditar" class="modal-content">
-        <div class="modal-header"><h5 class="modal-title">Editar producto</h5></div>
-        <div class="modal-body">
-          <input id="nombreEditar" class="form-control mb-2" required />
-          <input id="categoriaEditar" class="form-control mb-2" required />
-          <textarea id="descripcionEditar" class="form-control mb-2" required></textarea>
-          <input id="precioEditar" type="number" class="form-control mb-2" required />
-          <input id="stockEditar" type="number" class="form-control mb-2" required />
-          <input id="imagenEditar" type="url" class="form-control mb-2" required />
+<html lang="es_AR" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="Productos, marcas, home, decoracion, Rolling Code"
+    />
+    <meta
+      name="description"
+      content="Panel de administración"
+    />
+    <meta name="author" content="Desarrollado por Pablo Basso" />
+    <title>Challenge 19</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="../media/logo-mercado-liebre.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg bg-custom shadow py-3 sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              class="nav-logo"
+              src="../media/logo-mercado-liebre.svg"
+              alt=""
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html"
+                  
+                  ><i class="fa-solid fa-arrow-left me-2"></i
+                  ><span> Volver al inicio</span></a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Guardar cambios</button>
-        </div>
-      </form>
-    </div>
-  </div>
+      </nav>
+    </header>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="./js/modules/admin.js"></script>
-</body>
+    <main class="container py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1>Administración</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 offset-md-3">
+            <h3>Agregar un nuevo producto</h3>
+            <form id="formProducto">
+              <div class="row mt-3">
+                <div class="col">
+                  <label>Nombre del producto</label>
+                  <input type="text" class="form-control" id="nombreAdmin" required />
+                </div>
+                <div class="col">
+                  <label>Opiniones</label>
+                     <input type="number" class="form-control" id="opinionesAdmin" required />
+                  </select>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <label>Precio original</label>
+                    <input type="number" class="form-control" id="precioOriginalAdmin" required />
+                </div>
+                <div class="col">
+                  <label>Precio con descuento</label>
+                  <input type="number" class="form-control" id="precioDescAdmin" required />
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <label>Descuento</label>
+                    <input type="text" class="form-control" id="descuentoProductoAdmin" required />
+                </div>
+                <div class="col">
+                  <label>Nombre del venderor</label>
+                  <input type="text" class="form-control" id="nombreVendedorAdmin" required />
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <label>Cantidad de ventas</label>
+                 <input type="number" class="form-control" id="cantidadVentasAdmin" required />
+                </div>
+                <div class="col">
+                   <label>Imagen 1</label>
+                 <input type="text" class="form-control" id="imagen1ProductoAdmin" required />
+                </div>
+                <div class="col">
+                   <label>Imagen 2</label>
+                 <input type="text" class="form-control" id="imagen2ProductoAdmin" required />
+                </div>
+                <div class="col">
+                   <label>Imagen 3</label>
+                 <input type="text" class="form-control" id="imagen3ProductoAdmin" required />
+                </div>
+              </div>
+              <div class="mt-3 d-flex justify-content-end">
+                <button class="btn btn-info">Cargar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-8 offset-md-2">
+            <h3>Productos cargados</h3>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+                  <th>Descuento</th>
+                  <th>Vendedor</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="cuerpo-tabla"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal modificar producto -->
+      <div
+        class="modal fade"
+        id="modalProducto"
+        tabindex="-1"
+        aria-labelledby="modalProductotLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modalProductoLabel">
+                Modificar producto
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="formModal">
+                <div class="row mb-3">
+                  <div class="col">
+                  <label>Nombre del producto</label>
+                  <input type="text" class="form-control" id="nombreModal" required />
+                </div>
+                <div class="col">
+                  <label>Opiniones</label>
+                     <input type="number" class="form-control" id="opinionesModal" required />
+                  </select>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <label>Precio original</label>
+                    <input type="number" class="form-control" id="precioOriginalModal" required />
+                </div>
+                <div class="col">
+                  <label>Precio con descuento</label>
+                  <input type="number" class="form-control" id="precioDescModal" required />
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <label>Descuento</label>
+                    <input type="text" class="form-control" id="descuentoProductoModal" required />
+                </div>
+                <div class="col">
+                  <label>Nombre del venderor</label>
+                  <input type="text" class="form-control" id="nombreVendedorModal" required />
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <label>Cantidad de ventas</label>
+                 <input type="number" class="form-control" id="cantidadVentasModal" required />
+                </div>
+                <div class="col">
+                   <label>Imagen 1</label>
+                 <input type="text" class="form-control" id="imagen1ProductoModal" required />
+                </div>
+                <div class="col">
+                   <label>Imagen 2</label>
+                 <input type="text" class="form-control" id="imagen2ProductoModal" required />
+                </div>
+                <div class="col">
+                   <label>Imagen 3</label>
+                 <input type="text" class="form-control" id="imagen3ProductoModal" required />
+                </div>
+              </div>
+                <div class="mt-3 d-flex justify-content-end">
+                  <button class="btn btn-info">Actualizar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="../js/modules/admin.js"></script>
+  </body>
 </html>

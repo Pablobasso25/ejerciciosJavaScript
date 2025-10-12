@@ -1,68 +1,78 @@
-// Maneja todo el flujo del panel de administración
+export function restaurarSesion() {
+  const usuarioLocal = JSON.parse(localStorage.getItem("usuarioActivo"));
+  const usuarioSession = JSON.parse(sessionStorage.getItem("usuarioActivo"));
 
-import { Producto } from "./productos.js";
-import { obtenerProductos, guardarProductos } from "./storage.js";
-import { renderizarTabla } from "./ui.js";
-import { restaurarSesion, esAdmin} from "./sesion.js";
-
-
-// Verifica si hay sesión activa y si el usuario tiene rol "vendedor"
-restaurarSesion(); // Restaura sesión si viene de otra página
-
-const usuarioActivo = JSON.parse(sessionStorage.getItem("usuarioActivo"));
-
-if (!usuarioActivo || !esAdmin()) {
-  alert("Acceso denegado. Esta sección es solo para vendedores.");
-  window.location.href = "index.html"; // Redirige al home
+  if (!usuarioSession && usuarioLocal) {
+    sessionStorage.setItem("usuarioActivo", JSON.stringify(usuarioLocal));
+    actualizarNavbar(); // ← esto actualiza el navbar después de restaurar
+  }
 }
 
-// Inicializamos el array de productos desde localStorage
-let productos = obtenerProductos();
+export function actualizarNavbar() {
+  const usuarioActivo = JSON.parse(sessionStorage.getItem("usuarioActivo")); //Recupera el usuario logueado desde "sessionStorage", si no hay sesión activa, "usuarioActivo será "null
 
-// Renderizamos la tabla al cargar la página
-renderizarTabla(productos);
+  // se capturan los elementos del DOM que se van a mostrar u ocultar segun el estado de la sesión
+  const navUsuario = document.getElementById("navUsuario"); //el saludo con el nombre del usuario
+  const navCerrarSesion = document.getElementById("navCerrarSesion"); //el botón para cerrar sesión
+  const navIngresar = document.getElementById("navIngresar"); //el botón para abrir el modal de login
+  const nombreActivo = document.getElementById("nombreActivo"); //el span donde se muestra el nombre del usuario
+  const navMisCompras = document.getElementById("navMisCompras"); //el botón “Mis compras”
+  const navCrearCuenta = document.getElementById("navCrearCuenta"); //el botón de "crea tu cuenta"
+  const navAdmin = document.getElementById("navAdmin");  // botón panel admin
+
+
+  if (usuarioActivo) {
+    // verificamos si hay algun usuario logueado.Si existe, se muestran los elementos correspondientes
+    nombreActivo.textContent = `Hola, ${usuarioActivo.usuario}`;
+    navUsuario.style.display = "block"; // muestra el saludo al usuario
+    navCerrarSesion.style.display = "block"; // muestra el botón de cerrar sesión
+    navIngresar.style.display = "none"; // oculta el botón de "ingresá"
+    navMisCompras.style.display = "block"; // activa el acceso a "mis compras"
+    navCrearCuenta.style.display = "none"; // oculta el botón "creá tu cuenta"
+    navAdmin.style.display = usuarioActivo.rol === "vendedor" ? "block" : "none"; // muestra el botón solo si es administrador
+
+
+  } else {
+    // Si no hay sesión activa, se ocultan los elementos que solo se muestran cuando hay un usuario logueado
+    navUsuario.style.display = "none"; // oculta el saludo
+    navCerrarSesion.style.display = "none"; // oculta el botón de cerrar sesión
+    navIngresar.style.display = "block"; // muestra el botón de "ingresá"
+    navMisCompras.style.display = "none"; // oculta el botón "mis compras"
+    navCrearCuenta.style.display = "block"; // muestra el botón "creá tu cuenta"
+    navAdmin.style.display = "none"; // Ocultar el botón al cerrar sesión
+
+  }
+
+  
+
+  if (usuarioActivo.rol === "vender") {
+    navMisCompras.style.display = "none"; // oculta el botón "mis compras"
+    navAdmin.style.display = "block"; // muestra el botón si es vendedor
+  } else {
+    navCerrarSesion.style.display = "block"; // muestra el botón de cerrar sesión
+    navIngresar.style.display = "none"; // oculta el botón de "ingresá"
+    navMisCompras.style.display = "block"; // activa el acceso a "mis compras"
+    navCrearCuenta.style.display = "none"; // oculta el botón "creá tu cuenta"
+  }
+}
+
+// funcion para cerrar sesión
+export function cerrarSesion() {
+  sessionStorage.removeItem("usuarioActivo"); // Elimina el usuario logueado de sessionStorage, cerrando la sesión
+  localStorage.removeItem("usuarioActivo"); // Elimina también el dato persistente en localStorage
+  actualizarNavbar(); // Llama a actualizarNavbar() para que el navbar se actualice y refleje que ya no hay sesión activa
+  alert("Sesión cerrada correctamente"); // mensaje de confirmación al usuario
+}
+
+
 
 /**
- * Evento para agregar un nuevo producto desde el formulario
+ * Verifica si el usuario activo tiene rol "admin"
+ * @returns {boolean}
  */
-document.querySelector("#formProducto").addEventListener("submit", (event) => {
-  event.preventDefault(); // Evitamos que se recargue la página
 
-  // Calculamos el nuevo ID automáticamente
-  const id = productos.at(-1)?.id + 1 || 1;
-
-  // Capturamos los valores del formulario
-  const nombre = document.querySelector("#nombreAdmin").value;
-  const opiniones = document.querySelector("#opinionesAdmin").value;
-  const precioOriginal = document.querySelector("#precioOriginalAdmin").value;
-  const precioDesProducto = document.querySelector("#precioDescAdmin").value;
-  const descuentoProducto = document.querySelector("#descuentoProductoAdmin").value;
-  const vendedorProducto = document.querySelector("#nombreVendedorAdmin").value;
-  const cantidadVentas = document.querySelector("#cantidadVentasAdmin").value;
-  const imagen1 = document.querySelector("#imagen1ProductoAdmin").value;
-  const imagen2 = document.querySelector("#imagen2ProductoAdmin").value;
-  const imagen3 = document.querySelector("#imagen3ProductoAdmin").value;
-
-  // Creamos el nuevo producto
-  const nuevoProducto = new Producto(
-    id,
-    imagen1,
-    imagen2,
-    imagen3,
-    nombre,
-    opiniones,
-    precioOriginal,
-    precioDesProducto,
-    descuentoProducto,
-    vendedorProducto,
-    cantidadVentas
-  );
-
-  // Lo agregamos al array y lo guardamos
-  productos.push(nuevoProducto);
-  guardarProductos(productos);
-
-  // Limpiamos el formulario y actualizamos la tabla
-  document.querySelector("#formProducto").reset();
-  renderizarTabla(productos);
-});
+// función para saber si es administrador
+export function esAdmin() {
+  const usuarioActivo = JSON.parse(sessionStorage.getItem("usuarioActivo"));
+  return usuarioActivo?.rol === "vender";
+}
