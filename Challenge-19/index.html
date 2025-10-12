@@ -54,14 +54,20 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+              <li class="nav-item" id="navUsuario" style="display: none">
+                <a class="nav-link text-primary-emphasis" href="#">
+                  <i class="far fa-user me-2 text-info"></i
+                  ><span id="nombreActivo"></span>
+                </a>
+              </li>
               <li class="nav-item" id="navCrearCuenta">
                 <a
                   class="nav-link"
                   href="#"
                   data-bs-toggle="modal"
                   data-bs-target="#registroModal"
-                  ><i class="far fa-id-card me-2"></i
-                  ><span> Creá tu cuenta</span></a
+                  ><i class="far fa-id-card me-2 text-info"></i
+                  ><span class="text-white"> Creá tu cuenta</span></a
                 >
               </li>
               <li class="nav-item" id="navIngresar">
@@ -71,25 +77,20 @@
                   data-bs-toggle="modal"
                   data-bs-target="#loginModal"
                 >
-                  <i class="fas fa-sign-in-alt me-2"></i><span>Ingresá</span></a
+                  <i class="fas fa-sign-in-alt me-2 text-info"></i><span class="text-white">Ingresá</span></a
                 >
               </li>
               <li class="nav-item" id="navMisCompras" style="display: none">
                 <a class="nav-link" href="#"
-                  ><i class="fas fa-shopping-basket me-2"></i
-                  ><span>Mis compras</span></a
+                  ><i class="fas fa-shopping-basket me-2 text-info"></i
+                  ><span class="text-white">Mis compras</span></a
                 >
               </li>
-              <li class="nav-item" id="navUsuario" style="display: none">
-                <a class="nav-link fw-bold text-primary-emphasis" href="#">
-                  <i class="far fa-user me-2"></i
-                  ><span id="nombreActivo"></span>
-                </a>
-              </li>
+              
               <button
                 id="navAdmin"
                 style="display: none"
-                class="nav-link btn btn-secondary btn-sm ms-2"
+                class="nav-link btn btn-info btn-sm ms-2 text-white"
                 onclick="location.href='./admin.html'"
               >
                 Panel Admin
@@ -121,72 +122,15 @@
         </div>
       </nav>
 
-      <!-- Portada  -->
-      <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="./media/D_NQ_630123-MLA86276689967_062025-OO.webp"
-              class="d-block w-100"
-              alt="banner1"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="./media/D_NQ_743265-MLA86102144515_062025-OO.webp"
-              class="d-block w-100"
-              alt="banner2"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="./media/D_NQ_767480-MLA86280604571_062025-OO.webp"
-              class="d-block w-100"
-              alt="banner3"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="./media/D_NQ_803967-MLA86466180635_062025-OO.webp"
-              class="d-block w-100"
-              alt="banner4"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="./media/D_NQ_944395-MLA83017655050_032025-OO.webp"
-              class="d-block w-100"
-              alt="banner5"
-            />
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleRide"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleRide"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+
     </header>
 
     <main>
       <!-- Productos destacados -->
-      <section class="seccion-destacados bg-custom-section">
-        <div class="container">
+      <section class="seccion-destacados bg-custom-section ">
+        <div class="container mt-5">
           <div class="titulo-ofertas">
-            <h4 class="mt-4 titulares fw-bold">Productos destacados</h4>
+            <h4 class="fw-bold text-white">Productos destacados</h4>
           </div>
           <div class="row g-3 mt-3">
             <!-- aquí se renderizan las tarjetas de los productos cargados -->
@@ -195,17 +139,6 @@
       </section>
 
     </main>
-    <!-- Footer -->
-    <footer>
-      <section class="footer-copyright text-center text-muted py-3">
-        <div class="container">
-          <small
-            >Copyright © 1999–2025 <strong></strong> Todos
-            los derechos reservados.</small
-          >
-        </div>
-      </section>
-    </footer>
 
     <!-- Modal de login -->
     <div

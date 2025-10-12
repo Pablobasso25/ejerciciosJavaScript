@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+body{
+
+      background-color: rgb(54, 54, 54);
+    
+}
+
 
 /* Navbar*/
 
@@ -12,7 +18,7 @@
     width: 120px;
 }
 .bg-custom{
-    background-color: var(--amarillo);
+    background-color: rgb(54, 54, 54);
 }
 span{
     color: var(--gris-oscuro);
@@ -58,6 +64,8 @@ span:hover{
       position: relative;
       text-align: center;
       transition: box-shadow 0.3s;
+      background-color: #e9eaea;
+      
     }
 
     .producto-card2:hover {
@@ -109,8 +117,8 @@ span:hover{
       position: absolute;
       top: 10px;
       right: 10px;
-      background-color: var(--verde);
-      color: var(--blanco);
+      background-color: rgb(40, 178, 40);
+      color: white;
       font-size: 0.8rem;
       font-weight: bold;
       padding: 3px 6px;
@@ -133,10 +141,23 @@ span:hover{
       font-weight: bold;
       font-size: 1.1rem;
     }
+    .precio-color{
+      color: #007f5f;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
 
     .envio-gratis {
       color: var(--verde);
       font-size: 0.9rem;
+    }
+
+    .container{
+      background-color: rgb(54, 54, 54);
+    }
+
+    .bg-custom-section{
+      background-color: rgb(54, 54, 54);
     }
 
     /*Footer*/

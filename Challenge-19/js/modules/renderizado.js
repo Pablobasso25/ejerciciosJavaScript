@@ -166,17 +166,16 @@ function renderizarTarjetas(productos, contenedor) {
     const tarjeta = document.createElement("div");
     tarjeta.className = "col-12 col-sm-6 col-md-3 col-lg-3";
     tarjeta.innerHTML = `
-      <div class="producto-card2 bg-white">
+      <div class="producto-card2 ">
         <span class="etiqueta-descuento">-10%</span>
         <div class="card-img-box">
           <img src="${producto.imagen}" alt="${producto.nombre}" />
         </div>
-        <div class="fw-bold">${producto.nombre}</div>
-        <div>$${producto.precio}</div>
-        <div>${producto.descripcion}</div>
-        <div id="precio-original">$${Math.round(producto.precio * 1.1)}</div>
-        <div class="envio-gratis">
-          <i class="fas fa-shipping-fast me-2"></i> Envío gratis
+        <div class="fw-bold fs-5">${producto.nombre}</div>
+        <div class="precio-color fs-6 fw-bold">$${producto.precio}</div>
+        <div>${producto.descripcion}</div>        
+        <div class="envio-gratis text-success fw-bold">
+          <i class="fas fa-shipping-fast me-2 text-success"></i> Envío gratis
         </div>
       </div>
     `;

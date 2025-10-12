@@ -24,6 +24,7 @@ export function actualizarNavbar() {
   if (usuarioActivo) {
     // verificamos si hay algun usuario logueado.Si existe, se muestran los elementos correspondientes
     nombreActivo.textContent = `Hola, ${usuarioActivo.usuario}`;
+    nombreActivo.style.color = "white"
     navUsuario.style.display = "block"; // muestra el saludo al usuario
     navCerrarSesion.style.display = "block"; // muestra el botón de cerrar sesión
     navIngresar.style.display = "none"; // oculta el botón de "ingresá"
