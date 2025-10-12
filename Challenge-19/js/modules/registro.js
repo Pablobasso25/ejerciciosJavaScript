@@ -2,6 +2,8 @@
 export function manejarRegistro() {
   // 1. Se obtiene el formulario por su ID para poder escuchar el evento submit
   const form = document.getElementById('formRegistro');
+console.log("Formulario de registro encontrado:", form);
+
 
   // 2. Se intercepta el envío del formulario para evitar el comportamiento por defecto (recargar la página)
   form.addEventListener('submit', (e) => {

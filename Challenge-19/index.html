@@ -90,7 +90,7 @@
                 id="navAdmin"
                 style="display: none"
                 class="nav-link btn btn-secondary btn-sm ms-2"
-                onclick="location.href='./pages/admin.html'"
+                onclick="location.href='./admin.html'"
               >
                 Panel Admin
               </button>
@@ -189,21 +189,7 @@
             <h4 class="mt-4 titulares fw-bold">Productos destacados</h4>
           </div>
           <div class="row g-3 mt-3">
-            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="producto-card2 bg-white">
-                <span class="etiqueta-descuento">-10%</span>
-                <div class="card-img-box">
-                  <img id="imagenProducto"/>
-                </div>
-                <div id="nombreProducto"  class="fw-bold"></div>
-                <div id="precioProducto"></div>
-                <div id="descripcionProducto"></div>
-                <div id="precio-original"></div>
-                <div class="envio-gratis">
-                  <i class="fas fa-shipping-fast me-2"></i> Envío gratis
-                </div>
-              </div>
-            </div>
+            <!-- aquí se renderizan las tarjetas de los productos cargados -->
           </div>
         </div>
       </section>
@@ -363,6 +349,7 @@
                     name="rol"
                     id="vendedor"
                     value="vendedor"
+                    required
                   />
                   <label class="form-check-label" for="vendedor"
                     >Vendedor</label
@@ -375,6 +362,7 @@
                     name="rol"
                     id="comprar"
                     value="comprar"
+                    required
                   />
                   <label class="form-check-label" for="comprar"
                     >Comprador</label
@@ -421,6 +409,8 @@
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/modules/main.js"></script>
+    <!-- <script type="module" src="./js/index.js"></script> -->
+
   </body>
 </html>
