@@ -29,10 +29,10 @@ export function manejarLogin() {
 // función para recuperar la sesión si se perdio al navegar entre páginas
 export function restaurarSesion(){
 
-  const usuarioLocal = JSON.parse(localStorage.getItem('usuarioActivo'));
-  const usuarioSession = JSON.parse(sessionStorage.getItem('usuarioActivo'));
+  const usuarioLocal = JSON.parse(localStorage.getItem('usuarioActivo_app'));
+  const usuarioSession = JSON.parse(sessionStorage.getItem('usuarioActivo_app'));
   
   if (!usuarioSession && usuarioLocal) {
-    sessionStorage.setItem('usuarioActivo', JSON.stringify(usuarioLocal));
+    sessionStorage.setItem('usuarioActivo_app', JSON.stringify(usuarioLocal));
   }
 }

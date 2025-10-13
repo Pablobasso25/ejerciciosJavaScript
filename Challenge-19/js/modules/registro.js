@@ -1,4 +1,7 @@
 // Función principal que gestiona el registro de usuario desde el formulario del modal
+
+
+
 export function manejarRegistro() {
   // 1. Se obtiene el formulario por su ID para poder escuchar el evento submit
   const form = document.getElementById('formRegistro');

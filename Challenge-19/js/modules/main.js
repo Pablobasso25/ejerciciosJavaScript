@@ -7,10 +7,8 @@ import { renderizarProductos } from "./renderizado.js";
 document.addEventListener("DOMContentLoaded", () => {
   manejarLogin();
   restaurarSesion(); // esta ya actualiza el navbar si restaura
-  actualizarNavbar(); // se llama siempre
-
   renderizarProductos(); // se llama siempre, sin importar si hay sesión
-
+  actualizarNavbar(); // se llama siempre
   manejarRegistro();
 
   const botonCerrarSesion = document.getElementById('btnCerrarSesion');
@@ -18,4 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     botonCerrarSesion.addEventListener('click', cerrarSesion);
   }
 });
+
+const registroModal = document.getElementById('registroModal');
+registroModal.addEventListener('shown.bs.modal', manejarRegistro);
 
